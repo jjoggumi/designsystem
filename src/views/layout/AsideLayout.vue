@@ -22,12 +22,12 @@ export default {
   data(){
     return{
       menu: [
-        { name: 'design system', items:null },
-        { name: 'general', items: ['color', 'shadow', 'typography', 'icons'] },
-        { name: 'layout', items: ['Breakpoints', 'grid'] },
-        { name: 'content', items: ['Images', 'Tables', 'Figures'] },
-        { name: 'form', items: ['Form', 'checks & Radios & Swiches', 'DatePicker', 'input', 'select', 'upload', 'rate'] },
-        { name: 'components', items: ['accordion', 'alerts', 'badge', 'breadcrumb', 'buttons', 'card', 'collapse', 'dropdowns', 'modal', 'tab', 'pagination', 'spinners', 'toasts', 'tooltips', 'error'] }
+        { name: 'Design system', items:null },
+        { name: 'General', items: ['Color', 'Shadow', 'Typography', 'Icons'] },
+        { name: 'Layout', items: ['Breakpoints', 'Grid'] },
+        { name: 'Content', items: ['Images', 'Tables', 'Figures'] },
+        { name: 'Form', items: ['Form', 'Checks & Radios & Swiches', 'DatePicker', 'Input', 'Select', 'Upload', 'Rate'] },
+        { name: 'Components', items: ['Accordion', 'Alerts', 'Badge', 'Breadcrumb', 'Buttons', 'Card', 'Collapse', 'Dropdowns', 'Modal', 'Tab', 'Pagination', 'Spinners', 'Toasts', 'Tooltips', 'Error'] }
       ],
       activeCategory: null
     }
