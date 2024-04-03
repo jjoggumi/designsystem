@@ -3,14 +3,14 @@
     <div class="collapsible" @click="toggleCollapse">
       <slot name="tit"></slot>
     </div>
-    <div class="collapsCon" ref="collapsCon" :style="{ maxHeight: calculateHeight + 'px' }">
+    <div class="collapsCon" ref="collapsCon" :style="{ maxHeight: calculateHeight + 'px' }" >
       <slot name="con"></slot>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name : "Collapse-components",
+  name : "ComponentsCollapse",
   props: {   
     menuOn : Boolean 
   },
@@ -49,11 +49,11 @@ export default {
     border-radius: 5px;
     background: #f5f5f5;
     text-align: left;
-    font-weight: 600;
+    font-weight: var(--font-bold);
   
     &:after {
       content: ""; display: block; 
-      width: 7px; height: 7px;float: right; margin: 10px 6px; border-right: 1px solid #333;
+      width: 5px; height: 5px;float: right; margin: 10px 6px; border-right: 1px solid #333;
       border-bottom: 1px solid #333;transform: rotate(45deg); transition: 0.5s;}
   }
   .collapsCon { 

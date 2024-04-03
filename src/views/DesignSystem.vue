@@ -84,8 +84,7 @@
 
 <script>
 export default {
-  name : 'HomePage'
-
+  name : 'DesignSystem'
 }
 </script>
 

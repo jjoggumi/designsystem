@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+@import url("https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css");
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
   font-size: 62.5%;height:100%;
@@ -31,76 +37,138 @@ ul, li {
   border:0
 }
 
+
+
 #app{
   display:flex;
   flex-wrap: wrap;
 }
 
-header {
-  background: var(--color-primary);    
-  width: 100%;
-}
+// header {
+//   background: var(--color-primary);    
+//   width: 100%;
+// }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  height: 8rem;
-  margin: 0 auto;
-  padding: 0 2rem;
-  transition: 0.5s;
+// nav {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   position: relative;
+//   height: 8rem;
+//   margin: 0 auto;
+//   padding: 0 2rem;
+//   transition: 0.5s;
 
-  .navBrand {padding-left: 0;transition: 0.5s;
-    a{display:flex;}
-    img {width: 4.5rem;transition: 0.5s;}
-  }
-  .navWrap {display: flex;flex-grow: 1;}
-  .navBar {font-size: 1.6rem;flex-grow: 1;margin: 0 3rem;
-    li {display: inline-block;padding: 0 2rem;}
-    li a {color: #fff;text-decoration: none;font-family: var(--font-tit);}
-  }
-  .navEtc { border: 1px solid #ff8c2f;display: flex;align-items: center;
-    img {background: #ff8c2f;border: 1.1rem solid #ff8c2f;}
-    a {display: inline-block;padding: 0.5rem 1rem;color: #ff8c2f;font-size: 1.1rem;z-index: 999999;}
-  }
-  .navbar_toggler {position: absolute;display: none;right: 1.5rem;top: 1.5rem;background: none;border: 0;
-    span {display: block;height: 0.2rem;width: 2.5rem;margin: 0.5rem 0;background: #fff;}
-  }
-}
+//   .navBrand {padding-left: 0;transition: 0.5s;
+//     a{display:flex;}
+//     img {width: 4.5rem;transition: 0.5s;}
+//   }
+//   .navWrap {display: flex;flex-grow: 1;}
+//   .navBar {font-size: 1.6rem;flex-grow: 1;margin: 0 3rem;
+//     li {display: inline-block;padding: 0 2rem;}
+//     li a {color: #fff;text-decoration: none;font-family: var(--font-tit);}
+//   }
+//   .navEtc { border: 1px solid #ff8c2f;display: flex;align-items: center;
+//     img {background: #ff8c2f;border: 1.1rem solid #ff8c2f;}
+//     a {display: inline-block;padding: 0.5rem 1rem;color: #ff8c2f;font-size: 1.1rem;z-index: 999999;}
+//   }
+//   .navbar_toggler {position: absolute;display: none;right: 1.5rem;top: 1.5rem;background: none;border: 0;
+//     span {display: block;height: 0.2rem;width: 2.5rem;margin: 0.5rem 0;background: #fff;}
+//   }
+// }
 aside{
   width: 25rem;
-  height: calc(100dvh - 8rem); 
+  height: 100dvh; 
   background-color:#242745;
   color: #fff;
 
-  .collapseSet{
-    padding:0.5rem 0;
-    .collapsList{    
-      padding: 0.5rem 1rem;
-      .collapsible{
-        border: 0;
-        font-size: 1.7rem;
-        font-family: var(--font-tit);
-        background: #2D3253;
-        &:after{border-color:#fff;}
-        &:hover{background: #7367F0;}
-      }
-      .collapsCon {
-        padding:0 ;
-        .item {
-          padding: 0.3rem 1rem 0.3rem 3rem;
-          color: rgb(255 255 255 / 63%);
-          a{
-            color:rgb(255 255 255 / 70%);
-            font-size:1.4rem;
-          }
-        }      
-      }
-      &.on .collapsible{background: #7367F0;}
+  .navBrand {
+    a{
+      display: block;
+      background:url(@/assets/images/logo.svg);
+      background-size: 100%;
+      width: 4rem;
+      height: 4rem;
+      margin: 1.5rem auto 1rem;
+      text-indent: -99999px;
     }
   }
 
+  .collapseSet{
+    overflow: auto;
+    height: 100dvh;
+    padding:0.5rem 0;
 
-  
+    .collapsList{    
+      padding: 0.5rem 1rem;
+
+      .collapsible{
+        display: flex;
+        align-items: center;
+        position: relative;
+        border: 0;
+        padding:0.8rem;
+        background: #2D3253;
+        font-size: 1.4rem;
+        font-family: var(--font-tit);
+
+        &:hover{background: #7367F0;}
+        &::before{        
+          content: "";
+          display: inline-block;
+          width: 1.8rem;
+          height: 1.8rem;
+          margin-right: 0.8rem;
+          background-color: white;
+          mask-repeat: no-repeat;
+          mask-position: center left;
+          mask-size: contain;  
+        }
+        &::after{
+          position: absolute;
+          right: 1rem;
+          border-color:#fff;
+        }        
+      }
+      .collapsCon {
+        padding:0 ;
+
+        .item {
+          padding: 0.3rem 1rem 0.3rem 3.5rem;
+          color: rgb(255 255 255 / 63%);
+
+          a{
+            color:rgb(255 255 255 / 70%);
+            font-size:1.3rem;
+          }
+          &:first-child{padding-top:1rem;}
+          &:last-child{padding-bottom:1rem;}
+          &.on a{color:#7367f0;}
+        }      
+      }
+      &.on .collapsible{background: #7367F0;}
+
+      &:nth-child(1) .collapsible::before{        
+        mask-image: url("/src/assets/images/svg/icoChart.svg");  
+      }
+      &:nth-child(2) .collapsible::before{        
+        mask-image: url("/src/assets/images/svg/icoChart.svg");        
+      }
+      &:nth-child(3) .collapsible::before{        
+        mask-image: url("/src/assets/images/svg/icoChart.svg");        
+      }
+      &:nth-child(4) .collapsible::before{        
+        mask-image: url("/src/assets/images/svg/icoChart.svg");        
+      }
+      &:nth-child(5) .collapsible::before{        
+        mask-image: url("/src/assets/images/svg/icoChart.svg");        
+      }
+      &:nth-child(6) .collapsible::before{        
+        mask-image: url("/src/assets/images/svg/icoChart.svg");        
+      }
+    }
+    &::-webkit-scrollbar { width: 0.8rem;}
+    &::-webkit-scrollbar-thumb { background: #3a4064; border-radius: 1rem; }
+    &::-webkit-scrollbar-track { background: #242745; }
+  }
 }

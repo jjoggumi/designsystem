@@ -1639,7 +1639,7 @@ button span {
   width: 1.8rem;
   height: 1.8rem;
   background-color: #333;
-  -webkit-mask-size: 100%;
+  /* -webkit-mask-size: 100%; */
 }
 .btn[class*=btn-ico] > .ico.clip::after, .btn[class*=btn-ico] > .ico.clipW::after {
   -webkit-mask-image: url(/images/svg/icoClip.svg);

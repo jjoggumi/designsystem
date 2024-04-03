@@ -13,14 +13,18 @@
 	--color-white:#fff;
 	
 	/* font */
-	--font-tit:"NanumSquare";
-	--font-body:"Nanum Gothic", sans-serif;
-	--font-normal:400;
-	--font-bold:600;
+	//--font-tit:"NanumSquare", sans-serif;
+  //--font-tit: Inter,Helvetica,sans-serif;
+  --font-tit: "Noto Sans", sans-serif;
+  --font-body: "Nanum Barun Gothic", sans-serif;
+  --font-hero: "Poppins", sans-serif;
+	--font-bold:500;
 	--font-color:#111;
+
 	
 	/* content width */
 	--con-width:1400px;	
+	
 }
 /* Color */
 $color-primary:#147ADA !default;    /* 파랑 */
