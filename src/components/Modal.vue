@@ -52,5 +52,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url(/src/styles/scss/common/_modal.scss);
+@import "@/styles/scss/common/_modal.scss";
 </style>

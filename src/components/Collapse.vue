@@ -42,5 +42,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url(/src/styles/scss/common/_collaps.scss);
+@import "@/styles/scss/common/_collaps.scss";
 </style>

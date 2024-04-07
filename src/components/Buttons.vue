@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-primary">
+  <button :class="['btn', color ? `btn-${color}` : '']">
     <slot></slot>
   </button>
 </template>
@@ -7,6 +7,7 @@
 export default {
   name : "ComponentsButton",
   props: {   
+    color : String
   },
   data() {
     return {
@@ -18,7 +19,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import url(/src/styles/scss/common/_button.scss);
-</style>

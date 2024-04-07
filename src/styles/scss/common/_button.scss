@@ -3,11 +3,7 @@
 	color:$font;
 	background: $bg;
 	border-color:$border;	
-	&:hover:not(.disabled,:disabled) {
-		background:darken($bg,10%);
-		border-color: darken($border,10%);
-		transition: all 0.3s ease;
-	}
+	&:hover:not(.disabled,:disabled),
 	&:active:not(.disabled,:disabled) {
 	  background:darken($bg,10%);
 		border-color: darken($bg,10%);
@@ -48,15 +44,14 @@ button {
 	user-select: none;
 	word-break: keep-all;
 	
-	@include btnStyle(transparent, $font:#212529, $border:#ccc, $focus:rgb(119 119 119 / 31%));
+	@include btnStyle(transparent, $font:#212529, $border:#ccc, $focus:rgb(119, 119, 119, 3.1%));
 	
 	&.disabled, 
 	&:disabled{
-		color: #999;
+		color: darken($color-disabled,15%);
 		pointer-events: none;
-		background-color: rgb(0 0 0 / 17%);
-		border-color:#ddd;
-		opacity: 0.65;
+		background-color:$color-disabled;
+		border-color:$color-disabled;
 	}		
 	
 	/* 버튼 사이즈 */
@@ -64,17 +59,17 @@ button {
 	&-lg { padding: 0.7rem 1.5rem; font-size: 1.6rem; }
 	
 	/* 버튼 스타일 */
-	&-primary   { @include btnStyle(#000, $focus:rgb(20 122 218 / 35%)); }
-	// &-secondary { @include btnStyle($color-secondary, $focus:rgb(119 119 119 / 31%)); }
-	// &-special   { @include btnStyle($color-specail, $focus:rgb(119 119 119 / 31%)); }
-	// &-success   { @include btnStyle($color-success, $focus:rgb(0 76 147 / 30%)); }
-	// &-info      { @include btnStyle($color-info, $focus:rgb(255 153 0 / 31%)); }
-	// &-danger    { @include btnStyle($color-danger, $focus:rgb(220 53 69 / 30%)); }
-	// &-dark      { @include btnStyle($color-dark, $focus:rgb(68 68 68 / 30%)); }
+	&-primary   { @include btnStyle($color-primary, $focus:rgb(20, 122, 218, 3.5%)); }
+	&-secondary { @include btnStyle($color-secondary, $focus:rgb(119 119 119 / 31%)); }
+	&-success   { @include btnStyle($color-success, $focus:rgb(0 76 147 / 30%)); }
+	&-special   { @include btnStyle($color-specail, $focus:rgb(119 119 119 / 31%)); }
+	&-info      { @include btnStyle($color-info, $focus:rgb(255 153 0 / 31%)); }
+	&-danger    { @include btnStyle($color-danger, $focus:rgb(220 53 69 / 30%)); }
+	&-warning   { @include btnStyle($color-warning, $focus:rgb(220 53 69 / 30%)); }
+	&-gray      { @include btnStyle($color-gray, $focus:rgb(217 217 217 / 30%)); }
+	&-dark      { @include btnStyle($color-dark, $focus:rgb(68 68 68 / 30%)); }
 	// &-sky       { @include btnStyle(#C1E1FF, $font:#006ACC, $border:#C1E1FF, $focus:rgb(156 207 255 / 30%)); }
-	// &-default   { @include btnStyle($color-default, $focus:rgb(217 217 217 / 30%)); }
-	// &-gray      { @include btnStyle($color-gray, $font:$color-dark, $border:$color-default, $focus:rgb(217 217 217 / 30%)); }
-	// &-link      { border:0; border-radius: 0; }
+	&-link      { border:0; border-radius: 0; }
 		
 	
 	&.btn-ico-l {

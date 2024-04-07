@@ -2,9 +2,19 @@
   <article  class="buttonSys">
     <section>
       <h2>Button</h2>
-      <Buttons>
-        버튼을 누르세요
-      </Buttons>
+      <div>
+        <Buttons> base </Buttons> 
+        <Buttons color='primary'> Primary </Buttons> 
+        <Buttons color='secondary'> Secondary </Buttons> 
+        <Buttons color='success'> Success </Buttons> 
+        <Buttons color='special'> Special </Buttons>
+        <Buttons color='info'> Info </Buttons> 
+        <Buttons color='danger'> Danger </Buttons> 
+        <Buttons color='warning'> Warning </Buttons> 
+        <Buttons color='gray'> Gray </Buttons> 
+        <Buttons color='dark'> Dark </Buttons> 
+        <Buttons color='link'> link </Buttons> 
+      </div>
     </section>
   </article>  
 </template>
