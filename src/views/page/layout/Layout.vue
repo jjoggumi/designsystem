@@ -1,12 +1,10 @@
 <template>
-  <main>
-    FromPage
-  </main>
+   <router-view></router-view> 
 </template>
 
 <script>
 export default {
-  name : 'FromPage'
+  name : 'LayoutPage'
 
 }
 </script>

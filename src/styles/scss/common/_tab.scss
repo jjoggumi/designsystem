@@ -23,7 +23,7 @@
 		
 		&.active {
 		  font-weight: $font-bold;
-		  border: 1px solid var(--color-primary);
+		  border: 1px solid var(--primary);
 		  margin-bottom: -1px;
 		  background: #fff;
 		  color: #111;
@@ -51,7 +51,7 @@
 	}	
 	
 	&.type1 {
-	  border-bottom: 1px solid var(--color-primary);
+	  border-bottom: 1px solid var(--primary);
 	  
 		> button {
 		  cursor: pointer;
@@ -104,7 +104,7 @@
 			border:0;border-bottom:3px solid transparent;
 			
 			&.active{
-				border-bottom:3px solid var(--color-primary);
+				border-bottom:3px solid var(--primary);
 			}
 			&:hover:not(.active){
 				border-bottom:3px solid #eee;background:#fff;

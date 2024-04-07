@@ -1,12 +1,10 @@
 <template>
-  <main>
-    From
-  </main>
+    <router-view></router-view> 
 </template>
 
 <script>
 export default {
-  name : 'FromForm'
+  name : 'FromPage'
 
 }
 </script>

@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
 @import url("https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css");
 @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
@@ -41,11 +41,10 @@ ul, li {
 
 #app{
   display:flex;
-  flex-wrap: wrap;
 }
 
 // header {
-//   background: var(--color-primary);    
+//   background: var(--primary);    
 //   width: 100%;
 // }
 
@@ -78,48 +77,61 @@ ul, li {
 // }
 aside{
   width: 25rem;
+  min-width: 25rem;
   height: 100dvh; 
   background-color:#242745;
   color: #fff;
+  font-family: var(--font-tit);
 
   .navBrand {
+    height:11rem;
     a{
       display: block;
-      background:url(@/assets/images/logo.svg);
-      background-size: 100%;
-      width: 4rem;
-      height: 4rem;
-      margin: 1.5rem auto 1rem;
-      text-indent: -99999px;
+      padding: 1.5rem;
+      color:#fff;
+      text-align: center;
+      font-weight: var(--font-bold);
+      font-size: 1.3rem;
+      
+      &::before{
+        display:block;
+        content:'';
+        background:url(@/assets/images/logo.svg);
+        background-size: 100%;
+        width: 4rem;
+        height: 4rem;
+        margin: 1rem auto;
+      }
     }
   }
 
   .collapseSet{
     overflow: auto;
-    height: 100dvh;
+    height: calc(100dvh - 11rem);
     padding:0.5rem 0;
 
-    .collapsList{    
-      padding: 0.5rem 1rem;
+    .collapsList{ 
+      padding: 0.5rem;   
+      border-top:1px solid #313657;
 
       .collapsible{
         display: flex;
         align-items: center;
         position: relative;
         border: 0;
-        padding:0.8rem;
-        background: #2D3253;
-        font-size: 1.4rem;
-        font-family: var(--font-tit);
+        border-radius: 0;
+        padding:1rem 1.5rem;
+        background: transparent;
+        color: rgb(255 255 255 / 40%);;
+        font-size: 1.3rem;
 
-        &:hover{background: #7367F0;}
         &::before{        
           content: "";
           display: inline-block;
           width: 1.8rem;
           height: 1.8rem;
-          margin-right: 0.8rem;
-          background-color: white;
+          margin-right: 0.5rem;
+          background-color: rgb(255 255 255 / 40%);;
           mask-repeat: no-repeat;
           mask-position: center left;
           mask-size: contain;  
@@ -127,48 +139,110 @@ aside{
         &::after{
           position: absolute;
           right: 1rem;
-          border-color:#fff;
-        }        
+          border-color:rgb(255 255 255 / 40%);;
+        }    
+        a{
+          color:#fff;
+          text-decoration: none;
+        }  
       }
       .collapsCon {
         padding:0 ;
 
         .item {
-          padding: 0.3rem 1rem 0.3rem 3.5rem;
-          color: rgb(255 255 255 / 63%);
+          padding: 0 1rem 0.5rem 4rem;
 
           a{
-            color:rgb(255 255 255 / 70%);
-            font-size:1.3rem;
+            color:rgb(255 255 255 / 60%);
+            font-size:1.5rem;
+
+            &.router-link-active{
+              color: #4089ff;
+              font-weight: var(--font-bold);
+              text-decoration: underline;
+            }
           }
-          &:first-child{padding-top:1rem;}
-          &:last-child{padding-bottom:1rem;}
-          &.on a{color:#7367f0;}
+          &:first-child{padding-top:0.5rem;}
+          &:last-child{padding-bottom:2rem;}
         }      
       }
-      &.on .collapsible{background: #7367F0;}
+      //&.active .collapsible{background: #2D3253;}  
+      &:hover .collapsible,
+      &.on .collapsible{
+        border-radius: 0.5rem;
+        color: #fff;
 
-      &:nth-child(1) .collapsible::before{        
-        mask-image: url("/src/assets/images/svg/icoChart.svg");  
+        &::before{background-color:#fff;}
+        &::after{border-color: #fff;}
       }
-      &:nth-child(2) .collapsible::before{        
-        mask-image: url("/src/assets/images/svg/icoChart.svg");        
-      }
-      &:nth-child(3) .collapsible::before{        
-        mask-image: url("/src/assets/images/svg/icoChart.svg");        
-      }
-      &:nth-child(4) .collapsible::before{        
-        mask-image: url("/src/assets/images/svg/icoChart.svg");        
-      }
-      &:nth-child(5) .collapsible::before{        
-        mask-image: url("/src/assets/images/svg/icoChart.svg");        
-      }
-      &:nth-child(6) .collapsible::before{        
-        mask-image: url("/src/assets/images/svg/icoChart.svg");        
-      }
+      &.nonChild .collapsible::after{display: none;}
+      &:nth-child(1) .collapsible::before{mask-image: url("/src/assets/images/svg/icoChart.svg");}
+      &:nth-child(2) .collapsible::before{mask-image: url("/src/assets/images/svg/icoChart.svg");}
+      &:nth-child(3) .collapsible::before{mask-image: url("/src/assets/images/svg/icoChart.svg");}
+      &:nth-child(4) .collapsible::before{mask-image: url("/src/assets/images/svg/icoChart.svg");}
+      &:nth-child(5) .collapsible::before{mask-image: url("/src/assets/images/svg/icoChart.svg");}
+      &:nth-child(6) .collapsible::before{mask-image: url("/src/assets/images/svg/icoChart.svg");}
     }
     &::-webkit-scrollbar { width: 0.8rem;}
     &::-webkit-scrollbar-thumb { background: #3a4064; border-radius: 1rem; }
     &::-webkit-scrollbar-track { background: #242745; }
+  }
+}
+header{
+  position: relative;
+  background-color: #0F6BFF;
+  padding: 4rem 5rem;
+  color: #fff;  
+
+  h1{
+    font-size: 4rem;
+    line-height: 4rem;
+    font-family: var(--font-tit);
+  }
+  p{
+    margin-top:2.5rem;
+    color: rgb(255 255 255 / 80%);
+  }
+  p.info{ 
+    color: rgb(255 255 255 / 50%);
+    font-size: 1.3rem;
+
+    span{
+      display: inline-block;
+      margin: 0 1rem;
+      color: rgb(255 255 255 / 30%);
+    }
+  }
+  p.link{
+    button{
+      width: 4rem;
+      height: 4rem;
+      border: 0;
+      border-radius: 10rem;
+      background: #0059e7 no-repeat center;
+      text-indent: -999999px;
+      
+      &.figma{background-image: url('/src/assets/images/figma.svg');}
+      &.scss{background-image: url('/src/assets/images/css.svg');}
+      &.js{background-image: url('/src/assets/images/js.svg');}
+      
+      + button{margin-left:1rem;}
+    }
+  }
+}
+main{
+  flex-grow: 1;
+  background: #F5F5F5;
+  height: 100dvh;
+  overflow: auto;
+
+  article{
+    section{
+      padding:5rem;
+      h2{
+        font-size:1.8rem;
+        margin-bottom: 2rem;
+      }
+    }
   }
 }

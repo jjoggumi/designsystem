@@ -1,6 +1,6 @@
 <template>
   <main>
-    FromPage
+    Checks & Radios & Swiches
   </main>
 </template>
 
@@ -10,7 +10,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>

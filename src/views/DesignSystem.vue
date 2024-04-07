@@ -87,7 +87,3 @@ export default {
   name : 'DesignSystem'
 }
 </script>
-
-<style lang="scss">
-
-</style>
