@@ -1,59 +1,48 @@
-
 <template>
-    <div class="wrapper">
-      <button @click="toggle" class="btn">
-        <slot name="button">Click me</slot>
-      </button>
-      <div v-show="isOpen" class="content">        
-        <slot name="list">
-          <ul class="list">
-            <li>Nuxt</li>
-            <li>Vue</li>
-            <li>Webpack</li>
-          </ul>
-        </slot>        
-      </div>
+  <div class="dropdown" :class="{'block':block}" ref="dropdown">
+    <button @click="toggle" class="caption">{{ title }}</button>      
+    <div v-if="isActive" class="content" >    
+      <slot>
+        <ul class="list">
+          <li>option 01</li>
+          <li>option 02</li>
+          <li>option 03</li>
+        </ul> 
+      </slot>                   
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name : "ComponentsDropdown",
-    data() {
-      return {
-        isOpen: false
-      };
+  </div>
+</template>
+
+<script>
+export default {
+  name : "ComponentsDropdown",
+  props:{
+    title : String,
+    block : Boolean,
+  },
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  mounted() {
+    document.addEventListener('click', this.handleClickOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.handleClickOutside);
+  },
+  methods: {
+    toggle() {
+      this.isActive = !this.isActive;
     },
-    methods: {
-      toggle() {
-        this.isOpen = !this.isOpen;
+    close() {
+      this.isActive = false;
+    },
+    handleClickOutside(event) {
+      if (!this.$refs.dropdown.contains(event.target)) {
+        this.close();
       }
     }
-  };
-  </script>
-  <style lang="scss" scoped>
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
-  .btn {
-    width: 182px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-    padding: 8px;
-  }
-  
-  .content {
-    border: 1px solid lightblue;
-    width: 180px;
-  }
-  .list {
-    list-style: none;
-    margin: 0;
-    padding: 20px;
-  }
-  </style>
-  
+};
+</script>

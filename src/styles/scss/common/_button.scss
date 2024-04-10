@@ -6,14 +6,13 @@
 	&:hover:not(.disabled,:disabled),
 	&:active:not(.disabled,:disabled) {
 	  background:darken($bg,10%);
-		border-color: darken($bg,10%);
+		border-color: darken($border,10%);
 		transition: all 0.3s ease;
 	  } 
 	&:focus:not(.disabled,:disabled) {
-		box-shadow:0 0 0 3px $focus;
+		box-shadow:0 0 0 3px lighten($border,$focus);
 	}
-	
-	> span.ico{background-color:darken($bg,10%);}
+	> .ico{background-color:$font;}
 }
 
 button {
@@ -25,7 +24,7 @@ button {
 
 .btn {
 	display: inline-block;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 1.2rem;
 	border-radius: .3rem;
 	border:1px solid #ccc;
 	background-color: transparent;
@@ -44,10 +43,11 @@ button {
 	user-select: none;
 	word-break: keep-all;
 	
-	@include btnStyle(transparent, $font:#212529, $border:#ccc, $focus:rgb(119, 119, 119, 3.1%));
+	@include btnStyle(transparent, $font:#212529, $border:transparent, $focus:0);
 	
 	&.disabled, 
-	&:disabled{
+	&:disabled,
+	&[aria-disabled="true"]{
 		color: darken($color-disabled,15%);
 		pointer-events: none;
 		background-color:$color-disabled;
@@ -55,35 +55,62 @@ button {
 	}		
 	
 	/* 버튼 사이즈 */
+	&-xs { padding: 0.2rem 0.4rem; font-size: 1.2rem; }
 	&-sm { padding: 0.2rem 0.7rem; font-size: 1.4rem; }
-	&-lg { padding: 0.7rem 1.5rem; font-size: 1.6rem; }
-	
+	&-lg { padding: 0.8rem 1.6rem; font-size: 1.8rem; }
+	&-block{width:100%;}
+
 	/* 버튼 스타일 */
-	&-primary   { @include btnStyle($color-primary, $focus:rgb(20, 122, 218, 3.5%)); }
-	&-secondary { @include btnStyle($color-secondary, $focus:rgb(119 119 119 / 31%)); }
-	&-success   { @include btnStyle($color-success, $focus:rgb(0 76 147 / 30%)); }
-	&-special   { @include btnStyle($color-specail, $focus:rgb(119 119 119 / 31%)); }
-	&-info      { @include btnStyle($color-info, $focus:rgb(255 153 0 / 31%)); }
-	&-danger    { @include btnStyle($color-danger, $focus:rgb(220 53 69 / 30%)); }
-	&-warning   { @include btnStyle($color-warning, $focus:rgb(220 53 69 / 30%)); }
-	&-gray      { @include btnStyle($color-gray, $focus:rgb(217 217 217 / 30%)); }
-	&-dark      { @include btnStyle($color-dark, $focus:rgb(68 68 68 / 30%)); }
-	// &-sky       { @include btnStyle(#C1E1FF, $font:#006ACC, $border:#C1E1FF, $focus:rgb(156 207 255 / 30%)); }
-	&-link      { border:0; border-radius: 0; }
-		
+	&-default   { @include btnStyle($color-disabled,  $font:#212529, $border:$color-disabled, $focus:10)}
+	&-primary   { @include btnStyle($color-primary,   $focus:35);}
+	&-secondary { @include btnStyle($color-secondary, $focus:40);}
+	&-success   { @include btnStyle($color-success,   $focus:50);}
+	&-special   { @include btnStyle($color-specail,   $focus:35);}
+	&-info      { @include btnStyle($color-info,      $focus:35);}
+	&-danger    { @include btnStyle($color-danger,    $focus:45);}
+	&-warning   { @include btnStyle($color-warning,   $focus:35);}
+	&-gray      { @include btnStyle($color-gray,      $focus:35);}
+	&-dark      { @include btnStyle($color-dark,      $focus:60);}
 	
-	&.btn-ico-l {
-	  padding-left: 4.4rem;
-	  
-	   > span { left: 0; }
+	&-outline-default   { @include btnStyle($color-white, $font:$color-gray,      $border:$color-disabled,  $focus:10)}
+	&-outline-primary   { @include btnStyle($color-white, $font:$color-primary,   $border:$color-primary,   $focus:35);}
+	&-outline-secondary { @include btnStyle($color-white, $font:$color-secondary, $border:$color-secondary, $focus:40);}
+	&-outline-success   { @include btnStyle($color-white, $font:$color-success,   $border:$color-success,   $focus:50);}
+	&-outline-special   { @include btnStyle($color-white, $font:$color-specail,   $border:$color-specail,   $focus:35);}
+	&-outline-info      { @include btnStyle($color-white, $font:$color-info,      $border:$color-info,      $focus:35);}
+	&-outline-danger    { @include btnStyle($color-white, $font:$color-danger,    $border:$color-danger,    $focus:45);}
+	&-outline-warning   { @include btnStyle($color-white, $font:$color-warning,   $border:$color-warning,   $focus:35);}
+	&-outline-gray      { @include btnStyle($color-white, $font:$color-gray,      $border:$color-gray,      $focus:35);}
+	&-outline-dark      { @include btnStyle($color-white, $font:$color-dark,      $border:$color-dark,      $focus:60);}
+	
+	
+	/* 아이콘 버튼 */		
+	&[class *= 'ico'] {	display: inline-flex; align-items: center; position: relative;
+		> .ico{
+			display: inline-block;
+			width: 1.8rem;
+			height: 1.8rem;
+			text-indent: -999999999px;
+			-webkit-mask-repeat: repeat;mask-repeat: no-repeat;-webkit-mask-position: left center;mask-position: left center;-webkit-mask-size: contain;mask-size: contain;		
+		}
 	}
-	
-	&.btn-ico-r {
-	  padding-right: 4.4rem;
-	  
-	   > span { right: 0; }
+
+	&.icoLeft {
+		> .ico{margin-right: 0.5rem;}
+	}	
+	&.icoRight { 
+		flex-flow: row-reverse; 
+		> .ico{margin-left: 0.5rem;}
 	}
-	
+	&.icoTop {
+		flex-flow: column;
+		> .ico{margin-top: 0.5rem;}
+	}
+	&.icoBottom {
+		flex-flow: column-reverse;
+		> .ico{margin-top:0.2rem;margin-bottom: 0.3rem;}
+	}	
+
 	/* 버튼 그룹 */
 	&-group {
 		position: relative; display: inline-flex; vertical-align: middle;

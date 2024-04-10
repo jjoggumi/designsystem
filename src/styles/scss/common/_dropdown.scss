@@ -1,13 +1,17 @@
 /* dropdown */
 .dropdown {
 	position: relative;
+	display: inline-block;
   
-	> .caption {
+	> .caption {    
 		position: relative;
-		padding-right: 2rem;
-		cursor: pointer;
-		width: 100%;
-		text-align: left;
+    width: 100%;
+    padding-right: 4rem;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid #999;
+    border-radius: 0.5rem;
+    height: 3.5rem;
 		
 		&::after {
 			content: "";
@@ -24,35 +28,39 @@
 		}
 	}
 	
-	> .list {
+	> .content {
 		position: absolute;
-		background-color: #fff;
-		width: 100%;
-		border-radius: .4rem;
-		box-shadow: 0 0 2.5rem rgba(0, 0, 0, .15);
-		top: 4rem;
-		display: none;
-		overflow: hidden;
-		z-index: 11;
-	  
-		> .item {
-			padding: 1.2rem 2.4rem;
-			cursor: pointer;
-			width: 100%;
-			display: inline-block;
-			font-size: 1.5rem;
-			color: var(--info);
-			
-			+ .item {
-				border-top: 1px solid #eee;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+    top: 4rem;
+    overflow: hidden;
+		z-index: 1;
+
+	   ul{
+			padding:0.5rem;
+
+			> li{
+				padding:0.3rem 0.5rem;  
 			}
-			
-			&.selected {
-				font-weight: var(--font-bold);
-			}
-			&:hover {
-				background-color: var(--info);
-				color: #fff;
+			> .item {
+				padding: 1.2rem 2.4rem;
+				cursor: pointer;
+				width: 100%;
+				display: inline-block;
+				font-size: 1.5rem;
+				
+				+ .item {
+					border-top: 1px solid #eee;
+				}
+				
+				&.selected {
+					font-weight: var(--font-bold);
+				}
+				&:hover {
+					color: #fff;
+				}
 			}
 		}
 	}	
@@ -66,4 +74,6 @@
 		  display: block;
 		}
 	}
+
+	&.block{width:100%;}
 }

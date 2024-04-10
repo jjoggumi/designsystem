@@ -18,7 +18,7 @@ const store = createStore({
   mutations: {
     setHeadTitle(state, data) {
       state.headTitle = data
-    }
+    },
   },
   actions: {
     updateHeadTitle({ commit }, data) {
