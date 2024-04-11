@@ -13,7 +13,8 @@
     <div class="content">
       <ul v-if="dropdownData.isActive">
         <li v-for="(a,i) in dropdownData.options" :key="i" class="list">
-          <span @click="$emit('radioSelectOpt', [dropdownData.name, a])">{{ a.label }} </span>
+          <input type="radio" :value="a.value" :name="dropdownData" :id="'option_' + i" v-model="a.checked" @change="$emit('radioSelectOpt', [dropdownData.name, a])">
+          <label :for="'option_' + i">{{ a.label }} </label>
         </li>
       </ul>
     </div>

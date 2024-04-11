@@ -13,7 +13,8 @@
     <div class="content">
       <ul v-if="dropdownData.isActive">
         <li v-for="(a,i) in dropdownData.options" :key="i" class="list">
-          <span @click="$emit('radioSelectOpt', [dropdownData.name, a])">{{ a.label }} </span>
+          <input type="checkbox" :value="a.value" :id="'option_' + i" v-model="a.checked" @change="$emit('checkSelecOpt', dropdownData.name)">
+          <label :for="'option_' + i">{{ a.label }} </label>
         </li>
       </ul>
     </div>
@@ -28,7 +29,7 @@ export default {
      title:String,
      block:Boolean,
   },
-  emits: ['toggle','closed', 'radioSelectOpt'], 
+  emits: ['toggle','closed', 'checkSelecOpt'], 
   mounted() {
     document.addEventListener('click', this.handleClickOutside);
   },

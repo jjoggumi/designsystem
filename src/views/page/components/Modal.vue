@@ -2,7 +2,7 @@
   <article class="modalSys">
     <section>
       <h2>Modal Default</h2>
-      <Buttons variant="primary" @click="modalOpen[0]=true">Default Modal<small>(모달 배경 클릭 이벤트 없음)</small></Buttons>
+      <Buttons variant="primary" @click="modalOpen[0]=true">Default Modal<small>(모달 배경 클릭 닫기 이벤트 없음)</small></Buttons>
       <modal :active=modalOpen[0] :clickOnBg="false" size="sm" @closed="modalOpen[0]=false">        
         <template v-slot:modalHeader><h4>Default Modal Header</h4></template>
         <template v-slot:modalBody>모달 배경을 클릭시 모달이 닫히는 이벤트가 없습니다.</template>
@@ -11,8 +11,8 @@
         </template>
       </modal>
 
-      <Buttons variant="primary" @click="modalOpen[1]=true">Default Modal <small>(모달 배경 클릭 이벤트 있음)</small></Buttons>
-      <modal :active=modalOpen[1] :clickOnBg="false" size="sm" @closed="modalOpen[1]=false">        
+      <Buttons variant="primary" @click="modalOpen[1]=true">Default Modal <small>(모달 배경 클릭 닫기 이벤트 있음)</small></Buttons>
+      <modal :active=modalOpen[1] :clickOnBg="true" size="sm" @closed="modalOpen[1]=false">        
         <template v-slot:modalHeader><h4>Default Modal Header</h4></template>
         <template v-slot:modalBody>모달 배경을 클릭시 모달이 닫히는 이벤트 실행됩니다.</template>
         <template v-slot:modalFooter>  
