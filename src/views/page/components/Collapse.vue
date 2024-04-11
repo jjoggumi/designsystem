@@ -3,16 +3,36 @@
     <section>
       <h2>Collapse</h2>
       <div class="collapseSet">
-        <Collapse>
+        <Collapse onActive>
           <template #tit>
-            제목이 들어가는
+            collapse title
           </template>
           <template #con>
-            <div class="item" >
-             내용들어가는 곳
+            <div class="inner" >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </template>
-        </Collapse>
+        </Collapse>    
+        <Collapse>
+          <template #tit>
+            collapse title
+          </template>
+          <template #con>
+            <div class="inner" >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </template>
+        </Collapse> 
+        <Collapse>
+          <template #tit>
+            collapse title
+          </template>
+          <template #con>
+            <div class="inner" >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </template>
+        </Collapse>     
       </div>
     </section>
   </article>  
@@ -24,6 +44,11 @@ import Collapse from '@/components/Collapse.vue';
 export default {
   name : 'ComponentsCollapse',
   components : {Collapse},
+  data(){
+    return{
+      collapseOpen: [null,null,null,null,null,null,null,null]
+    }
+  },
   mounted() {
     this.$store.dispatch('updateHeadTitle', {
       title: "Collapse ",

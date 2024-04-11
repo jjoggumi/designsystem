@@ -14,11 +14,10 @@ export default {
   props: {   
     isActive : Boolean,
     nonChild : Boolean,
-    onActive :Boolean
   },
   data() {
     return {
-      active: null,
+      active: false,
       activeMaxHeight: 0
     };
   },  
@@ -35,11 +34,8 @@ export default {
     }
   },
   mounted() {
-    this.active = !this.onActive
-    if (this.active === true) {
-      this.activeMaxHeight = '0';
-    } else {
-      this.activeMaxHeight = this.$refs.collapsCon.scrollHeight;
+    if (this.$refs.collapsCon) {
+      this.activeMaxHeight = this.$refs.collapsCon.scrollHeight ;
     }
   }
 }

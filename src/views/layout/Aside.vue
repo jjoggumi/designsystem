@@ -2,7 +2,7 @@
   <aside>
     <div class="navBrand"><a href="@/">Creative Lab</a></div>   
     <div class="collapseSet type02">
-      <Collapse v-for="(route, index) in routes" :key="index" :isActive="mainCate === route.name" :nonChild="!route.children">
+      <CollapseAside v-for="(route, index) in routes" :key="index" :active="true" :isActive="mainCate === route.name" :nonChild="!route.children">
         <template #tit>
           <router-link :to="route.path" v-if="!route.children">{{ route.name }}</router-link>
           <span v-else>{{ route.name }}</span>
@@ -20,16 +20,16 @@
             -->
           </div>
         </template>
-      </Collapse>
+      </CollapseAside>
     </div>
   </aside>
 </template>
 
 <script>
-import Collapse from '@/components/Collapse.vue';
+import CollapseAside from '@/components/CollapseAside.vue';
 
 export default {
-  components: { Collapse },
+  components: { CollapseAside },
   name: 'AsideLayout',
   props:{
     routes : Array,
