@@ -1,5 +1,5 @@
 <template>
-  <div class="collapsList" :class="{ active: !active,  on: isActive, nonChild: nonChild }">
+  <div class="collapsList" :class="{ active: active,  on: isActive, nonChild: nonChild }">
     <div class="collapsible" @click="toggleCollapse">
       <slot name="tit"></slot>
     </div>
@@ -26,25 +26,21 @@ export default {
     toggleCollapse() {
       this.active = !this.active;
       if (!this.active) {
+        this.activeMaxHeight = '0';
+      } else {
         this.$nextTick(() => {
           this.activeMaxHeight = this.$refs.collapsCon.scrollHeight;
         });
-      } else {
-        this.activeMaxHeight = '0';
       }
     }
   },
   mounted() {
-    this.active = !this.onActive
+    this.active = this.onActive
     if (this.active === true) {
-      this.activeMaxHeight = '0';
-    } else {
       this.activeMaxHeight = this.$refs.collapsCon.scrollHeight;
+    } else {
+      this.activeMaxHeight = '0';
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "@/styles/scss/common/_collaps.scss";
-</style>

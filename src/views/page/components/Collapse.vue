@@ -9,7 +9,8 @@
           </template>
           <template #con>
             <div class="inner" >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </template>
         </Collapse>    
@@ -19,20 +20,38 @@
           </template>
           <template #con>
             <div class="inner" >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </template>
-        </Collapse> 
-        <Collapse>
+        </Collapse>    
+      </div>
+    </section>
+    <section>
+      <h2>Accordion</h2>
+      <div class="collapseSet">
+        <Accordion onActive>
           <template #tit>
-            collapse title
+            Accordion title
           </template>
           <template #con>
             <div class="inner" >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </template>
-        </Collapse>     
+        </Accordion>    
+        <Accordion>
+          <template #tit>
+            Accordion title
+          </template>
+          <template #con>
+            <div class="inner" >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </template>
+        </Accordion>    
       </div>
     </section>
   </article>  
@@ -40,13 +59,14 @@
 
 <script>
 import Collapse from '@/components/Collapse.vue';
+import Accordion from '@/components/Accordion.vue';
 
 export default {
   name : 'ComponentsCollapse',
-  components : {Collapse},
+  components : {Collapse, Accordion},
   data(){
     return{
-      collapseOpen: [null,null,null,null,null,null,null,null]
+      // collapseOpen: [null,null,null,null,null,null,null,null]
     }
   },
   mounted() {
