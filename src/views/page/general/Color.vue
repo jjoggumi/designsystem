@@ -82,19 +82,6 @@ export default {
       }]
     }
   },
-  mounted() {
-    this.$store.dispatch('updateHeadTitle', {
-      title: "Color System",
-      description: `Colors help to represent hierarchy, establish brand identity, and convey meaning and status of elements.<br>
-      색상은 계층 구조를 표현하고, 브랜드 정체성을 확립하고, 요소의 의미,  상태를 나타내는 데 도움이 됩니다.`,
-      version: "1.0.0",
-      date: "2023년 02월 21일 업로드",
-      name: "김은영",
-      figmaLink: "/",
-      scssLink: "/",
-      jsLink: "/"
-    })
-  }
 }
 </script>
 

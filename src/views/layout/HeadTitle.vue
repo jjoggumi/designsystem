@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>{{ headTitle.title }}</h1>
+    <h1>{{ headTitle.title }} System</h1>
     <p class="smr" v-html="headTitle.description"></p>
     <p class="info">{{ headTitle.version }}<span>/</span>{{ headTitle.date }} <span>/</span> {{ headTitle.name }}</p>
     <p class="link">
@@ -14,13 +14,22 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-  name : 'headTitle',  
+  name : 'headTitle',    
   computed: {
     ...mapGetters(['getHeadTitle']),
+    pagename() {
+      return this.$route.name;
+    },
     headTitle() {
-      return this.getHeadTitle
+      for (const key in this.getHeadTitle) {
+        const object = this.getHeadTitle[key];
+        if (object.title === this.pagename) {
+          return object;
+        }
+      }
+      return this.getHeadTitle[0];
     }
-  }, 
+  },
 }
 </script>
 

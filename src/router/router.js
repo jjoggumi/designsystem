@@ -22,7 +22,7 @@ import Button from '@/views/page/components/Button';
 import Modal from '@/views/page/components/Modal';
 import Dropdown from '@/views/page/components/Dropdown';
 import Collapse from '@/views/page/components/Collapse';
-import Accordion from '@/views/page/components/Accordion';
+import Tab from '@/views/page/components/Tab';
 import Alerts from '@/views/page/components/Alerts';
 
 
@@ -114,9 +114,9 @@ const routes = [
         name: 'Collapse',
         component: Collapse,
       },{
-        path: 'accordion', 
-        name: 'Accordion',
-        component: Accordion,
+        path: 'tab', 
+        name: 'Tab',
+        component: Tab,
       },{
         path: 'alerts', 
         name: 'Alerts',

@@ -1,33 +1,43 @@
 <template>
-  <div class="collapsList" :class="{ active: active}">
-    <div class="collapsible" @click="toggleCollapse">
-      <slot name="tit"></slot>
-    </div>
-    <transition name="collaps"
+  <div class="collapsList" >
+    <div class="collapsList" v-for="(item) in items" :key="item.id">
+      <div class="collapsible" @click="toggle(item)">
+        <slot name="title">{{ item.title }}</slot>
+      </div>
+      <transition name="accordion"
       v-on:before-enter="beforeEnter" v-on:enter="enter"
       v-on:before-leave="beforeLeave" v-on:leave="leave">
-      <div class="collapsCon" v-if="active">
-        <slot name="con"></slot>
-      </div>
-    </transition>
+        <div class="collapsCon" v-if="item.active" >
+          <slot name="detail"><div class="inner">{{ item.details }} </div></slot>
+        </div>
+      </Transition>
+    </div>
+
   </div>
 </template>
 <script>
 export default {
   name : "ComponentsAccordion",
-  props: {   
-    onActive :Boolean
+  props: {       
+    items: {
+      type: Array,
+      required: true
+    },
+    accordion: {
+      type: Boolean,
+    }
   },
-  data() {
-    return {
-      active: this.onActive,
-      activeMaxHeight: 0
-    };
-  }, 
   methods: {
-    toggleCollapse() {
-      this.active = !this.active;
-    },    
+    toggle(item) {
+      this.items.forEach((x) => {
+        if(this.accordion){        
+          x.active = x.id === item.id && !x.active;
+        }else{
+          x.active = x.id === item.id ? !x.active : x.active;
+        }
+      });
+      this.$emit('itemToggled', item);
+    },
     beforeEnter: function(el) {
       el.style.height = '0';
     },
@@ -40,6 +50,6 @@ export default {
     leave: function(el) {
       el.style.height = '0';
     }
-  },
+  }
 }
 </script>

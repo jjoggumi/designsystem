@@ -1,13 +1,13 @@
 <template>
-  <div class="collapsWrap">
+  <div class="tabWrap">
 
-    아코디언
+    탭
   </div>
 </template>
 
 <script>
 export default {
-  name : "ComponentsAccordion",
+  name : "ComponentsTab",
   data() {
     return{
 
