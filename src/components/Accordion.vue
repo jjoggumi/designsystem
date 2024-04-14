@@ -1,46 +1,62 @@
 <template>
-  <div class="collapsList" :class="{ active: active,  on: isActive, nonChild: nonChild }">
-    <div class="collapsible" @click="toggleCollapse">
-      <slot name="tit"></slot>
-    </div>
-    <div class="collapsCon" ref="collapsCon" :style="{ maxHeight: activeMaxHeight + 'px' }" >
-      <slot name="con"></slot>
+  <div class="collapsList" >
+    <button v-if="expandall" @click="expandAll">
+      {{ expandBtnText }} All
+    </button>
+
+    <div class="collapsList" v-for="(item) in content.item" :key="item.id">
+      <div class="collapsible" @click="toggle(item.id)">{{ item.title }}</div>
+      <transition name="accordion"
+      v-on:before-enter="beforeEnter" v-on:enter="enter"
+      v-on:before-leave="beforeLeave" v-on:leave="leave">
+        <div class="collapsCon" v-if="item.active" >
+          <div class="inner">{{ item.details }} </div>
+        </div>
+      </Transition>
     </div>
   </div>
 </template>
 <script>
 export default {
   name : "ComponentsAccordion",
-  props: {   
-    isActive : Boolean,
-    nonChild : Boolean,
-    onActive :Boolean
+  props: {       
+    content: {
+      type: Array,
+      required: true
+    },
+    multiple: {
+      type: Boolean,
+      default: false
+    },
+    expandall: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
-      active: null,
-      activeMaxHeight: 0
+      activeMaxHeight:0
     };
-  }, 
-  mounted() {    
-    this.active = this.onActive
-    if (this.active === true) {
-      this.activeMaxHeight = this.$refs.collapsCon.scrollHeight;
-    } else {
-      this.activeMaxHeight = '0';
-    }
   },
   methods: {
-    toggleCollapse() {
-      this.active = !this.active;
-      if (!this.active) {
-        this.activeMaxHeight = '0';
-      } else {
-        this.$nextTick(() => {
-          this.activeMaxHeight = this.$refs.collapsCon.scrollHeight;
-        });
-      }
+    toggle(item) {
+      this.$emit('toggle', [this.content.name, item]);
+    },
+    expandAll() {      
+      this.$emit('expand');
+    },
+    beforeEnter: function(el) {
+      el.style.height = '0';
+    },
+    enter: function(el) {
+      el.style.height = el.scrollHeight + 'px';
+    },
+    beforeLeave: function(el) {
+      el.style.height = el.scrollHeight + 'px';
+    },
+    leave: function(el) {
+      el.style.height = '0';
     }
-  },
+  }
 }
 </script>

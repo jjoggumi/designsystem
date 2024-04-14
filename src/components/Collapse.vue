@@ -1,46 +1,45 @@
 <template>
-  <div class="collapsList" :class="{ active: active,  on: isActive, nonChild: nonChild }">
+  <div class="collapsList" :class="{ active: active}">
     <div class="collapsible" @click="toggleCollapse">
       <slot name="tit"></slot>
     </div>
-    <div class="collapsCon" ref="collapsCon" :style="{ maxHeight: activeMaxHeight + 'px' }" >
-      <slot name="con"></slot>
-    </div>
+    <transition name="collaps"
+      v-on:before-enter="beforeEnter" v-on:enter="enter"
+      v-on:before-leave="beforeLeave" v-on:leave="leave">
+      <div class="collapsCon" v-if="active">
+        <slot name="con"></slot>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
 export default {
-  name : "ComponentsCollapse",
+  name : "ComponentsAccordion",
   props: {   
-    isActive : Boolean,
-    nonChild : Boolean,
     onActive :Boolean
   },
   data() {
     return {
-      active: null,
+      active: this.onActive,
       activeMaxHeight: 0
     };
-  },  
+  }, 
   methods: {
     toggleCollapse() {
       this.active = !this.active;
-      if (!this.active) {
-        this.activeMaxHeight = '0';
-      } else {
-        this.$nextTick(() => {
-          this.activeMaxHeight = this.$refs.collapsCon.scrollHeight;
-        });
-      }
+    },    
+    beforeEnter: function(el) {
+      el.style.height = '0';
+    },
+    enter: function(el) {
+      el.style.height = el.scrollHeight + 'px';
+    },
+    beforeLeave: function(el) {
+      el.style.height = el.scrollHeight + 'px';
+    },
+    leave: function(el) {
+      el.style.height = '0';
     }
   },
-  mounted() {
-    this.active = this.onActive
-    if (this.active === true) {
-      this.activeMaxHeight = this.$refs.collapsCon.scrollHeight;
-    } else {
-      this.activeMaxHeight = '0';
-    }
-  }
 }
 </script>

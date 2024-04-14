@@ -11,6 +11,10 @@
             <div class="inner" >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </template>
         </Collapse>    
@@ -28,31 +32,8 @@
       </div>
     </section>
     <section>
-      <h2>Accordion</h2>
-      <div class="collapseSet">
-        <Accordion onActive>
-          <template #tit>
-            Accordion title
-          </template>
-          <template #con>
-            <div class="inner" >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </template>
-        </Accordion>    
-        <Accordion>
-          <template #tit>
-            Accordion title
-          </template>
-          <template #con>
-            <div class="inner" >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </template>
-        </Accordion>    
-      </div>
+      <h2 class="my-3">Single Active Item</h2>
+      <Accordion :content="data1" @toggle="toggleItem"></Accordion>
     </section>
   </article>  
 </template>
@@ -65,9 +46,31 @@ export default {
   name : 'ComponentsCollapse',
   components : {Collapse, Accordion},
   data(){
-    return{
-      // collapseOpen: [null,null,null,null,null,null,null,null]
+    return{      
+      data1: {
+        name : 'data1',
+        item : [
+          { id: 1, active: true, title: "Title 1", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+          { id: 2, active: false, title: "Title 2", details: "content 2" },
+          { id: 3, active: false, title: "Title 3", details: "content 3" }
+        ]
+      }
     }
+  },
+  methods: {
+    toggleItem([dataSet,itemId]) {
+      const targetItem = this[dataSet].item.find(i => i.id === itemId);
+      if (targetItem.active === true) {
+        this[dataSet].item.map((x) => {
+          x.active = false;
+        });
+      }else{
+        this[dataSet].item.map((x) => {
+          x.active = false;
+        });
+        targetItem.active = true
+      }
+    },
   },
   mounted() {
     this.$store.dispatch('updateHeadTitle', {
