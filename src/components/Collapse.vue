@@ -23,20 +23,17 @@ export default {
       type: Array,
       required: true
     },
+    name: {
+      type: String,
+      required: true
+    },
     accordion: {
       type: Boolean,
     }
   },
   methods: {
     toggle(item) {
-      this.items.forEach((x) => {
-        if(this.accordion){        
-          x.active = x.id === item.id && !x.active;
-        }else{
-          x.active = x.id === item.id ? !x.active : x.active;
-        }
-      });
-      this.$emit('itemToggled', item);
+      this.$emit('itemToggled', [item, this.name, this.accordion]);
     },
     beforeEnter: function(el) {
       el.style.height = '0';

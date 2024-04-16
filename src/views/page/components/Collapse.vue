@@ -17,8 +17,7 @@
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </template>
-        </CollapseSlot>    
-
+        </CollapseSlot>   
         <CollapseSlot>
           <template #tit>
             collapse title
@@ -34,11 +33,11 @@
     </section>
     <section>
       <h2>Collapse <small>(data)</small></h2>
-      <Collapse :items="CollapseData" />
+      <Collapse :items="CollapseData" name="CollapseData" @itemToggled="toggleItem"/>
     </section>
     <section>
       <h2>Accordion <small>(data)</small></h2>
-      <Collapse :items="AccordionData" accordion />
+      <Collapse :items="AccordionData" name="AccordionData" accordion @itemToggled="toggleItem"/>
     </section>
   </article>  
 </template>
@@ -64,5 +63,16 @@ export default {
       ],       
     }
   },
+  methods:{
+    toggleItem([item, dataName, isAccordian]){
+      this[dataName].forEach((x) => {
+          if(isAccordian){        
+            x.active = x.id === item.id && !x.active;
+          }else{
+            x.active = x.id === item.id ? !x.active : x.active;
+          }
+        });
+    }
+  }
 }
 </script>
