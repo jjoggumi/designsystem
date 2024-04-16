@@ -3,7 +3,7 @@
     <button type="button" @click="$emit('toggle', dropdownData.name)" class="caption">    
       <slot name="dropdownTitle"> 
         <template v-if="dropdownData.selectOpt.length > 0">
-          <span v-for="(a, i) in dropdownData.selectOpt" :key="i">{{ a.label }}</span>
+          <span v-for="(a, i) in dropdownData.selectOpt" :key="i">{{ a.label }} / </span>
         </template>
         <template v-else>
           {{ title }}
@@ -13,7 +13,7 @@
     <div class="content">
       <ul v-if="dropdownData.isActive">
         <li v-for="(a,i) in dropdownData.options" :key="i" class="list">
-          <input type="checkbox" :value="a.value" :id="'option_' + i" v-model="a.checked" @change="$emit('checkSelecOpt', dropdownData.name)">
+          <input type="checkbox" :value="a.value" :id="'option_' + i" v-model="a.checked" @change="$emit('changeOption', dropdownData.name)">
           <label :for="'option_' + i">{{ a.label }} </label>
         </li>
       </ul>
@@ -29,7 +29,7 @@ export default {
      title:String,
      block:Boolean,
   },
-  emits: ['toggle','closed', 'checkSelecOpt'], 
+  emits: ['toggle','closed', 'changeOption'], 
   mounted() {
     document.addEventListener('click', this.handleClickOutside);
   },

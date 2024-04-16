@@ -16,7 +16,6 @@
     <section>
       <h2>Dropdown Single Option</h2>      
       <Dropdown :dropdownData="dropdown01" title="Select an Single option" @toggle="toggle($event)" @closed="closed($event)" @radioSelectOpt="radioSelectOpt($event)">
-
         <template v-slot:dropdownTitle></template>
       </Dropdown>
       <p>Selected value: <span v-for="(a, i) in dropdown01.selectOpt" :key="i">{{ a.label }} </span></p>
