@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+@import url("https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css");
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+html body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-body);
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+aside {
+  width: 25rem;
+  min-width: 25rem;
+  height: 100dvh;
+  background-color: #242745;
+  color: #fff;
+  font-family: var(--font-tit);
+}
+aside .navBrand {
+  height: 11rem;
+}
+aside .navBrand a {
+  display: block;
+  padding: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-bold);
+  font-size: 1.3rem;
+}
+aside .navBrand a::before {
+  display: block;
+  content: "";
+  background: url(@/assets/images/logo.svg);
+  background-size: 100%;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem auto;
+}
+aside .collapseSet {
+  overflow: auto;
+  height: calc(100dvh - 11rem);
+  padding: 0.5rem 0;
+}
+aside .collapseSet .collapsList {
+  padding: 0.5rem;
+  border-top: 1px solid #313657;
+}
+aside .collapseSet .collapsList .collapsible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.3rem;
+}
+aside .collapseSet .collapsList .collapsible::before {
+  content: "";
+  display: inline-block;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center left;
+          mask-position: center left;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+aside .collapseSet .collapsList .collapsible::after {
+  position: absolute;
+  right: 1rem;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+aside .collapseSet .collapsList .collapsible a {
+  color: #fff;
+  text-decoration: none;
+}
+aside .collapseSet .collapsList .collapsCon {
+  padding: 0;
+}
+aside .collapseSet .collapsList .collapsCon .item {
+  padding: 0 1rem 0.5rem 4rem;
+}
+aside .collapseSet .collapsList .collapsCon .item a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+}
+aside .collapseSet .collapsList .collapsCon .item a.router-link-active {
+  color: #4089ff;
+  font-weight: var(--font-bold);
+  text-decoration: underline;
+}
+aside .collapseSet .collapsList .collapsCon .item:first-child {
+  padding-top: 0.5rem;
+}
+aside .collapseSet .collapsList .collapsCon .item:last-child {
+  padding-bottom: 2rem;
+}
+aside .collapseSet .collapsList:hover .collapsible, aside .collapseSet .collapsList.on .collapsible {
+  border-radius: 0.5rem;
+  color: #fff;
+}
+aside .collapseSet .collapsList:hover .collapsible::before, aside .collapseSet .collapsList.on .collapsible::before {
+  background-color: #fff;
+}
+aside .collapseSet .collapsList:hover .collapsible::after, aside .collapseSet .collapsList.on .collapsible::after {
+  border-color: #fff;
+}
+aside .collapseSet .collapsList.nonChild .collapsible::after {
+  display: none;
+}
+aside .collapseSet .collapsList:nth-child(1) .collapsible::before {
+  -webkit-mask-image: url("/src/assets/images/svg/icoChart.svg");
+          mask-image: url("/src/assets/images/svg/icoChart.svg");
+}
+aside .collapseSet .collapsList:nth-child(2) .collapsible::before {
+  -webkit-mask-image: url("/src/assets/images/svg/icoChart.svg");
+          mask-image: url("/src/assets/images/svg/icoChart.svg");
+}
+aside .collapseSet .collapsList:nth-child(3) .collapsible::before {
+  -webkit-mask-image: url("/src/assets/images/svg/icoChart.svg");
+          mask-image: url("/src/assets/images/svg/icoChart.svg");
+}
+aside .collapseSet .collapsList:nth-child(4) .collapsible::before {
+  -webkit-mask-image: url("/src/assets/images/svg/icoChart.svg");
+          mask-image: url("/src/assets/images/svg/icoChart.svg");
+}
+aside .collapseSet .collapsList:nth-child(5) .collapsible::before {
+  -webkit-mask-image: url("/src/assets/images/svg/icoChart.svg");
+          mask-image: url("/src/assets/images/svg/icoChart.svg");
+}
+aside .collapseSet .collapsList:nth-child(6) .collapsible::before {
+  -webkit-mask-image: url("/src/assets/images/svg/icoChart.svg");
+          mask-image: url("/src/assets/images/svg/icoChart.svg");
+}
+aside .collapseSet::-webkit-scrollbar {
+  width: 0.8rem;
+}
+aside .collapseSet::-webkit-scrollbar-thumb {
+  background: #3a4064;
+  border-radius: 1rem;
+}
+aside .collapseSet::-webkit-scrollbar-track {
+  background: #242745;
+}
+
+header {
+  position: relative;
+  background-color: #0F6BFF;
+  padding: 4rem 5rem;
+  color: #fff;
+}
+header h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+  font-family: var(--font-tit);
+}
+header p {
+  margin-top: 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+header p.info {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.3rem;
+}
+header p.info span {
+  display: inline-block;
+  margin: 0 1rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+header p.link button {
+  width: 4rem;
+  height: 4rem;
+  border: 0;
+  border-radius: 10rem;
+  background: #0059e7 no-repeat center;
+  text-indent: -999999px;
+}
+header p.link button.figma {
+  background-image: url("/src/assets/images/figma.svg");
+}
+header p.link button.scss {
+  background-image: url("/src/assets/images/css.svg");
+}
+header p.link button.js {
+  background-image: url("/src/assets/images/js.svg");
+}
+header p.link button + button {
+  margin-left: 1rem;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background: #F5F5F5;
+  height: 100dvh;
+  overflow: auto;
+}
+main article section {
+  padding: 5rem;
+}
+main article section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=layout.css.map */

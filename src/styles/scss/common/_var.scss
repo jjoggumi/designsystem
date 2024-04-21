@@ -1,54 +1,143 @@
 :root{	
-	/* Color */
-	--color-primary:#3d19b1;    /* 파랑 */
-	--color-secondary:#00529f;  /* 중파랑 */
-	--color-third:#132A4C;      /* 진파랑 */
-	--color-success:#43618E;    /* 채도낮은 파랑 */
-	--color-info:#ff9900;       /* 보색 */
-	--color-danger:#dc3545;     /* 빨간 */
-	--color-dark:#444;          /* 진회색 */
-	--color-gray:#ddd;          /* 회색 */
-	--color-default:#898989;    /* 중회색 */		
-	--color-black:#000;
-	--color-white:#fff;
+	--primary:     #0f6bff;     /* 액션, 정보상태, 긍정적 */
+	--secondary:   #31415f;     /* 부정적 액션,  */
+	--success:     #00c394;     /* 성공, 긍정적 */
+	--info:        #00a3ff;     /* 정보, 긍정적 */
+	--warning:     #ffa800;     /* 경고, 작은오류, 부정적 */
+	--danger:      #e30029;     /* 파괴적, 심각한오류, 부정적 */
+	--special:     #6223fd;     /* 특별한,  */
+	--gray:        #898989;     /* 배경, 라인 */
+	--dark:        #333333;     /* 배경, 라인 */
+	--disabled:    #d3d3d3;     /* 꺼짐, 부정적 */		
 	
+	// --primaryRgb:     15, 107, 255;       /* 액션, 정보상태, 긍정적 */
+	// --secondaryRgb:   49, 65, 95;         /* 부정적 액션,  */
+	// --successRgb:     0, 195, 148;        /* 성공, 긍정적 */
+	// --infoRgb:        0, 163, 255;        /* 정보, 긍정적 */
+	// --warningRgb:     255, 168, 0;        /* 경고, 작은오류, 부정적 */
+	// --dangerRgb:      227, 0, 41;         /* 파괴적, 심각한오류, 부정적 */
+	// --specialRgb:     98, 35, 253;        /* 특별한,  */
+	// --grayRgb:        221, 221, 221;      /* 배경, 라인 */
+	// --darkRgb:        51, 51, 51;         /* 배경, 라인 */
+	// --defaultRgb:     137, 137, 137;      /* 꺼짐, 부정적 */	
+	
+	
+	// --primary:     rgb(var(--primaryRgb));       /* 액션, 정보상태, 긍정적 */
+	// --secondary:   rgb(var(--secondaryRgb));     /* 부정적 액션,  */
+	// --success:     rgb(var(--successRgb));       /* 성공, 긍정적 */
+	// --info:        rgb(var(--infoRgb));          /* 정보, 긍정적 */
+	// --warning:     rgb(var(--warningRgb));       /* 경고, 작은오류, 부정적 */
+	// --danger:      rgb(var(--dangerRgb));        /* 파괴적, 심각한오류, 부정적 */
+	// --special:     rgb(var(--specialRgb));       /* 특별한,  */
+	// --gray:        rgb(var(--grayRgb));          /* 배경, 라인 */
+	// --dark:        rgb(var(--darkRgb));          /* 배경, 라인 */
+	// --default:     rgb(var(--defaultRgb));       /* 꺼짐, 부정적 */		
+
+	--white:       #ffffff;
+	--gray-10:     #e5e5e5;
+	--gray-20:     #cccccc;
+	--gray-30:     #b2b2b2;
+	--gray-40:     #999999;
+	--gray-50:     #7f7f7f;
+	--gray-60:     #666666;
+	--gray-70:     #4c4c4c;
+	--gray-80:     #333333;
+	--gray-90:     #191919;
+	--black:       #000000;
+
+	--primary20:   #C7D9F7;
+	--primary40:   #99BEF9;
+	--primary60:   #6BA2FB;
+	--primary80:   #3D87FD;
+	--primary90:   #0A4BB3;
+	--primary100:  #073580;
+
+	--secondary20: #7685A1;
+	--secondary40: #67758F;
+	--secondary60: #51607D;
+	--secondary80: #415170;
+
+	--success20:   #B8E9DD;
+	--success40:   #7BDCC5;
+	--success60:   #3DCFAC;
+	--success80:   #009C76;
+
+	--info20:      #B8E1F8;
+	--info40:      #7BCCFA;
+	--info60:      #3DB8FD;
+	--info80:      #0082CC;
+	
+	--warning20:   #F8E2B8;  
+	--warning40:   #FACF7B;  
+	--warning60:   #FDBB3D;  
+	--warning80:   #FF8A00;  
+
+	--danger20:    #F1B8C2;
+	--danger40:    #EC7B8F;
+	--danger60:    #E83D5C;
+	--danger80:    #B60021;
+
+	--special20:   #D0C1F7; 
+	--special40:   #AB8CF9; 
+	--special60:   #8758FB; 
+	--special80:   #4E1CCA; 
+
+	// --gray-10:   rgba(0, 0, 0, .1);
+	// --gray-20:   rgba(0, 0, 0, .2);
+	// --gray-30:   rgba(0, 0, 0, .3);
+	// --gray-40:   rgba(0, 0, 0, .4);
+	// --gray-50:   rgba(0, 0, 0, .5);
+	// --gray-60:   rgba(0, 0, 0, .6);
+	// --gray-70:   rgba(0, 0, 0, .7);
+	// --gray-80:   rgba(0, 0, 0, .8);
+	// --gray-90:   rgba(0, 0, 0, .9);
+	// --black:     rgba(0, 0, 0, 1);
+	// --gray-10:   #f8f9fa;
+	// --gray-20:   #e9ecef;
+	// --gray-30:   #dee2e6;
+	// --gray-40:   #ced4da;
+	// --gray-50:   #adb5bd;
+	// --gray-60:   #6c757d;
+	// --gray-70:   #495057;
+	// --gray-80:   #343a40;
+	// --gray-90:   #212512;
+
 	/* font */
-	--font-tit:"NanumSquare";
-	--font-body:"Nanum Gothic", sans-serif;
-	--font-normal:400;
-	--font-bold:600;
+  --font-body: "Nanum Gothic", sans-serif;
+  --font-tit: "Noto Sans", sans-serif;
+  --font-hero: "Poppins", sans-serif;
+	--font-nomal:400;
+	--font-bold:500;
 	--font-color:#111;
 	
 	/* content width */
 	--con-width:1400px;	
+
+	/* Break Point */
+	--xsBp: 576px;
+	--smBp: 768px;
+	--mdBp: 1024px;
+	--lgBp: 1290px;
+	--xlBp: 1440px;	
 }
-/* Color */
-$color-primary:#147ADA !default;    /* 파랑 */
-$color-secondary:#00529f !default;  /* 중파랑 */
-$color-third:#132A4C !default;      /* 진파랑 */
-$color-success:#43618E !default;    /* 채도낮은 파랑 */
-$color-info:#ff9900 !default;       /* 보색 */
-$color-danger:#dc3545 !default;     /* 빨간 */
-$color-dark:#444 !default;          /* 진회색 */
-$color-gray:#ddd !default;          /* 회색 */
-$color-default:#898989 !default;    /* 중회색 */
 
-$color-black:#000 !default;
-$color-white:#fff !default;
+$color-primary:   #0f6bff;     /* 액션, 정보상태, 긍정적 */
+$color-secondary: #31415f;     /* 부정적 액션,  */
+$color-success:   #00c394;     /* 성공, 긍정적 */
+$color-info:      #00a3ff;     /* 정보, 긍정적 */
+$color-warning:   #ffa800;     /* 경고, 작은오류, 부정적 */
+$color-danger:    #e30029;     /* 파괴적, 심각한오류, 부정적 */
+$color-specail:   #6223fd;     /* 특별한,  */
+$color-gray:      #898989;     /* 배경, 라인 */
+$color-dark:      #333333;     /* 배경, 라인 */
+$color-disabled:  #d3d3d3;     /* 꺼짐, 부정적 */	
 
-/* font */
-$font-tit:"NanumSquare" !default;
-$font-body:"Nanum Gothic", sans-serif;
-$font-normal:400;
+$color-white:     #ffffff;
+$color-black:     #000;
+
+$font-body: "Nanum Gothic", sans-serif;
+$font-tit: "Noto Sans", sans-serif;
+$font-hero: "Poppins", sans-serif;
+$font-nomal:400;
 $font-bold:600;
 $font-color:#111;
-
-/* content width */
-$con-width:1400px;
-
-/* Break Point */
-$xsBp: 576px;
-$smBp: 768px;
-$mdBp: 1024px;
-$lgBp: 1290px;
-$xlBp: 1440px;
