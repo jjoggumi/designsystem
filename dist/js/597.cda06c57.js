@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkdesignsys"]=self["webpackChunkdesignsys"]||[]).push([[597],{1597:function(n,e,r){r.r(e),r.d(e,{default:function(){return c}});var s=r(641);function u(n,e,r,u,t,a){return(0,s.uX)(),(0,s.CE)("main")}var t={name:"FoundationGrid"},a=r(6262);const i=(0,a.A)(t,[["render",u]]);var c=i}}]);
+//# sourceMappingURL=597.cda06c57.js.map

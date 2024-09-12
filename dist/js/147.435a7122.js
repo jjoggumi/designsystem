@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkdesignsys"]=self["webpackChunkdesignsys"]||[]).push([[147],{2147:function(n,s,r){r.r(s),r.d(s,{default:function(){return y}});var a=r(641);const e={class:"TypographySys"};function u(n,s,r,u,t,c){return(0,a.uX)(),(0,a.CE)("main",e,s[0]||(s[0]=[(0,a.Lk)("article",null," TypographySys ",-1)]))}var t={name:"FoundationTypography"},c=r(6262);const o=(0,c.A)(t,[["render",u]]);var y=o}}]);
+//# sourceMappingURL=147.435a7122.js.map
