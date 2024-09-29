@@ -1,0 +1,111 @@
+.hi-tab {
+    display: flex;
+    font-size: 0;
+    border-top: 1px solid $gray-10;
+    border-bottom: 1px solid $gray-05;
+
+    button {
+        overflow: visible;
+        color: map-get($disabled, txt);
+        font-size: 16px;
+        line-height: 1;
+        margin: 22px 0;
+        padding-left: 24px;
+
+        &:not(:last-of-type) {
+            padding: 0 24px;
+            border-right: 1px solid $gray-05;
+        }
+        &:first-of-type { padding-left: 8px; }
+        &.is-active {
+            color: #222;
+            font-weight: 700;
+        }
+        &.is-new::after {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: $info;
+            border-radius: 50%;
+            vertical-align: top;
+            margin: -2px 0 0 2px;
+        } 
+    }
+
+    &.type01{
+        border: 0;
+        > button{
+            margin: 0;
+            padding: 15px 25px;
+            color: map-get($disabled, txtLight);
+            border: 1px solid map-get($disabled, bg);
+            &.is-active{
+                background-color: $primary;
+                border: 1px solid $primary;
+                color: #fff;
+            }
+            & + button {margin-left: -1px;}
+            &:first-child{border-radius: 7px 0 0 7px;}
+            &:last-child{border-radius: 0 7px 7px 0;}
+        }
+    }
+
+    &.type02{
+        border: 0;
+        > button{
+            margin: 0;
+            padding: 15px 25px;
+            color: map-get($disabled, txtLight);
+            border: 1px solid map-get($disabled, bg);
+            &.is-active{
+                background-color: $primary;
+                border: 1px solid $primary;
+                color: #fff;
+            }
+            & + button {margin-left: -1px;}
+            &:first-child{border-radius: 50px 0 0 50px; padding-left: 35px;}
+            &:last-child{border-radius: 0 50px 50px 0; padding-right: 35px;}
+        }
+    }
+
+    &.type03{
+        border-top: 0;
+        > button{
+            border: 0;
+            margin: 0;
+            padding: 15px 25px;
+            color: map-get($disabled, txt);            
+            font-weight: 400;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -1px;
+            &.is-active{
+                color: $primary;
+                font-weight: 500;
+                border-color: $primary;
+            }
+        }
+    }
+
+    &.type04{
+        border: 0;
+        gap: 10px;
+        > button{
+            margin: 0;
+            padding: 15px 25px;
+            color: map-get($disabled, txt);            
+            border: 1px solid map-get($disabled, bg);
+            font-weight: 400;
+            border-radius: 50px;
+            &.is-active{
+                color: #fff;
+                background-color: $gray-10;
+                border-color: $gray-10;
+                font-weight: 500;
+            }
+        }
+    }
+    &.tab-block{
+        > button{width:100%;}
+    }
+}

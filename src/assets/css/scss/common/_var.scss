@@ -1,0 +1,118 @@
+:root {
+
+	/* Main Color */
+	--primary:    #4778DE;
+	--secondary:  #4267B2;
+
+	--primary-01: #F8F9FC;  // [bg] 웹 홈 메인> 나의 클래스/학교 및 	서브페이지 배경
+	--primary-02: #EBEEF4;  // [bg] 첨부파일, 알림장 읽은 사람 표기
+	--primary-03: #E9F3FF;  // [bg] 상단공지
+	--primary-04: #E1E9F9;  // [bg] 급식 상세 알레르기 정보
+	// --primary-05: #C7D9F7;
+	// --primary-06: #99BEF9;
+	// --primary-07: #6BA2FB;
+	
+	/* State Color */
+	--success:    #61D235;	// 확인, 성공, 긍정적 
+	--info:       #FF6A6A;     // 공지, 알럿, 정보, 긍정적 
+	--warning:    #EC1F2D;  //경고, 오류, 부정적
+
+	/* Sub Color */
+	--purple:     #EB6BFF;
+	--yellow:     #FFB600;
+	--jungle:     #36BCA5;
+	--orange:     #EE813E;   // 메인>급식 영역 타이틀, 하이스토어 뱃지
+
+	/* gray Color */
+	--gray-01:    #FAFAFA;   // [bg] 전체 두번째 배경
+	--gray-02:    #F6F6F6;   
+	--gray-03:    #F3F3F3;   // [bg] 구성항목 구분 배경
+	--gray-04:    #EEE;      // [bg] 인풋박스 비활성화 배경
+	--gray-05:    #E0E0E0;   
+	--gray-06:    #D6D6D6;   // [bg] 버튼, 아이콘, 비활성화 배경
+	--gray-07:    #BDBDBD;   // [text] 비활성화, 입력제한 텍스트
+	--gray-08:    #9E9E9E;   // [text] 설명 텍스트
+	--gray-09:    #616161;   // [text] 본문 하위 서브 텍스트
+	--gray-10:    #222;      // [text] 본문 텍스트
+
+	--black:      #000;        // [text] 타이틀 텍스트
+	--white:      #fff;
+
+	/* font */
+	--font-body:  "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "NanumSquareRound", "Noto Color Emoji", sans-serif;
+	--font-tit:   "NanumSquare", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "segoe ui emoji", sans-serif;
+	--font-nomal:  400;
+	--font-bold:   500;
+	--font-strong: 700;
+	--font-color: #000;
+}
+
+/* Main Color */
+$primary:       #4778DE;
+$secondary:     #4267B2;
+
+$primary-01:    #F8F9FC;  // [bg] 웹 홈 메인> 나의 클래스/학교 및 	서브페이지 배경
+$primary-02:    #EBEEF4;  // [bg] 첨부파일, 알림장 읽은 사람 표기
+$primary-03:    #E9F3FF;  // [bg] 상단공지
+$primary-04:    #E1E9F9;  // [bg] 급식 상세 알레르기 정보
+// $primary-05:    #C7D9F7;
+// $primary-06:    #99BEF9;
+// $primary-07:    #6BA2FB;
+
+/* State Color */
+$success:       #61D235;	// 확인, 성공, 긍정적 
+$info:          #FF6A6A;     // 공지, 알럿, 정보, 긍정적 
+$warning:       #EC1F2D;  //경고, 오류, 부정적
+
+/* Sub Color */
+$purple:        #EB6BFF;
+$yellow:        #FFB600;
+$jungle:        #36BCA5;
+$orange:        #EE813E;   // 메인>급식 영역 타이틀, 하이스토어 뱃지
+
+/* gray Color */
+$gray-01:       #FAFAFA;   // [bg] 전체 두번째 배경
+$gray-02:       #F6F6F6;   
+$gray-03:       #F3F3F3;   // [bg] 구성항목 구분 배경
+$gray-04:       #EEE;      // [bg] 인풋박스 비활성화 배경
+$gray-05:       #E0E0E0;   
+$gray-06:       #D6D6D6;   // [bg] 버튼, 아이콘, 비활성화 배경
+$gray-07:       #BDBDBD;   // [text] 비활성화, 입력제한 텍스트
+$gray-08:       #9E9E9E;   // [text] 설명 텍스트
+$gray-09:       #616161;   // [text] 본문 하위 서브 텍스트
+$gray-10:       #222;      // [text] 본문 텍스트
+
+$black:         #000;        // [text] 타이틀 텍스트
+$white:         #fff;
+$transparent: transparent;
+
+$colors: (
+  primary:       $primary,
+  secondary:     $secondary,
+  success:       $success,
+  info:          $info,
+  warning:       $warning,
+  purple:        $purple,
+  yellow:        $yellow,
+  jungle:        $jungle,
+  orange:        $orange,
+  default:       $gray-09,
+  black:         $black,
+  white:         $white,
+  disabled:      $gray-07,
+);
+
+$disabled: (
+	bgLight : $gray-04,
+	bg : $gray-06,
+	txtLight : $gray-07, 
+	txt : $gray-09, 
+);
+
+/* font */
+$font-body:  "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "NanumSquareRound", "Noto Color Emoji", sans-serif;
+$font-tit:   "NanumSquare", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "segoe ui emoji", sans-serif;
+$font-nomal:  400;
+$font-bold:   500;
+$font-strong: 700;
+$font-color: #000;

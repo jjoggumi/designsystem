@@ -1,0 +1,392 @@
+/* Button Style */
+@mixin btnStyle($bg, $focus, $font: $white, $border: $bg) {
+	color: $font;
+	background: $bg;
+	border-color: $border;
+
+	&:hover:not(.disabled, :disabled),
+	&:active:not(.disabled, :disabled) {
+		background: darken($bg, 10%);
+		border-color: darken($border, 10%);
+		transition: all 0.3s ease;
+	}
+
+	&:focus:not(.disabled, :disabled) {
+		box-shadow: 0 0 0 3px lighten($border, $focus);
+	}
+
+}
+
+button {
+	cursor: pointer;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.hi-btn{	
+	display: inline-block;
+	color: #fff;
+	border: 1px solid $primary;
+	background: $primary;
+	font-weight: 500;
+	text-align: center;
+	padding: 0 16px;
+	border-radius:100px;
+	min-height: 22px;
+	line-height: 2.1;
+	
+	&.disabled,
+	&:disabled,
+	&[aria-disabled="true"],
+	&[disabled] {
+		color: $white !important;
+		pointer-events: none;
+		background-color: $gray-06 !important;
+		border-color: $gray-06 !important;
+		cursor: default;
+	}
+	/* 버튼 사이즈 */
+	&.btn-xs {
+		font-size: 11px;
+	}
+
+	&.btn-sm {		
+		font-size: 14px;
+	}
+
+	&.btn-md {		
+		font-size: 14px;
+		line-height: 38px;
+	}
+
+	&.btn-lg {
+		font-size: 16px;
+		line-height: 42px;
+	}	
+	&.btn-xl {		
+	font-size: 16px;
+	line-height: 62px;
+	}
+
+	&.btn-block {
+		width: 100%;
+	}
+
+	/* 버튼 스타일 */
+	&.btn-disabled {
+		color: $white !important;
+		pointer-events: none;
+		background-color: $gray-06 !important;
+		border-color: $gray-06 !important;
+		cursor: default;
+	}
+	&.btn-default {
+		@include btnStyle($gray-03, $focus: 10, $font:  $gray-09, $border: $gray-03)
+	}
+
+	&.btn-primary {
+		@include btnStyle($primary, $focus: 35);
+	}
+
+	&.btn-secondary {
+		@include btnStyle($secondary, $focus: 40);
+	}
+
+	&.btn-success {
+		@include btnStyle($success, $focus: 50);
+	}
+	
+	&.btn-info {
+		@include btnStyle($info, $focus: 35);
+	}
+	
+	&.btn-warning {
+		@include btnStyle($warning, $focus: 35);
+	}
+	
+	&.btn-purple {
+		@include btnStyle($purple, $focus: 35);
+	}
+
+	&.btn-yellow {
+		@include btnStyle($yellow, $focus: 45);
+	}
+
+	&.btn-jungle {
+		@include btnStyle($jungle, $focus: 35);
+	}
+
+	&.btn-orange {
+		@include btnStyle($orange, $focus: 60);
+	}
+	
+	&.btn-gray {
+		@include btnStyle($gray-09, $focus: 60, $font: $white);
+	}	
+
+	&.btn-white {
+		@include btnStyle($white, $focus: 60, $font: #212529);
+	}
+
+	&.btn-black {
+		@include btnStyle($gray-10, $focus: 60);
+	}
+
+	&.btn-line-default {
+		@include btnStyle($transparent, $focus: 50, $font: $gray-09, $border: $gray-06)
+	}
+	&.btn-line-primary {
+		@include btnStyle($transparent, $focus: 35, $font: $primary, $border: $primary);
+	}
+	&.btn-line-secondary {
+		@include btnStyle($transparent, $focus: 40, $font: $secondary, $border: $secondary);
+	}
+	&.btn-line-success {
+		@include btnStyle($transparent, $focus: 40, $font: $success, $border: $success);
+	}	
+	&.btn-line-info {
+		@include btnStyle($transparent, $focus: 25, $font: $info, $border: $info);
+	}
+	&.btn-line-warning {
+		@include btnStyle($transparent, $focus: 42, $font: $warning, $border: $warning);
+	}
+	&.btn-line-purple {
+		@include btnStyle($transparent, $focus: 25, $font: $purple, $border: $purple);
+	}
+	&.btn-line-yellow {
+		@include btnStyle($transparent, $focus: 45, $font: $yellow, $border: $yellow);
+	}
+	&.btn-line-jungle {
+		@include btnStyle($transparent, $focus: 45, $font: $jungle, $border: $jungle);
+	}
+	&.btn-line-orange {
+		@include btnStyle($transparent, $focus: 35, $font: $orange, $border: $orange);
+	}	
+	&.btn-line-gray {
+		@include btnStyle($transparent, $focus: 55, $font: $gray-09, $border: $gray-09);
+	}
+	&.btn-line-black {
+		@include btnStyle($transparent, $focus: 90, $font: $gray-10, $border: $gray-10);
+	}	
+	&.btn-line-white {
+		@include btnStyle($transparent, $focus: 100, $font: $white, $border: $white);
+		&:focus:not(.disabled, :disabled) {
+			box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+		}
+		&:hover:not(.disabled, :disabled),
+		&:active:not(.disabled, :disabled) {
+			color: rgba(255, 255, 255, 0.8);
+			background-color: rgba(255, 255, 255, 0.1);
+			border-color: rgba(255, 255, 255, 0.8);
+		}
+	}
+
+	&.btn-bitrounded {
+		border-radius: 5px;
+	}
+
+	&.btn-square {
+		border-radius: 0;
+	}
+
+}
+
+
+// common.css
+
+
+.cursor-pointer { cursor: pointer; }
+
+// .hi-btn {
+//     display: inline-block;
+//     color: #fff;
+//     background-color: #4778de;
+//     border: 1px solid #4778de;
+//     font-weight: 500;
+//     text-align: center;
+//     padding: 0 16px;
+// }
+// .hi-btn[disabled] {
+//     cursor: default;
+//     color: #fff !important;
+//     background-color: #dadde2 !important;
+//     border-color: #dadde2 !important;
+// }
+.hi-btn.btn-line {
+    color: #4778de;
+    background-color: transparent;
+    border-color: #4778de;
+}
+.hi-btn.btn-line-lgray {
+    color: #222;
+    background-color: transparent;
+    border-color: #d6d6d6;
+}
+// .hi-btn.btn-line-white {
+//     background-color: transparent;
+//     border-color: #fff;
+// }
+// .hi-btn.btn-white {
+//     color: #333;
+//     background-color: #fff;
+//     border-color: #fff;
+// }
+.hi-btn.btn-end {
+    background-color: #ccc;
+    border-color: #ccc;
+}
+// .hi-btn.btn-gray {
+//     background-color: #616161;
+//     border-color: #616161;
+// }
+.hi-btn.btn-lgray {
+	color: #616161;
+	background-color: #f3f3f3;
+	border-color: #f3f3f3;
+}
+// .hi-btn.btn-black {
+//     color: #fff;
+//     background-color: #222;
+//     border-color: #222;
+// }
+// .hi-btn.btn-sm { 
+//     font-size: 14px;
+//     line-height: 30px;
+//     border-radius: 32px;
+// }
+// .hi-btn.btn-md { 
+//     font-size: 14px;
+//     line-height: 38px;
+//     border-radius: 40px;
+// }
+// .hi-btn.btn-lg {
+//     font-size: 16px;
+//     line-height: 42px;
+//     border-radius: 44px;
+// }
+// .hi-btn.btn-xl {
+//     font-size: 16px;
+//     line-height: 62px;
+//     border-radius: 64px;
+// }
+
+.hi-btn.btn-download { color: #fff; }
+.hi-btn.btn-download.btn-line { color: #4778de; }
+.hi-btn.btn-download.btn-line-lgray { color: #616161; }
+.hi-btn.btn-download::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("../../img/icon/icon_download_white.svg") no-repeat;
+    background-size: cover;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.hi-btn.btn-download.btn-line::before { background-image: url("../../img/icon/icon_download_blue.svg"); }
+.hi-btn.btn-download.btn-line-lgray::before { background-image: url("../../img/icon/icon_download_gray.svg"); }
+.hi-btn.btn-download[disabled]::before { background-image: url("../../img/icon/icon_download_white.svg") !important; }
+
+/* 하이톡 공유 버튼 */
+.hi-hitalkshare .btn-hitalkshare {
+    width: 24px;
+    height: 24px;
+    background: #fff url("../../img/icon/icon_hitalkshare.svg") center center / 24px 24px no-repeat;
+}
+.hi-hitalkshare:hover .tooltip { display: block; }
+.hi-hitalkshare .tooltip {
+    display: none;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    height: 30px;
+    background: rgba(61,70,85,.85);
+    color: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 30px;
+    white-space: nowrap;
+    padding: 0 10px;
+    transform: translateX(-50%);
+}
+.hi-hitalkshare .tooltip::before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -8px;
+    left: calc(50% - 2px);
+    border: 4px solid transparent;
+    border-top: 4px solid rgba(61,70,85,.85);
+}
+
+
+// hiclass.css
+
+/* 흰색 버튼 */
+.btn-bg-w {border:1px solid rgba(0, 0, 0, 0.2);background:#fff;}
+.btn-bg-w:hover {background:#ebeef4;}
+.btn-bg-w.dis {background:#fff;cursor:default;opacity:0.5;}
+
+/* 흰색 버튼2 파랑보더 */
+.btn-bg-w2 {border:1px solid rgba(66, 103, 178, 0.4);background:#fff;color:#3867c6;}
+.btn-bg-w2:hover {background:#ebeef4;}
+.btn-bg-w2.dis {background:#fff;cursor:default;opacity:0.5;}
+
+.btn-bg-w3 {border:1px solid #4778DE;background:#fff;color:#4778DE;}
+.btn-bg-w3:hover {background:#ebeef4;}
+.btn-bg-w3.dis {background:#fff;cursor:default;opacity:0.5;}
+
+.btn-bg-w4 {border: 1px solid #4267B266;background:#fff;color:#4778DE;}
+.btn-bg-w4:hover {background:#ebeef4;}
+.btn-bg-w4.dis {background:#fff;cursor:default;opacity:0.5;}
+
+/* 코랄 버튼 border */
+.btn-bg-cb {border:1px solid #ff6a6a;background:#fff;color:#ff6a6a;}
+.btn-bg-cb:hover {opacity:0.8;}
+.btn-bg-cb.dis {background:#dadde2;cursor:default;color:#fff;opacity:1 !important;border:0;}
+
+/* 흰색 버튼-none border */
+.btn-bg-w-nb {background:#fff;}
+.btn-bg-w-nb:hover {opacity:0.8;}
+.btn-bg-w-nb.dis {background:#fff;color:#000;cursor:default;opacity:0.2;}
+
+/* 코발트 버튼 */
+.btn-bg-c {background: #4778de;color:#fff;text-align:center;}
+.btn-bg-c:hover {background:#3867c6;}
+.btn-bg-c.dis {background:#dadde2;cursor:default;color:#fff;}
+
+/* 오렌지 버튼 */
+.btn-bg-y {background:#ffc56a;}
+.btn-bg-y:hover {opacity:0.8;}
+.btn-bg-y.dis {background:#ffc56a;}
+
+/* 쿨 그레이색 */
+.btn-bg-cg {background:#ebeef4;}
+.btn-bg-cg:hover {background:#e0e6f1;}
+.btn-bg-cg.dis {background:#ebeef4;opacity:0.5;}
+
+/* 파랑색 텍스트 */
+.text-cl-blue {color:#3867c6;display: inline-block;}
+.text-cl-blue:hover {opacity:0.5;}
+.text-cl-blue.dis {color:#3867c6;opacity:0.5;}
+
+/* 코랄-솔리드 버튼 border */
+.btn-bg-cb-solid {background:#ff6a6a;color:#fff;}
+.btn-bg-cb-solid:hover {opacity:0.8;}
+.btn-bg-cb-solid.dis {background:#dadde2;cursor:default;color:#fff;opacity:1 !important;border:0;}
+.btn-bg-cb-solid.n {background:#EC1F2D;font-weight: 700;font-size:15px;}
+
+.btn-bg-navy {background:#274480;color:#fff;}
+.btn-bg-navy:hover {opacity:0.8;}
+.btn-bg-navy.dis {background:#dadde2;cursor:default;color:#fff;opacity:1 !important;border:0;}
+
+/* 그레이 버튼 */
+.btn-bg-g {background-color: #5f6580;color: #fff;}
+.btn-bg-g:hover {opacity: .8;}
+.btn-bg-g.dis {background:#dadde2;opacity:0.5;}
+
+/* 레드 버튼 */
+.btn-bg-r {background-color: #ff2a20;color: #fff;}
+.btn-bg-r.dis {background:#dadde2;opacity:0.5;}
