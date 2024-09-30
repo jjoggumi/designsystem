@@ -1,10 +1,13 @@
 <template>
   <div class="hi-tabs">
-    <div class="hi-tab">
+    <div :class="['hi-tab', [addClassName]]">
       <button
         v-for="(tab, index) in tabs"
         :key="index"
-        :class="{ 'is-active': tab.isActive }"
+        :class="{ 
+          'is-active': tab.isActive,
+          'is-new': tab.isNew,
+         }"
         @click="selectTab(tab)"
       >
         {{ tab.label }}
@@ -19,6 +22,9 @@
 <script>
 export default {
   name: "HiTabs",
+  props: {
+    addClassName: { type: String, default: null },
+  },
   data() {
     return {
       tabs: [],

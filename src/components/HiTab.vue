@@ -12,7 +12,11 @@ export default {
       type: String,
       required: true,
     },
-    active: { // active prop 추가
+    active: {
+      type: Boolean,
+      default: false,
+    },
+    new: { 
       type: Boolean,
       default: false,
     },
@@ -20,6 +24,7 @@ export default {
   data() {
     return {
       isActive: this.active, 
+      isNew: this.new, 
     };
   },
   mounted() {
