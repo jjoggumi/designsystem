@@ -2,7 +2,11 @@ import Vue from 'vue'
 import App from '@/App.vue'
 import router from '@/router/router.js'
 import store from '@/store/store'
+import vClickOutside from 'v-click-outside';
 
+//import Toasted from 'vue-toasted';
+// hiClass APIs
+import "@/plugins/hiClass.js";
 import "@/assets/css/reset.css"             // reset
 // import "@/assets/css/slick.css"             // slick plugin
 // import "@/assets/css/jquery-ui.css"         // jQuery ui
@@ -27,6 +31,12 @@ import '@/assets/css/scss/layout.scss'
 
 // Vue 인스턴스 생성 및 mount
 Vue.config.productionTip = false
+Vue.use(vClickOutside);
+
+// Vue.use(Toasted, {
+//   position: 'bottom-center',
+//   duration: 3000
+// })
 
 new Vue({
   router,

@@ -42,7 +42,7 @@ const router = new Router({
       ]
     },{
       path: '/form',
-      name : 'Form',
+      name : 'Forms',
       component : () => import('../views/page/form/Forms.vue'),
       children:[          
         {

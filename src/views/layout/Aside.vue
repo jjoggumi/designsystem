@@ -1,35 +1,23 @@
 <template>
   <aside>
-    <div class="navBrand">
-      <a href="@/">HiClass <span>Creative Lab</span></a>
-    </div>
+    <div class="navBrand"><a href="@/">HiClass <span>Creative Lab</span></a></div>   
     <div class="collapseSet type02">
-      <div class="collapsList nonChild">
-        <div class="collapsible">
-          <a href="/" class="">Design System</a>
-        </div>
-      </div>
-      <CollapseAside
-        v-for="(menu, index) in sysMenu"
-        :key="index"
-        :active="true"
-        :isActive="activeMenu === menu.name"
-        :nonChild="!menu.children"
-      >
+      <CollapseAside v-for="(route, index) in routes" :key="index" :active="true" :isActive="mainCate === route.name" :nonChild="!route.children">
         <template #tit>
-          <a>{{ menu.name }}</a>
+          <router-link :to="route.path" v-if="!route.children">{{ route.name }}</router-link>
+          <span v-else>{{ route.name }}</span>
         </template>
         <template #con>
-          <div
-            v-for="(childMenu, subIndex) in menu.children"
-            :key="subIndex"
-            class="item"
-          >
-            <a
-              :class="{ active: activeMenu === childMenu.name }"
-              @click="$emit('menuLink', childMenu.name)"
-              >{{ childMenu.name }}</a
-            >
+          <div v-for="(childRoute, subIndex) in route.children" :key="subIndex" class="item" >
+            <router-link :to="route.path + '/' + childRoute.path">{{ childRoute.name }}</router-link>
+            <!--
+            {{ $route.fullPath }}
+            {{ $route.path }}
+            {{ $route.name }}
+            {{ $route.params.id }}
+            {{ $router.push('/detail/0') }}
+            {{ $router.go(-1)}}
+            -->
           </div>
         </template>
       </CollapseAside>
@@ -38,16 +26,18 @@
 </template>
 
 <script>
-import CollapseAside from "@/components/CollapseAside.vue";
+import CollapseAside from '@/components/CollapseAside.vue';
+
 export default {
   components: { CollapseAside },
-  name: "AsideLayout",
-  props: {
-    sysMenu: Array,
-    activeMenu: String,
+  name: 'AsideLayout',
+  props:{
+    routes : Array,
+    mainCate : String
   },
-  data() {
-    return {};
-  },
-};
+  data(){
+    return{
+    }
+  }
+}
 </script>

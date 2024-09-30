@@ -1,51 +1,13 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700");
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
-@import url("https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css");
-@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css");
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-html {
-  font-size: 62.5%;
-  height: 100%;
-}
-
-html body {
-  height: 100%;
-  margin: 0;
-  font-family: var(--font-body);
-  color: #333;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-*, 
-*::before,
-*::after {box-sizing: border-box;}
-
-ul, li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.sr-only{
-  position:absolute;
-  width:1px;
-  height:1px;
-  padding:0;
-  overflow:hidden;
-  border:0
-}
-
+.app{display:flex;}
 .designSys{
   display:flex;
 }
 
 aside{
-  width: 25rem;
-  min-width: 25rem;
+  width: 250px;
+  min-width: 250px;
   height: 100dvh; 
   background-color:#242745;
   color: #fff;
@@ -79,11 +41,11 @@ aside{
 
   .collapseSet{
     overflow: auto;
-    height: calc(100dvh - 11rem);
-    padding:0.5rem 0;
+    height: calc(100dvh - 110px);
+    padding:5px 0;
 
     .collapsList{ 
-      padding: 0.5rem;   
+      padding: 5px;   
       border-top:1px solid #313657;
 
       .collapsible{
@@ -92,17 +54,17 @@ aside{
         position: relative;
         border: 0;
         border-radius: 0;
-        padding:1rem 1.5rem;
+        padding:10px 15px;
         background: transparent;
         color: rrgba(255, 255, 255, 0.4);
-        font-size: 1.3rem;
+        font-size: 13px;
 
         &::before{        
           content: "";
           display: inline-block;
-          width: 1.8rem;
-          height: 1.8rem;
-          margin-right: 0.5rem;
+          width: 18px;
+          height: 18px;
+          margin-right: 5px;
           background-color: rgba(255, 255, 255, 0.4);
           mask-repeat: no-repeat;
           mask-position: center left;
@@ -110,7 +72,7 @@ aside{
         }
         &::after{
           position: absolute;
-          right: 1rem;
+          right: 10px;
           border-color:rgba(255, 255, 255, 0.4);
         }    
         a{
@@ -122,26 +84,26 @@ aside{
         padding:0 ;
 
         .item {
-          padding: 0 1rem 0.5rem 4rem;
+          padding: 0 10px 5px 40px;
 
           a{
             color:rgba(255, 255, 255, 0.6);
-            font-size:1.5rem;
+            font-size:15px;
 
-            &.active{
+            &.router-link-active{
               color: #4089ff;
               font-weight: var(--font-bold);
               text-decoration: underline;
             }
           }
-          &:first-child{padding-top:0.5rem;}
-          &:last-child{padding-bottom:2rem;}
+          &:first-child{padding-top:5px;}
+          &:last-child{padding-bottom:20px;}
         }      
       }
       //&.active .collapsible{background: #2D3253;}  
       &:hover .collapsible,
       &.on .collapsible{
-        border-radius: 0.5rem;
+        border-radius: 5px;
         color: #fff;
 
         &::before{background-color:#fff;}
@@ -156,44 +118,44 @@ aside{
       &:nth-child(6) .collapsible::before{mask-image: url("~@/assets/img/svg/icoChart.svg");}
     }
     
-    &::-webkit-scrollbar { width: 0.8rem;}
-    &::-webkit-scrollbar-thumb { background: #3a4064; border-radius: 1rem; }
+    &::-webkit-scrollbar { width: 8px;}
+    &::-webkit-scrollbar-thumb { background: #3a4064; border-radius: 10px; }
     &::-webkit-scrollbar-track { background: #242745; }
   }
 }
 header{
   position: relative;
   background-color: #0F6BFF;
-  padding: 4rem 5rem;
+  padding: 40px 50px;
   color: #fff;  
 
   h1{
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 40px;
+    line-height: 40px;
     font-family: var(--font-tit);
     margin-top: 0;
   }
   p{
-    margin-top:2.5rem;
+    margin-top:25px;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.4;
   }
   p.info{ 
     color: rgba(255, 255, 255, 0.5);
-    font-size: 1.3rem;
+    font-size: 13px;
 
     span{
       display: inline-block;
-      margin: 0 1rem;
+      margin: 0 10px;
       color: rgba(255, 255, 255, 0.3);
     }
   }
   p.link{
     button{
-      width: 4rem;
-      height: 4rem;
+      width: 40px;
+      height: 40px;
       border: 0;
-      border-radius: 10rem;
+      border-radius: 100px;
       background: #0059e7 no-repeat center;
       text-indent: -999999px;
       
@@ -201,7 +163,7 @@ header{
       &.scss{background-image: url('~@/assets/img/designSys/css.svg');}
       &.js{background-image: url('~@/assets/img/designSys/js.svg');}
       
-      + button{margin-left:1rem;}
+      + button{margin-left:10px;}
     }
   }
 }
@@ -217,10 +179,10 @@ main{
     align-items: normal !important;
     height: 100%;
     section{
-      padding:5rem;
+      padding:50px;
       > h2{
-        font-size:1.8rem;
-        margin-bottom: 2rem;
+        font-size:18px;
+        margin-bottom: 20px;
       }
       + section{padding-top:0;}
     }
@@ -267,7 +229,7 @@ main{
     }
     .codeArea{
       background: #333;
-      width: 40%;
+      width: 55%;
     }
     code{
       color:#ccc;
