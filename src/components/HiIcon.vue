@@ -5,7 +5,7 @@
 export default {
   props: {
     name: String,
-    size: Number,
+    size: String,
     color: String,
     bgColor: String,
     rounded: String,

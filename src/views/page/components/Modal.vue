@@ -2,31 +2,31 @@
   <article class="modalSys">
     <section>
       <h2>Modal Type</h2>
-      <HiButton color="primary" @click="modalType[0] = true">Type01</HiButton>
-      <HiButton color="primary" @click="modalType[2] = true">Type02</HiButton>
-      <HiButton color="secondary" @click="modalType[1] = true">Opt : 타이틀 구분선 추가</HiButton>
-      <HiButton color="secondary" @click="modalType[3] = true">Opt : 상단 닫기버튼 스킵</HiButton>
-      <HiModal v-show="modalType[0]" @close="modalType[0] = false">
+      <HiButton color="primary" @click="$set(modalType, 0, true)">Type01</HiButton>
+      <HiButton color="primary" @click="$set(modalType, 2, true)">Type02</HiButton>
+      <HiButton color="secondary" @click="$set(modalType, 1, true)">Opt : 타이틀 구분선 추가</HiButton>
+      <HiButton color="secondary" @click="$set(modalType, 3, true)">Opt : 상단 닫기버튼 스킵</HiButton>
+      <HiModal v-show="modalType[0]" @close="$set(modalType, 0, false)">
         <template v-slot:heading>Type01 :기본 모달 형태</template>
         <template v-slot:content> 기본 모달은 모달 컴포넌트에서 기본으로 제공되는 UI입니다. </template>
         <template v-slot:footer>
           <div class="group-btn">
-            <HiButton color="line-default" size="lg" @click="modalType[0] = false">취소</HiButton>
-            <HiButton color="primary" size="lg" @click="modalType[0] = false">확인</HiButton>
+            <HiButton color="line-default" size="lg" @click="$set(modalType, 0, false)">취소</HiButton>
+            <HiButton color="primary" size="lg" @click="$set(modalType, 0, false)">확인</HiButton>
           </div>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message" v-show="modalType[2]" @close="modalType[2] = false">
+      <HiModal addClassName="modal-message" v-show="modalType[2]" @close="$set(modalType, 2, false)">
         <template v-slot:heading>Type02 : 하단 버튼 영역 UI 변경</template>
         <template v-slot:content>
           <div class="desc">컨텐츠모달, 알림모달, 메시지모달 등 <br /><strong>현행에서 주로 사용되는 UI</strong> 입니다.</div>
         </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalType[2] = false">취소</HiButton>
-          <HiButton color="primary" size="lg" @click="modalType[2] = false">확인</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalType, 2, false)">취소</HiButton>
+          <HiButton color="primary" size="lg" @click="$set(modalType, 2, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="title-line" v-show="modalType[1]" @close="modalType[1] = false">
+      <HiModal addClassName="title-line" v-show="modalType[1]" @close="$set(modalType, 1, false)">
         <template v-slot:heading>Option : 구분선 있는 타이틀</template>
         <template v-slot:content>
           <div class="desc">
@@ -36,68 +36,68 @@
         </template>
         <template v-slot:footer>
           <div class="group-btn">
-            <HiButton color="line-default" size="lg" @click="modalType[1] = false">취소</HiButton>
-            <HiButton color="primary" size="lg" @click="modalType[1] = false">확인</HiButton>
+            <HiButton color="line-default" size="lg" @click="$set(modalType, 1, false)">취소</HiButton>
+            <HiButton color="primary" size="lg" @click="$set(modalType, 1, false)">확인</HiButton>
           </div>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message title-close-skip" v-show="modalType[3]" @close="modalType[3] = false">
+      <HiModal addClassName="modal-message title-close-skip" v-show="modalType[3]" @close="$set(modalType, 3, false)">
         <template v-slot:heading>Option :상단 닫기버튼 스킵</template>
         <template v-slot:content>
           <div class="desc">메세지 알림 모달 형태로 <br />하단버튼으로 상단 닫기 이벤트를 대신함</div>
         </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalType[3] = false">취소</HiButton>
-          <HiButton color="primary" size="lg" @click="modalType[3] = false">확인</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalType, 3, false)">취소</HiButton>
+          <HiButton color="primary" size="lg" @click="$set(modalType, 3, false)">확인</HiButton>
         </template>
       </HiModal>
     </section>
 
     <section>
       <h2>Modal Size</h2>
-      <HiButton color="primary" @click="modalSize[0] = true">Small Modal</HiButton>
-      <HiButton color="primary" @click="modalSize[1] = true">Medium Modal</HiButton>
-      <HiButton color="primary" @click="modalSize[2] = true">Large Modal</HiButton>
-      <HiButton color="primary" @click="modalSize[3] = true">Full Modal</HiButton>
-      <HiModal addClassName="modal-message modal-sm" v-show="modalSize[0]" @close="modalSize[0] = false">
+      <HiButton color="primary" @click="$set(modalSize, 0, true)">Small Modal</HiButton>
+      <HiButton color="primary" @click="$set(modalSize, 1, true)">Medium Modal</HiButton>
+      <HiButton color="primary" @click="$set(modalSize, 2, true)">Large Modal</HiButton>
+      <HiButton color="primary" @click="$set(modalSize, 3, true)">Full Modal</HiButton>
+      <HiModal addClassName="modal-message modal-sm" v-show="modalSize[0]" @close="$set(modalSize, 0, false)">
         <template v-slot:heading>Small Modal Title </template>
         <template v-slot:content> Small Modal Content </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalSize[0] = false">취소</HiButton>
-          <HiButton color="primary" size="lg" @click="modalSize[0] = false">확인</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalSize, 0, false)">취소</HiButton>
+          <HiButton color="primary" size="lg" @click="$set(modalSize, 0, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message modal-md" v-show="modalSize[1]" @close="modalSize[1] = false">
+      <HiModal addClassName="modal-message modal-md" v-show="modalSize[1]" @close="$set(modalSize, 1, false)">
         <template v-slot:heading>Medium Modal Title </template>
         <template v-slot:content>Medium Modal Content </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalSize[1] = false">취소</HiButton>
-          <HiButton color="primary" size="lg" @click="modalSize[1] = false">확인</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalSize, 1, false)">취소</HiButton>
+          <HiButton color="primary" size="lg" @click="$set(modalSize, 1, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message modal-lg" v-show="modalSize[2]" @close="modalSize[2] = false">
+      <HiModal addClassName="modal-message modal-lg" v-show="modalSize[2]" @close="$set(modalSize, 2, false)">
         <template v-slot:heading>Large Modal Title </template>
         <template v-slot:content>Large Modal Content </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalSize[2] = false">취소</HiButton>
-          <HiButton color="primary" size="lg" @click="modalSize[2] = false">확인</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalSize, 2, false)">취소</HiButton>
+          <HiButton color="primary" size="lg" @click="$set(modalSize, 2, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message modal-full" v-show="modalSize[3]" @close="modalSize[3] = false">
+      <HiModal addClassName="modal-message modal-full" v-show="modalSize[3]" @close="$set(modalSize, 3, false)">
         <template v-slot:heading>Full Modal Title </template>
         <template v-slot:content>Full Modal Content </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalSize[3] = false">취소</HiButton>
-          <HiButton color="primary" size="lg" @click="modalSize[3] = false">확인</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalSize, 3, false)">취소</HiButton>
+          <HiButton color="primary" size="lg" @click="$set(modalSize, 3, false)">확인</HiButton>
         </template>
       </HiModal>
     </section>
     <section>
       <h2>Modal Condent Type</h2>
-      <HiButton color="primary" @click="modalCon[0] = true">Default Content</HiButton>
-      <HiButton color="primary" @click="modalCon[1] = true">Icon Messege</HiButton>
-      <HiButton color="primary" @click="modalCon[2] = true">Progress bar</HiButton>
-      <HiModal addClassName="modal-message" v-show="modalCon[0]" @close="modalCon[0] = false">
+      <HiButton color="primary" @click="$set(modalCon, 0, true)">Default Content</HiButton>
+      <HiButton color="primary" @click="$set(modalCon, 1, true)">Icon Messege</HiButton>
+      <HiButton color="primary" @click="$set(modalCon, 2, true)">Progress bar</HiButton>
+      <HiModal addClassName="modal-message" v-show="modalCon[0]" @close="$set(modalCon, 0, false)">
         <template v-slot:heading>
           모달 제목 영역
           <span class="highlight">제목 강조 텍스트</span>
@@ -112,25 +112,25 @@
           <p class="text-refer mt-10">※ 참조 텍스트</p>
         </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalCon[0] = false">취소</HiButton>
-          <HiButton color="primary" size="lg" @click="modalCon[0] = false">확인</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalCon, 0, false)">취소</HiButton>
+          <HiButton color="primary" size="lg" @click="$set(modalCon, 0, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message" v-show="modalCon[1]" @close="modalCon[1] = false">
+      <HiModal addClassName="modal-message" v-show="modalCon[1]" @close="$set(modalCon, 1, false)">
         <template v-slot:heading>
           모달 제목 영역
           <span class="highlight">제목 강조 텍스트</span>
         </template>
         <template v-slot:content>
-          <HiIcon :name="propsName" color="disabled" size="50" rounded="rounded" outline />
+          <HiIcon name="ico-none" color="disabled" size="50" rounded="rounded" outline></HiIcon>
           <p class="desc mt-10"><strong class="txt-primary">아이콘</strong>이 추가된 메세지 모달입니다.</p>
         </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalCon[1] = false">취소</HiButton>
-          <HiButton color="primary" size="lg" @click="modalCon[1] = false">확인</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalCon, 1, false)">취소</HiButton>
+          <HiButton color="primary" size="lg" @click="$set(modalCon, 1, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-progressbar modal-flex" v-show="modalCon[2]" @close="modalCon[2] = false">
+      <HiModal addClassName="modal-progressbar modal-flex" v-show="modalCon[2]" @close="$set(modalCon, 2, false)">
         <template v-slot:heading>전체 파일을 선택 중입니다.<br />잠시만 기다려주세요.</template>
         <template v-slot:content>
           <div class="w100">
@@ -141,7 +141,7 @@
           </div>
         </template>
         <template v-slot:footer>
-          <HiButton color="line-default" size="lg" @click="modalCon[2] = false" style="width: 150px">취소</HiButton>
+          <HiButton color="line-default" size="lg" @click="$set(modalCon, 2, false)" style="width: 150px">취소</HiButton>
         </template>
       </HiModal>
     </section>
@@ -200,18 +200,17 @@
 <script>
 import HiModal from "@/components/HiModal.vue";
 import HiButton from "@/components/HiButton.vue";
-import HiIcon from "@/components/HiIcon.vue";
 import HiSelectBox from "@/components/HiSelectBox.vue";
 import HiSwitch from "@/components/HiSwitch.vue";
+import HiIcon from '@/components/HiIcon.vue';
 export default {
   name: "ComponentsModal",
-  components: { HiModal, HiButton, HiIcon, HiSelectBox, HiSwitch },
+  components: { HiModal, HiButton,  HiSelectBox, HiSwitch, HiIcon },
   data() {
     return {
-      modalType: [null, null, null, null, null, null, null, null],
-      modalSize: [null, null, null, null, null, null, null, null],
-      modalCon: [null, null, null, null, null, null, null, null],
-      tabModal: ["true", null, null, null, null, null, null, null],
+      modalType: [false, false, false, false],
+      modalSize: [null, null, null, null],
+      modalCon: [null, null, null, null],
       propsVal: {
         type: "type01",
         titleLine: false,
@@ -231,7 +230,7 @@ export default {
         ],
       },
     };
-  },
+  },  
   computed: {
     generatedCode() {
       // Generate class list for the button element

@@ -19,19 +19,19 @@
           <HiIcon :name="propsName" bgColor="primary" color="white" size="24" />
         </li>
         <li>
-          <HiIcon :name="propsName" color="primary" outline="ture" size="24" />
+          <HiIcon :name="propsName" color="primary" outline size="24" />
         </li>
         <li>
           <HiIcon :name="propsName" bgColor="primary" color="white" rounded="bitrounded" size="24" />
         </li>
         <li>
-          <HiIcon :name="propsName" color="primary" rounded="bitrounded" outline="ture" size="24" />
+          <HiIcon :name="propsName" color="primary" rounded="bitrounded" outlin size="24" />
         </li>
         <li>
           <HiIcon :name="propsName" bgColor="primary" color="white" rounded="rounded" size="24" />
         </li>
         <li>
-          <HiIcon :name="propsName" color="primary" rounded="rounded" outline="ture" size="24" />
+          <HiIcon :name="propsName" color="primary" rounded="rounded" outline size="24" />
         </li>
       </ul>
     </section>
@@ -98,7 +98,6 @@
         <li>
           <label>OUTLINE</label>
           <hi-switch v-model="propsVal.outline" @update:model="propsVal.outline = $event" />
-          {{ propsVal.outline }}
         </li>
         <li>
           <label>COLOR</label>
@@ -243,7 +242,7 @@ export default {
         this.propsVal.bgColor ? `bgColor="${this.propsVal.bgColor}"` : "",
         this.propsVal.size ? `size="${this.propsVal.size}"` : "",
         this.propsVal.rounded ? `rounded="${this.propsVal.rounded}"` : "",
-        this.propsVal.outline ? "outline=" + true : "outline=" + false,
+        this.propsVal.outline ? "outline" : "",
       ]
         .filter(Boolean)
         .join(" ");
