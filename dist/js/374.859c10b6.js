@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkdesignsys"]=self["webpackChunkdesignsys"]||[]).push([[374],{9374:function(n,e,s){s.r(e),s.d(e,{default:function(){return c}});var r=s(641);function u(n,e,s,u,t,a){return(0,r.uX)(),(0,r.CE)("main")}var t={name:"foundationBreakpoints"},a=s(6262);const i=(0,a.A)(t,[["render",u]]);var c=i}}]);
-//# sourceMappingURL=374.859c10b6.js.map
