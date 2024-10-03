@@ -37,8 +37,8 @@ export default {
         },
         {
           title: "Typography",
-          description: `Colors help to represent hierarchy, establish brand identity, and convey meaning and status of elements.<br>
-        색상은 계층 구조를 표현하고, 브랜드 정체성을 확립하고, 요소의 의미,  상태를 나타내는 데 도움이 됩니다.`,
+          description: `Typography is an essential part of design systems, and good typographic rules help to present content clearly and efficiently.<br>
+타이포그래피는 디자인 시스템의 중요한 부분이며 좋은 타이포그래피 규칙은 콘텐츠를 명확하고 효율적으로 표현하는 데 도움이 됩니다.`,
           version: "1.0.0",
           date: "2024년 10월 30일 업데이트",
           name: "김은영",
@@ -103,8 +103,8 @@ export default {
         },
         {
           title: "Button",
-          description: `Colors help to represent hierarchy, establish brand identity, and convey meaning and status of elements.<br>
-        색상은 계층 구조를 표현하고, 브랜드 정체성을 확립하고, 요소의 의미,  상태를 나타내는 데 도움이 됩니다.`,
+          description: `Buttons are elements for actions, encompassing various states and corresponding behavior rules based on their shape, size, and color.<br>
+        버튼은 동작을 위한 요소로 모양, 크기, 색상에 따라 다양한 상태와 그에 따른 행동 규칙을 포함합니다.`,
           version: "1.0.0",
           date: "2024년 10월 30일 업데이트",
           name: "김은영",
@@ -183,7 +183,9 @@ export default {
   },
   computed: {
     headTitle() {
-      const match = this.headTitles.find((item) => item.title === this.$route.name);
+      const match = this.headTitles.find(
+        (item) => item.title === this.$route.name
+      );
       return match || this.headTitles[0];
     },
   },
