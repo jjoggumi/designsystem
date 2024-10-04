@@ -1,6 +1,6 @@
 <template>
   <div class="hi-tabs">
-    <div :class="['hi-tab', [addClassName]]">
+    <div :class="classList">
       <button
         v-for="(tab, index) in tabs"
         :key="index"
@@ -10,6 +10,7 @@
          }"
         @click="selectTab(tab)"
       >
+      <i :class="`hi-ico ` + tab.ico" v-if="tab.ico"></i>
         {{ tab.label }}
       </button>
     </div>
@@ -23,7 +24,10 @@
 export default {
   name: "HiTabs",
   props: {
-    addClassName: { type: String, default: null },
+    block: { type: Boolean, default: false },
+    type: { type: String, default: null },
+    size: { type: String, default: null },
+    align: { type: String, default: null },
   },
   data() {
     return {
@@ -33,16 +37,23 @@ export default {
   methods: {
     addTab(tab) {
       this.tabs.push(tab);
-      if (this.tabs.length === 1 || tab.active) {
+      if (this.tabs.length === 1 || tab.isActive) {
         this.selectTab(tab);
       }
     },
-    selectTab(selectedTab) {
-      console.log(this.tabs)
-      this.tabs.forEach((tab) => {
-        tab.isActive = tab === selectedTab;
-      });
-    },
+  },
+  computed: {
+    classList() {
+      const className = ["hi-tab"];
+      this.type ? className.push(this.type) : null;
+      this.size ? className.push(`tab-${this.size}`) : null;
+      this.align === 'center' ? className.push('j-center') :
+      this.align === 'left' ? null :
+      this.align === 'right' ? className.push('j-right') :
+      null;
+      this.block ? className.push("tab-block") : null;
+      return className.join(" ");
+    },    
   },
 };
 </script>

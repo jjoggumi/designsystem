@@ -1,13 +1,13 @@
 <template>
   <article class="modalSys">
     <section>
-      <h2>Modal Type</h2>
-      <HiButton color="primary" @click="$set(modalType, 0, true)">Type01</HiButton>
-      <HiButton color="primary" @click="$set(modalType, 2, true)">Type02</HiButton>
+      <h2>Modal Type</h2>        
+      <HiButton color="primary" @click="$set(modalType, 0, true)">Default</HiButton>
+      <HiButton color="primary" @click="$set(modalType, 2, true)">Type01</HiButton>
       <HiButton color="secondary" @click="$set(modalType, 1, true)">Opt : 타이틀 구분선 추가</HiButton>
       <HiButton color="secondary" @click="$set(modalType, 3, true)">Opt : 상단 닫기버튼 스킵</HiButton>
       <HiModal v-show="modalType[0]" @close="$set(modalType, 0, false)">
-        <template v-slot:heading>Type01 :기본 모달 형태</template>
+        <template v-slot:heading>Default :기본 모달 형태</template>
         <template v-slot:content> 기본 모달은 모달 컴포넌트에서 기본으로 제공되는 UI입니다. </template>
         <template v-slot:footer>
           <div class="group-btn">
@@ -17,7 +17,7 @@
         </template>
       </HiModal>
       <HiModal addClassName="modal-message" v-show="modalType[2]" @close="$set(modalType, 2, false)">
-        <template v-slot:heading>Type02 : 하단 버튼 영역 UI 변경</template>
+        <template v-slot:heading>Type01 : 하단 버튼 영역 UI 변경</template>
         <template v-slot:content>
           <div class="desc">컨텐츠모달, 알림모달, 메시지모달 등 <br /><strong>현행에서 주로 사용되는 UI</strong> 입니다.</div>
         </template>
@@ -159,7 +159,7 @@
           <template v-slot:heading>모달 제목 영역입니다. </template>
           <template v-slot:content> 모달 컨텐츠 영역입니다. </template>
           <template v-slot:footer>
-            <div v-if="propsVal.type === 'type01'" class="group-btn">
+            <div v-if="propsVal.type === ''" class="group-btn">
               <HiButton color="line-default" size="lg" @click="modalType[0] = false">취소</HiButton>
               <HiButton color="primary" size="lg" @click="modalType[0] = false">확인</HiButton>
             </div>
@@ -205,22 +205,22 @@ import HiSwitch from "@/components/HiSwitch.vue";
 import HiIcon from '@/components/HiIcon.vue';
 export default {
   name: "ComponentsModal",
-  components: { HiModal, HiButton,  HiSelectBox, HiSwitch, HiIcon },
+  components: { HiModal, HiButton, HiSelectBox, HiSwitch, HiIcon },
   data() {
     return {
       modalType: [false, false, false, false],
       modalSize: [null, null, null, null],
       modalCon: [null, null, null, null],
       propsVal: {
-        type: "type01",
+        type: "",
         titleLine: false,
         titleCloseSkip: false,
         size: "sm",
       },
       propsOpt: {
         type: [
-          { value: "type01", title: "type01" },
-          { value: "modal-message", title: "type02" },
+          { value: "", title: "default" },
+          { value: "modal-message", title: "type01" },
         ],
         size: [
           { value: "sm", title: "sm" },
@@ -234,22 +234,27 @@ export default {
   computed: {
     generatedCode() {
       // Generate class list for the button element
-      const classes = ["btn", this.propsVal.type ? `model-${this.propsVal.type}` : "", this.propsVal.size ? `model-${this.propsVal.size}` : ""].filter(Boolean).join(" ");
+      const classes = ["btn", 
+      this.propsVal.type ? `${this.propsVal.type}` : "", 
+      this.propsVal.size ? `model-${this.propsVal.size}` : "",
+      this.propsVal.titleLine ? "title-line" : "",
+      this.propsVal.titleCloseSkip ? "title-close-skip" : "",
+      ].filter(Boolean).join(" ");
       const btnarea = [
-        this.propsVal.type === "type01"
+        this.propsVal.type === ""
           ? `&lt;div class="group-btn"&gt;
-              &lt;HiButton color="line-default" size="lg" @click="modalType[0] = false"&gt;취소&lt;/HiButton&gt;
-              &lt;HiButton color="primary" size="lg" @click="modalType[0] = false"&gt;확인&lt;/HiButton&gt;
+              &lt;HiButton color="line-default" size="lg" &gt;취소&lt;/HiButton&gt;
+              &lt;HiButton color="primary" size="lg" &gt;확인&lt;/HiButton&gt;
             &lt;/div&gt;`
-          : `&lt;HiButton color="line-default" size="lg" @click="modalType[0] = false"&gt;취소&lt;/HiButton&gt;
-             &lt;HiButton color="primary" size="lg" @click="modalType[0] = false"&gt;확인&lt;/HiButton&gt;`,
+          : `&lt;HiButton color="line-default" size="lg" &gt;취소&lt;/HiButton&gt;
+             &lt;HiButton color="primary" size="lg" &gt;확인&lt;/HiButton&gt;`,
       ]
         .filter(Boolean)
         .join(" ");
 
       // Generate HTML code for the button and HiButton component
       return `
-        &lt;HiModal class="${classes}" @close="modalType[0] = false"&gt;
+        &lt;HiModal class="${classes}" @close=""&gt;
           &lt;template v-slot:heading&gt;모달 제목 영역입니다.&lt;/template&gt;
           &lt;template v-slot:content&gt; 모달 컨텐츠 영역입니다. &lt;/template&gt;
           &lt;template v-slot:footer&gt;

@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app designSys">
     <Aside :routes="routes" :mainCate="mainCate" />
     <!-- {{ mainCate }}  -->  
     <main>    

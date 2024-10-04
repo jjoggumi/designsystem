@@ -76,7 +76,7 @@
     </div>
     <footer class="content_footer">
         <div class="footer_inner">
-            <p class="copyright">Copyright © 2023 Danusys</p>
+            <p class="copyright">Copyright © 2024 kimey</p>
         </div>
     </footer>
   </main>

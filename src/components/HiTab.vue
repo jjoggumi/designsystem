@@ -12,19 +12,24 @@ export default {
       type: String,
       required: true,
     },
-    active: {
+    onActive: {
       type: Boolean,
       default: false,
     },
-    new: { 
+    onNew: { 
       type: Boolean,
       default: false,
     },
+    ico:{
+      type: String,
+      default: null
+    }
   },
   data() {
     return {
-      isActive: this.active, 
-      isNew: this.new, 
+      isActive: this.onActive, 
+      isNew: this.onNew, 
+      isIco: this.ico, 
     };
   },
   mounted() {

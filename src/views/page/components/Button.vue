@@ -223,7 +223,7 @@ export default {
     generatedCode() {
       // Generate class list for the button element
       const classes = [
-        "btn",
+        "hi-btn",
         this.propsVal.color ? (this.propsVal.outline === true ? `btn-line-${this.propsVal.color}` : `btn-${this.propsVal.color}`) : this.propsVal.outline === true ? `btn-line` : "",
         this.propsVal.shap ? `btn-${this.propsVal.shap}` : "",
         this.propsVal.size ? `btn-${this.propsVal.size}` : "",
