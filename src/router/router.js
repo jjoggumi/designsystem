@@ -30,14 +30,14 @@ const router = new Router({
           path: 'icon',
           name : 'Icon',
           component : () => import('../views/page/foundation/Icon.vue'),
-        },{
-          path: 'grid',
-          name : 'Grid',
-          component : () => import('../views/page/foundation/Grid.vue'),
-        },{
-          path: 'breakpoints', 
-          name: 'Breakpoints',
-          component : () => import('../views/page/foundation/Breakpoints.vue'),
+        // },{
+        //   path: 'grid',
+        //   name : 'Grid',
+        //   component : () => import('../views/page/foundation/Grid.vue'),
+        // },{
+        //   path: 'breakpoints', 
+        //   name: 'Breakpoints',
+        //   component : () => import('../views/page/foundation/Breakpoints.vue'),
         }
       ]
     },{
@@ -53,6 +53,10 @@ const router = new Router({
           path: 'checks',
           name : 'Checks & Radios & Swiches',
           component : () => import('../views/page/form/Checks.vue'),
+        },{
+          path: 'selectbox',
+          name : 'Selectbox',
+          component : () => import('../views/page/form/Selectbox.vue'),
         }
       ]
     },{
@@ -69,10 +73,10 @@ const router = new Router({
           name: 'Modal',
           component:  () => import('../views/page/components/Modal.vue'),
         },{
-          path: 'dropdown', 
-          name: 'Dropdown',
-          component:  () => import('../views/page/components/Dropdown.vue'),
-        },{
+        //   path: 'dropdown', 
+        //   name: 'Dropdown',
+        //   component:  () => import('../views/page/components/Dropdown.vue'),
+        // },{
           path: 'collapse', 
           name: 'Collapse',
           component:() => import('../views/page/components/Collapse.vue'),
