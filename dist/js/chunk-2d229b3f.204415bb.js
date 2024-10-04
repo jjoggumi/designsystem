@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d229b3f"],{df29:function(n,t,u){"use strict";u.r(t);var a=function(){var n=this,t=n._self._c;return t("main")},e=[],o={name:"foundationBreakpoints"},i=o,s=u("2877"),c=Object(s["a"])(i,a,e,!1,null,null,null);t["default"]=c.exports}}]);
+//# sourceMappingURL=chunk-2d229b3f.204415bb.js.map

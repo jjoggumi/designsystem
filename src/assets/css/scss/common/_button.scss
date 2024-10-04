@@ -1,5 +1,4 @@
 /* Button Style */
-@use 'sass:color';
 
 @mixin btnStyle($bg, $focus, $font: $white, $border: $bg) {
   color: $font;
@@ -8,13 +7,13 @@
 
   &:hover:not(.disabled, :disabled),
   &:active:not(.disabled, :disabled) {
-    background: color.scale($bg, $lightness: -10%);
-    border-color: color.scale($border, $lightness: -10%);
+    background: scale-color($bg, $lightness: -10%);
+    border-color: scale-color($border, $lightness: -10%);
     transition: all 0.3s ease;
   }
 
   &:focus:not(.disabled, :disabled) {
-    box-shadow: 0 0 0 3px color.scale($border, $lightness: $focus * 1%);
+    box-shadow: 0 0 0 3px scale-color($border, $lightness: $focus * 1%);
   }
 }
 
