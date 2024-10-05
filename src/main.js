@@ -9,8 +9,8 @@ import vClickOutside from "v-click-outside";
 import "@/plugins/hiClass.js";
 import "@/assets/css/reset.css"; // reset
 import "@/assets/css/scss/common.scss"; // common scss
-import "@/assets/css/common.css"; // common css
-import "@/assets/css/hiclass.css"; // old css
+//import "@/assets/css/common.css"; // common css
+//import "@/assets/css/hiclass.css"; // old css
 // import "@/assets/css/layout.css"            // renewal layout css
 // import "@/assets/css/main.css"              // 메인 화면 css
 // import "@/assets/css/sub.css"               // 서브페이지 css
