@@ -407,9 +407,9 @@ i.camera_transparent, span.camera_transparent {
     background: url("../img/icon/icon_camera_transparent.svg") center no-repeat;
 }
 /* * * * *
-    SELECTBOX
+    SELECTBOX  >> scss로 취합
 * * * * */
-.hi-selectbox ::-webkit-scrollbar {
+/* .hi-selectbox ::-webkit-scrollbar {
     background-color: transparent;
     width: 8px;
 }
@@ -497,7 +497,7 @@ i.camera_transparent, span.camera_transparent {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
     margin-top: -2px;
-}
+} */
 
 
 /* * * * * 
