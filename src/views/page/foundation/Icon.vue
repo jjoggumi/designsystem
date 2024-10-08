@@ -3,8 +3,8 @@
     <section>
       <h2>Icon Variant</h2>
       <ul class="options">
-        <li v-for="name in propsOpt.name" :key="name.value">
-          <HiIcon :name="name.value" size="24" @click="changeName(name.value)" />
+        <li v-for="name in propsOpt.name" :key="name.value" @click="changeName(name.value)">
+          <HiIcon :name="name.value" size="24"  />
           <span>{{ name.title }}</span>
         </li>
       </ul>

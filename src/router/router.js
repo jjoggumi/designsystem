@@ -61,10 +61,10 @@ const router = new Router({
           name: 'Modal',
           component:  () => import('../views/page/components/Modal.vue'),
         },{
-          path: 'collapse', 
-          name: 'Collapse',
-          component:() => import('../views/page/components/Collapse.vue'),
-        },{
+        //   path: 'collapse', 
+        //   name: 'Collapse',
+        //   component:() => import('../views/page/components/Collapse.vue'),
+        // },{
           path: 'tab', 
           name: 'Tab',
           component:() => import('../views/page/components/Tab.vue'),
