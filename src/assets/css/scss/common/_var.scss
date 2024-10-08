@@ -55,9 +55,6 @@ $primary-01:    #F8F9FC;  // [bg] 웹 홈 메인> 나의 클래스/학교 및 	�
 $primary-02:    #EBEEF4;  // [bg] 첨부파일, 알림장 읽은 사람 표기
 $primary-03:    #E9F3FF;  // [bg] 상단공지
 $primary-04:    #E1E9F9;  // [bg] 급식 상세 알레르기 정보
-// $primary-05:    #C7D9F7;
-// $primary-06:    #99BEF9;
-// $primary-07:    #6BA2FB;
 
 /* State Color */
 $success:       #61D235;	// 확인, 성공, 긍정적 
@@ -85,29 +82,10 @@ $gray-10:       #222;      // [text] 본문 텍스트
 $black:         #000;        // [text] 타이틀 텍스트
 $white:         #fff;
 $transparent: transparent;
+$default:       $gray-09;
 
-$colors: (
-  primary:       $primary,
-  secondary:     $secondary,
-  success:       $success,
-  info:          $info,
-  warning:       $warning,
-  purple:        $purple,
-  yellow:        $yellow,
-  jungle:        $jungle,
-  orange:        $orange,
-  default:       $gray-09,
-  black:         $black,
-  white:         $white,
-  disabled:      $gray-07,
-);
-
-$disabled: (
-	bgLight : $gray-04,
-	bg : $gray-06,
-	txtLight : $gray-07, 
-	txt : $gray-09, 
-);
+$disabled:      $gray-07;
+$disabled-bg:   $gray-06;
 
 /* font */
 $font-body:  "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "NanumSquareRound", "Noto Color Emoji", sans-serif;

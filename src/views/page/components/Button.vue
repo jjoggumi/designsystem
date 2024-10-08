@@ -172,6 +172,7 @@
 import HiButton from "@/components/HiButton.vue";
 import HiSelectBox from "@/components/HiSelectBox.vue";
 import HiSwitch from "@/components/HiSwitch.vue";
+import designsysData from '@/assets/js/designsysData.js';
 
 export default {
   name: "ComponentsHiButton",
@@ -192,30 +193,8 @@ export default {
           { value: "bitrounded", title: "bitrounded" },
           { value: "square", title: "square" },
         ],
-        color: [
-          { value: "", title: "none" },
-          { value: "default", title: "default" },
-          { value: "disabled", title: "disabled" },
-          { value: "primary", title: "primary" },
-          { value: "secondary", title: "secondary" },
-          { value: "success", title: "success" },
-          { value: "info", title: "info" },
-          { value: "purple", title: "purple" },
-          { value: "yellow", title: "yellow" },
-          { value: "jungle", title: "jungle" },
-          { value: "orange", title: "orange" },
-          { value: "gray", title: "gray" },
-          { value: "black", title: "black" },
-          { value: "white", title: "white" },
-        ],
-        size: [
-          { value: "", title: "none" },
-          { value: "xl", title: "xl" },
-          { value: "lg", title: "lg" },
-          { value: "md", title: "md" },
-          { value: "sm", title: "sm" },
-          { value: "xs", title: "xs" },
-        ],
+        color: designsysData.btnColor,
+        size: designsysData.size,
       },
     };
   },

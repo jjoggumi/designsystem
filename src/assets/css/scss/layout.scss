@@ -89,9 +89,8 @@
               font-size:15px;
   
               &.router-link-active{
-                color: #4089ff;
+                color: #fff;
                 font-weight: var(--font-bold);
-                text-decoration: underline;
               }
             }
             &:first-child{padding-top:5px;}

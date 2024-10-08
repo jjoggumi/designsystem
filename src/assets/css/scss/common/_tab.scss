@@ -4,7 +4,7 @@
 	font-size: 0;
 	button {
 		overflow: visible;
-		color: map-get($disabled, txt);
+		color: $gray-09;
 		font-size: 16px;
 		line-height: 1;
 		min-height:48px;
@@ -12,7 +12,7 @@
 		position: relative;
 		.hi-ico{
 			vertical-align: middle;
-			&::after{background-color:map-get($disabled, txt);}
+			&::after{background-color:$gray-09;}
 		}
 	} 
 
@@ -23,11 +23,12 @@
 			&::before {
 				width: 1px;
 				height: 16px;
-				background-color: #E0E0E0;
+				background-color: $gray-05;
 				display: inline-block;
 				content: '';
 				position: absolute;
 				left: 0;
+				top: calc(50% - 8px);
 			}
 			&:first-of-type { padding-left: 8px; }
 			&:first-of-type::before{display: none; }		
@@ -51,9 +52,9 @@
 
 	&.type01{
 		> button{
-			color: map-get($disabled, txtLight);
-			border: 1px solid map-get($disabled, bg);			
-			.hi-ico::after{background-color:map-get($disabled, txtLight);}
+			color: $disabled;
+			border: 1px solid  $disabled-bg;			
+			.hi-ico::after{background-color: $disabled}
 			&.is-active{
 				background-color: $primary;
 				border: 1px solid $primary;
@@ -68,10 +69,9 @@
 
 	&.type02{
 		> button{
-			min-width:200px;
-			color: map-get($disabled, txtLight);
-			border: 1px solid map-get($disabled, bg);
-			.hi-ico::after{background-color:map-get($disabled, txtLight);}
+			color:  $disabled;
+			border: 1px solid  $disabled-bg;
+			.hi-ico::after{background-color: $disabled}
 			&.is-active{
 				background-color: $primary;
 				border: 1px solid $primary;
@@ -87,11 +87,11 @@
 	&.type03{
 		border-bottom: 1px solid $gray-05;
 		> button{
-			color: map-get($disabled, txt);            
+			color:  $gray-09;            
 			font-weight: 400;
 			border-bottom: 3px solid transparent;
 			margin-bottom: -1px;
-			.hi-ico::after{background-color: map-get($disabled, txt);}
+			.hi-ico::after{background-color:  $gray-09;}
 			&.is-active{
 				color: $primary;
 				font-weight: 500;
@@ -104,11 +104,11 @@
 	&.type04{
 		gap: 10px;
 		> button{
-			color: map-get($disabled, txt);            
-			border: 1px solid map-get($disabled, bg);
+			color: $gray-09;            
+			border: 1px solid  $disabled-bg;
 			font-weight: 400;
 			border-radius: 50px;
-			.hi-ico::after{background-color: map-get($disabled, txt);}
+			.hi-ico::after{background-color: $gray-09;}
 			&.is-active{
 				color: #fff;
 				background-color: $gray-10;
@@ -120,23 +120,23 @@
 	}
 
 	&.tab-xs > button{
-		min-height: 36px;font-size: 13px;		
+		min-height: 36px;font-size: 13px;padding: 0 16px;
 		.hi-ico{width:16px;height:16px;}
 	}
 	&.tab-sm > button{
-		min-height: 40px;font-size: 14px;
+		min-height: 40px;font-size: 14px;padding: 0 16px;
 		.hi-ico{width:20px;height:20px;}
 	}
 	&.tab-md > button{
-		min-height: 48px;font-size: 14px;
+		min-height: 48px;font-size: 14px;padding: 0 20px;
 		.hi-ico{width:20px;height:20px;}
 	}
 	&.tab-lg > button{
-		min-height: 56px;font-size: 16px;
+		min-height: 56px;font-size: 16px;padding: 0 24px;
 		.hi-ico{width:24px;height:24px;}
 	}
 	&.tab-xl > button{
-		min-height: 64px;font-size: 16px;
+		min-height: 64px;font-size: 16px;padding: 0 24px;
 		.hi-ico{width:24px;height:24px;}
 	}
 

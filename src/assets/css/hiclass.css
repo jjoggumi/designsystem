@@ -78,8 +78,9 @@ body.hidden.mac #header-cont-wrap {padding:0;}
 .btn-bg-r.dis {background:#dadde2;opacity:0.5;} */
 
 /* input-box-wrap */
-.input-box-wrap {position:relative;border:1px solid rgba(0, 0, 0, 0.14);border-radius:4px;overflow:hidden;background:#fff;font-size:13px;}
-.input-box-wrap.focus {border-color:rgba(66, 103, 178, 0.6);}
+/* scss로 취합
+ .input-box-wrap {position:relative;border:1px solid rgba(0, 0, 0, 0.14);border-radius:4px;overflow:hidden;background:#fff;font-size:13px;}
+.input-box-wrap.focus {border-color:rgba(234, 236, 241, 0.6);}
 .input-box-wrap:hover {border-color:rgba(66, 103, 178, 0.6);}
 .input-box-wrap.readonly {border:1px solid rgba(0, 0, 0, 0.14);}
 .input-box-wrap.readonly input {background:#eee;cursor:default;}
@@ -106,15 +107,20 @@ body.hidden.mac #header-cont-wrap {padding:0;}
 .input-box-wrap .input-text-delete-btn {display:none;position:absolute;top:6px;right:44px;width:24px;height:24px;background:url('../img/icon_input_text_delete_24.png');}
 .input-box-wrap .input-text-delete-btn:hover {background-position:-24px 0;}
 .input-box-wrap .input-text-delete-btn.dis {background-position:-48px 0;}
+ */
 
 /* input validation 텍스트 */
+/* scss로 취합 
 .input-validation-text {margin:8px 0 0 0;padding: 0 0 8px 0;}
 .input-validation-text.error-text {color: #fe5151;}
-.input-validation-text.good-text {color:#229c47;}
+.input-validation-text.good-text {color:#229c47;} 
+*/
 
 /* search-box-wrap */
+/* scss로 취합
 .search-box-wrap {padding-right:58px !important;}
-.search-box-wrap.delete-on {padding-right:70px !important;}
+.search-box-wrap.delete-on {padding-right:70px !important;} 
+*/
 
 button.icon {font-size:0;}
 button.icon span {display:inline-block;font-size: 14px;vertical-align:middle;}
@@ -123,12 +129,14 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
 .btn-wrap .btn-group {font-size:0;}
 
 /* radio */
+/* scss로 취합 
 .input-radio-wrap {font-size:0;}
 
 .round-search-box {height:36px;padding:0 0 0 8px;border-radius:18px;}
 .round-search-box .search-btn {position:absolute;top:2px;right:12px;width:30px;height:30px;background:url('../img/icon_header_search_30.png');vertical-align:middle;}
 .round-search-box .search-btn:hover {opacity:0.8;}
-.round-search-box .search-btn.dis {background-position:-60px 0;}
+.round-search-box .search-btn.dis {background-position:-60px 0;} 
+*/
 
 /* right-menu-cont-wrap  >>  layout.css로 이동*/
 /* .right-menu-cont-wrap {position:fixed;top:0;right:-160px;height:100%;width:160px;z-index:999;transition:right 0.3s;}
@@ -522,7 +530,6 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
 }
 
 /* view-album-modal : 이미지 뷰어 */
-/* global >> scoped (ImageViewer.vue)
 .modal.view-album-modal .modal-cont {height:100%;}
 .modal.view-album-modal .modal-cont-wrap {overflow:hidden;}
 .modal.view-album-modal .modal-cont-inner {height:100%;}
@@ -542,7 +549,7 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
         max-width: 100%;
         max-height: 100%;
     }
-} */
+}
 
 /* modal-top-btn-wrap */
 .modal.has-top-btn-wrap .modal-cont-wrap {height:100%;position:static;transform:none;}
@@ -590,8 +597,8 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
 }
 .modal-top-btn-wrap .right-wrap .download-select span + span { border-top: 1px solid #e8e8e8; }
 
-/* 신규 학교 추가 신청 완료 모달 */
-/* global >> scoped (MainBodyCreateComplete.vue)
+/* 신규 학교 추가 신청 완료 모달 
+global >> scoped (MainBodyCreateComplete.vue)
 .add-class-complete-modal .after-add-complete-wrap {width:468px;margin:0 auto;}
 .add-class-complete-modal .after-add-complete-wrap .class-info-wrap {margin:0 0 30px 0;}
 .add-class-complete-modal .link-wrap {padding:0 0 40px 0;text-align:left;}
@@ -975,7 +982,7 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
 .class-editor-modal .contents-wrap .input-cont .upload-file-wrap .attaching-img-wrap ul li {float: none;display: inline-block;margin: 0 8px 15px;vertical-align: middle;}
 .class-editor-modal .contents-wrap .input-cont .upload-file-wrap .attaching-img-wrap ul li .file-drag-area-wrap .file-drag-area {margin: 13px;}
 .class-editor-modal .contents-wrap .input-cont .upload-file-wrap .attaching-img-wrap .img-wrap {cursor: pointer;}
-.class-editor-modal .contents-wrap .input-cont .upload-file-wrap .attaching-img-wrap .img-wrap:hover::before {
+.class-editor-modal .contents-wrap .input-cont .upload-file-wrap .attaching-img-wrap .img-wrap:not(.uneditable):hover::before {
     content: "";
     position: absolute;
     top: 0;
@@ -1038,7 +1045,8 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
 .add-class-teacher-modal .result-empty-wrap {position:absolute;top:50%;width:100%;transform:translateY(-50%);}
 .add-class-teacher-modal .result-empty-wrap p {line-height:1.43;color:#666;}
 
-/* global >> scoped (MainBodyClazzesRnbCalendarSchedule.vue)
+/* 우리반 일정 등록하기 모달 
+global >> scoped (MainBodyClazzesRnbCalendarSchedule.vue)
 .add-class-schedule-modal .modal-cont-wrap {overflow:visible;}
 .add-class-schedule-modal .add-schedule-wrap {padding:0 48px;}
 .add-class-schedule-modal .add-schedule-wrap .date-wrap {position:relative;margin:0 0 10px 0;text-align:left;}
@@ -1868,7 +1876,8 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
 .emoticon-select-popup .select-tab-wrap button.prev-btn.dis,.emoticon-select-popup .select-tab-wrap button.next-btn.dis {background-position:-48px 0;}
 .emoticon-select-popup .select-tab-wrap button:hover {background-position:-24px 0;}
 
-/* global >> scoped (MainBodyClazzesBodyInvite.vue)
+/* 클래스 > 상단 영역 초대하기버튼
+global >> scoped (MainBodyClazzesBodyInvite.vue)
 .member-code-invite-wrap {padding:40px 26px;text-align:center;border: 1px solid #e0e0e0;}
 .member-code-invite-wrap:not(.boundary-box-2) {padding:40px 0 40px 0;text-align:center;border: 1px solid #e0e0e0;}
 .member-code-invite-wrap p {line-height: 1.3;font-size: 16px;color: #2e2e2e;}
@@ -3363,7 +3372,9 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
     text-decoration: underline;
     font-weight: 500;
 } */
-/* global >> scoped (MainBodyClazzesBodyInvite.vue)
+/* 
+클래스 > 상단 영역 초대하기버튼 
+global >> scoped (MainBodyClazzesBodyInvite.vue)
 .btn-code-again-2 {
     width: 160px;
     padding: 8.5px 16px;
@@ -3399,7 +3410,8 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
     overflow-y: scroll;
 }
 
-/* global >> scoped (HelpTerms.vue)
+/* 이용약관
+global >> scoped (HelpTerms.vue)
 .customer-terms-cont-wrap .tab-nav-wrap {position:relative;margin:0 0 11px 0;font-size:0;}
 .customer-terms-cont-wrap .tab-nav-wrap > * {display:inline-block;vertical-align:middle;}
 .customer-terms-cont-wrap .tab-nav-wrap button {margin:0 32px 0 0;font-size:16px;transform: skew(0.2deg);font-weight: 600;color: #606164;}
@@ -3492,7 +3504,8 @@ button.icon:after {content:'';display:inline-block;vertical-align:middle;}
 .loading-cont-wrap.page-main-cont-loading ul li .loading-text.text5 {width:238px;}
 .loading-cont-wrap.page-main-cont-loading ul li .loading-text.text6 {width:103px;} */
 
-/* global >> scoped (MainBodyClazzesBodyClassBoardPostsLoadingBox.vue)
+/* 게시판 로딩 이미지
+global >> scoped (MainBodyClazzesBodyClassBoardPostsLoadingBox.vue)
 .loading-cont-wrap.page-class-loading ul li .loading-box {width:100%;height:324px;padding:25px;}
 .loading-cont-wrap.page-class-loading ul li + li {margin:20px 0 0 0;}
 .loading-cont-wrap.page-class-loading ul li .loading-text-wrap + .loading-text-wrap {margin:30px 0 0 0;}
@@ -3843,7 +3856,8 @@ figure.image,
 figure.image > img{
     width: 100%;
 }
-/* global >> scoped (HelpUpload.vue) 
+/* 고객센터 > 서비스 제안하기 > 제안서 첨부 
+global >> scoped (HelpUpload.vue) 
 .attach-guidetxt{
     font-size: 13px;
     transform: skew(0.2deg);
@@ -3906,11 +3920,14 @@ figure.image > img{
     border: 2px solid #fff;
     z-index: 2;
 }
-/* global >> scoped (MainBodyMypageClazzesItem.vue) 
+/* 
+마이페이지 > 나의 클래스 > 아이템
+global >> scoped (MainBodyMypageClazzesItem.vue) 
 .tumbnail-box-disalbe .class-administrator{
     opacity: 0.5;
 } */
-/* global >> scoped (AlarmPlusSubscribeItem.vue)
+/* 가입요청하기(미사용)
+global >> scoped (AlarmPlusSubscribeItem.vue)
 .apply-family-letter-con {margin:0 0 20px 0;padding:30px 0 32px;text-align:center;
     border-radius: 10px;
     box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.1);
@@ -3924,7 +3941,8 @@ figure.image > img{
 .apply-family-letter-con .apply-family-letter-btn-wrap {margin:32px 0 0 0;}
 .apply-family-letter-con .apply-family-letter-btn-wrap button {width:248px;height:36px;border-radius:18px;} */
 
-/* global >> scoped (AlarmPlusSubscribePopup.vue)
+/* 가정통신문 가입 요청(미사용)
+global >> scoped (AlarmPlusSubscribePopup.vue)
 .family-letter-popup-wrap{padding:0 30px;}
 .family-letter-popup-inner02 > ul > li{padding: 12px 0 12px 140px; position:relative; height:58px;}
 .family-letter-popup-wrap  ul li .category-name {width:120px;font-size: 14px;text-align:left;transform: skew(0.2deg);position: absolute; left: 0; top:24px;}
@@ -3959,7 +3977,8 @@ figure.image > img{
     border-radius: 10px;
 }  */
 /*예약*/
-/* global >> scoped (MainBodySchoolsBodyAlarmPlusItem.vue)
+/* 가정통신문 플러스 게시물(미사용-헷갈림)
+global >> scoped (MainBodySchoolsBodyAlarmPlusItem.vue)
 .badge-list-wrap{
     position: absolute;
     right: 18px;
@@ -3993,7 +4012,8 @@ figure.image > img{
     border-radius: 36px;
     font-weight: bold;
 } */
-/* global >> scoped (AlarmPlusSubscribePopup.vue)
+/* 가정통신문가입요청(미사용)
+global >> scoped (AlarmPlusSubscribePopup.vue)
 .family-letter-popup-inner02 {padding: 0 30px} 
 .username-wrap .input-box-wrap {float:left;width:296px;}
 .username-wrap .request-btn-wrap {float:left;width:76px;margin:0 0 0 8px;}
@@ -4049,14 +4069,17 @@ figure.image > img{
      height: 18px;
      padding: 0 6px 0 0;
  }
-/*  global >> scoped ( MainBodyClazzesBodyInviteFreeSms.vue)
+/*  
+클래스 > 초대하기 > 무료 문자로 초대장 보내기
+global >> scoped ( MainBodyClazzesBodyInviteFreeSms.vue)
 .hp-list-wrap.hp-history-wrap > p{
     transform: skew(0.2deg);
     font-size: 15px;
     padding: 6px 0;
     color:#555;
 } */
-/* global >> scoped (GuidePopup.vue)
+/* 가이드 팝업 (페이지 확인은 되나 현재 사용하지 않음 /  /popup/GuidePopup)
+global >> scoped (GuidePopup.vue)
 .hy-guide-popup-wrap{
     width:640px;
     height:886px;
@@ -4315,7 +4338,8 @@ figure.image > img{
 .hy-guide-popup-wrap .popup-close-btn:hover {
     background: url(../img/icon_modal_close_24.png) no-repeat -26px -2px;
 } */
-/* global >> scoped (AlarmPlusInbiteCardPopup.vue)
+/* 가정통신문 초대장(미사용)
+global >> scoped (AlarmPlusInviteCardPopup.vue)
 .modal-invitation.bg-black {background:#000;}
 .modal-invitation .modal-cont {
     position:absolute;
@@ -4419,7 +4443,8 @@ figure.image > img{
     width:960px;
     height:663px;
 }
-/* global >> scoped (AlarmPlusDetailPopup.vue)
+/* 학교 알리미(미사용)
+global >> scoped (AlarmPlusDetailPopup.vue)
 .modal .family-detail-pop{
     width: 880px!important;
     margin: 50px auto;
@@ -4449,7 +4474,8 @@ figure.image > img{
 .more-educatioin-btn-wrap{
     display:none;
 }
-/* global >> scoped (MainBodyClazzesBodyPermissionBoardSettingItem.vue)
+/* 게시판 상세 설정
+global >> scoped (MainBodyClazzesBodyPermissionBoardSettingItem.vue)
 .free-check-box{
     position: absolute;
     top: 12px;
@@ -4491,7 +4517,8 @@ figure.image > img{
     right: 32px;
     top: 20px;
 }  */
-/* global >> scoped (MainBodyClazzesBodyHomeworkStatusMember.vue)
+/* 과제 상세 팝업 내 과제 제출 리스트
+global >> scoped (MainBodyClazzesBodyHomeworkStatusMember.vue)
 .btn-homework-etc{
     position: absolute;
     right: 16px;
@@ -4529,7 +4556,8 @@ figure.image > img{
     background: #e0e6f1;
 } */
 
-/* global >> scoped (MainBodyClazzesBodyHomeworkStatus.vue)
+/* 과제 상세 팝업 내 과제 제출 리스트
+global >> scoped (MainBodyClazzesBodyHomeworkStatus.vue)
  .homework-acco-wrap{
     width:100%;
     position: relative;
@@ -4544,7 +4572,8 @@ figure.image > img{
     min-height: 70px;
     height: 100%;
 } */
- /* global >> scoped (MainBodyClazzesBodyHomeworkItem.vue)
+ /* 과제 현황 
+ global >> scoped (MainBodyClazzesBodyHomeworkItem.vue)
 .btn-homework-acco{
     float: right;
 }
@@ -4620,7 +4649,8 @@ figure.image > img{
     padding:0;
     border-top: none;
 }
-/* global >> scoped (StudentHealthCheck.vue)
+/* 시도교육청 학생건강 자가진단(미사용)
+global >> scoped (StudentHealthCheck.vue)
 .self-health-list{
     max-height: 320px;
     min-height: 70px;
@@ -4668,7 +4698,8 @@ button.btn-homework-send{
     line-height: 30px!important;
    background: #3867c6;
 }
-/* global >> scoped (MainBodyClazzesBodyHomeworkStatusMember.vue)
+/* 과제 상세 팝업 내 과제 제출 리스트
+global >> scoped (MainBodyClazzesBodyHomeworkStatusMember.vue)
 span.txt-homework-notsend{
     top: 12px;
     display: block;
@@ -4716,7 +4747,8 @@ button.btn-download:before {
     vertical-align: top;
     border: 1px solid #dedede;
 }
-/* global >> scoped (MainBodyClazzesBodyHomeworkStatus.vue)
+/* 과제 상세 팝업 내 과제 제출 리스트
+global >> scoped (MainBodyClazzesBodyHomeworkStatus.vue)
 /* .txt-homework-box{
     position:relative;
     border-top: 1px solid #efefef;
@@ -5478,7 +5510,8 @@ button.btn-attach.dis:hover{
     opacity: 0.3;
     border:1px solid #829cd3;
 }
-/* global >> scoped (HealthCheckFreeSms.vue)
+/*  학생 건강상태 자가진단 무료문자 전송( 미사용 (컴포넌트 등록은 되어있으나 v-if 플래그값 변경하는 로직이 없음)) 
+global >> scoped (HealthCheckFreeSms.vue)
 .hp-box{
     height: 216px;
     margin: 16px 0;
@@ -5900,7 +5933,8 @@ button.btn-attach.dis:hover{
     border: 0;
 }
 
-/* global >> scoped (Message.vue)*/
+/* 메세지 모달(공통)
+global >> scoped (Message.vue)*/
 /* .modal.common-alert-modal .modal-cont-wrap {padding: 0;}
 .modal.common-alert-modal .modal-cont-wrap .boundary-box {width: 400px;padding: 50px 0 40px;}
 .modal.common-alert-modal .modal-close-icon {position:absolute;top: 16px;right:16px;background-image:url('../img/icon_modal_close_24.png');}

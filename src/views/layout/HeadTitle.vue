@@ -38,7 +38,7 @@ export default {
         색상은 계층 구조를 표현하고, 브랜드 정체성을 확립하고, 요소의 의미,  상태를 나타내는 데 도움이 됩니다.`,
         },
         {
-          title: "Checks & Radios & Swiches",
+          title: "Check & Radio & Switch",
           description: `Colors help to represent hierarchy, establish brand identity, and convey meaning and status of elements.<br>
         색상은 계층 구조를 표현하고, 브랜드 정체성을 확립하고, 요소의 의미,  상태를 나타내는 데 도움이 됩니다.`,
         },

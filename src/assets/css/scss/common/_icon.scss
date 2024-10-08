@@ -1,152 +1,152 @@
-@mixin iconName($name: icoClip) {
-  &.ico-#{$name}::after {
-    -webkit-mask-image: url("../../img/svg/ico-#{$name}.svg");
-    mask-image: url("../../img/svg/ico-#{$name}.svg");
-  }
+@mixin iconName($name) {
+	&.ico-#{$name}::after {
+		-webkit-mask-image: url("../../img/svg/ico-#{$name}.svg");
+		mask-image: url("../../img/svg/ico-#{$name}.svg");
+	}
 }
-@mixin iconColor($color: primary) {
-  &.ico-bg-#{"#{$color}"},
-  &.ico-#{"#{$color}"}::after {
-    background-color: map-get($colors, $color);
-  }
-  &.ico-line-#{"#{$color}"} {
-    border-color: map-get($colors, $color);
-    &::after {
-      background-color: map-get($colors, $color);
-    }
-  }
+@mixin iconColor($color-name, $color-value) {
+	&.ico-bg-#{$color-name},
+	&.ico-#{$color-name}::after {
+		background-color:#{$color-value};
+	}
+	&.ico-line-#{$color-name} {
+		border-color: $color-value;
+		&::after {
+			background-color: $color-value;
+		}
+	}
 }
 /* Icon Style */
 .hi-ico {
-  display: inline-flex;
-  width: 24px;
-  height: 24px;
-  border: 2px solid transparent;
-  padding: 3px;
-  box-sizing: content-box;
-  &::after {
-    display: inline-block;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: $black;
-    -webkit-mask-image: url("../../img/svg/ico-none.svg");
-    mask-image: url("../../img/svg/ico-none.svg");
+	display: inline-flex;
+	width: 24px;
+	height: 24px;
+	border: 2px solid transparent;
+	padding: 3px;
+	box-sizing: content-box;
+	&::after {
+		display: inline-block;
+		content: "";
+		width: 100%;
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-color: $black;
+		-webkit-mask-image: url("../../img/svg/ico-none.svg");
+		mask-image: url("../../img/svg/ico-none.svg");
 
-    /* 아이콘 색상 설정 */
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-  }
+		/* 아이콘 색상 설정 */
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		mask-position: center;
+		-webkit-mask-size: contain;
+		mask-size: contain;
+	}
 
-  /* 아이콘 색상 */
-  @include iconColor($color: default);
-  @include iconColor($color: primary);
-  @include iconColor($color: secondary);
-  @include iconColor($color: success);
-  @include iconColor($color: info);
-  @include iconColor($color: warning);
-  @include iconColor($color: purple);
-  @include iconColor($color: yellow);
-  @include iconColor($color: jungle);
-  @include iconColor($color: orange);
-  @include iconColor($color: black);
-  @include iconColor($color: white);
-  @include iconColor($color: disabled);
+	/* 아이콘 색상 */
+	@include iconColor(default, $default);
+	@include iconColor(primary, $primary);
+	@include iconColor(secondary, $secondary);
+	@include iconColor(success, $success);
+	@include iconColor(info, $info);
+	@include iconColor(warning, $warning);
+	@include iconColor(purple, $purple);
+	@include iconColor(yellow, $yellow);
+	@include iconColor(jungle, $jungle);
+	@include iconColor(orange, $orange);
+	@include iconColor(black, $black);
+	@include iconColor(white, $white);
+	@include iconColor(disabled, $disabled);
 
-  // 아이콘 사이즈
-  &.ico-size-18 {
-    width: 18px;
-    height: 18px;
-  }
-  &.ico-size-20 {
-    width: 20px;
-    height: 20px;
-  }
-  &.ico-size-24 {
-    width: 24px;
-    height: 24px;
-  }
-  &.ico-size-28 {
-    width: 28px;
-    height: 28px;
-  }
-  &.ico-size-32 {
-    width: 32px;
-    height: 32px;
-  }
-  &.ico-size-36 {
-    width: 36px;
-    height: 36px;
-    padding: 5px;
-  }
-  &.ico-size-50 {
-    width: 50px;
-    height: 50px;
-    border-width: 3px;
-    padding: 10px;
-  }
-  &.ico-size-100 {
-    width: 100px;
-    height: 100px;
-    border-width: 5px;
-    padding: 15px;
-  }
+	// 아이콘 사이즈
+	&.ico-size-18 {
+		width: 18px;
+		height: 18px;
+	}
+	&.ico-size-20 {
+		width: 20px;
+		height: 20px;
+	}
+	&.ico-size-24 {
+		width: 24px;
+		height: 24px;
+	}
+	&.ico-size-28 {
+		width: 28px;
+		height: 28px;
+	}
+	&.ico-size-32 {
+		width: 32px;
+		height: 32px;
+	}
+	&.ico-size-36 {
+		width: 36px;
+		height: 36px;
+		padding: 5px;
+	}
+	&.ico-size-50 {
+		width: 50px;
+		height: 50px;
+		border-width: 3px;
+		padding: 10px;
+	}
+	&.ico-size-100 {
+		width: 100px;
+		height: 100px;
+		border-width: 5px;
+		padding: 15px;
+	}
 
-  &.ico-rounded {
-    border-radius: 100px;
-  }
+	&.ico-rounded {
+		border-radius: 100px;
+	}
 
-  &.ico-bitrounded {
-    border-radius: 4px;
-  }
+	&.ico-bitrounded {
+		border-radius: 4px;
+	}
 
-  //아이콘 이름
-  @include iconName($name: none);
-  @include iconName($name: listmove);
-  @include iconName($name: plus);
-  @include iconName($name: chart);
-  @include iconName($name: close-circle-fill);
-  @include iconName($name: speech-bubble);
-  @include iconName($name: volume);
-  @include iconName($name: sort-up);
-  @include iconName($name: sort-down);
-  @include iconName($name: printer);
-  @include iconName($name: pointlist);
-  @include iconName($name: file-upload);
-  @include iconName($name: file-down);
-  @include iconName($name: time-fill);
-  @include iconName($name: time);
-  @include iconName($name: refresh);
-  @include iconName($name: refresh2);
-  @include iconName($name: expand);
-  @include iconName($name: shrink);
-  @include iconName($name: drawnup);
-  @include iconName($name: close);
-  @include iconName($name: close2);
-  @include iconName($name: close3);
+	//아이콘 이름
+	@include iconName(none);
+	@include iconName(listmove);
+	@include iconName(plus);
+	@include iconName(chart);
+	@include iconName(close-circle-fill);
+	@include iconName(speech-bubble);
+	@include iconName(volume);
+	@include iconName(sort-up);
+	@include iconName(sort-down);
+	@include iconName(printer);
+	@include iconName(pointlist);
+	@include iconName(file-upload);
+	@include iconName(file-down);
+	@include iconName(time-fill);
+	@include iconName(time);
+	@include iconName(refresh);
+	@include iconName(refresh2);
+	@include iconName(expand);
+	@include iconName(shrink);
+	@include iconName(drawnup);
+	@include iconName(close);
+	@include iconName(close2);
+	@include iconName(close3);
 }
 i.ico-listmove {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: url("../../img/icon/ico_listmove.svg");
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url("../../img/icon/ico_listmove.svg");
 }
 i.close-btn01 {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: url("../../img/icon/icon_mnclose_24.svg");
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url("../../img/icon/icon_mnclose_24.svg");
 }
 .icon-unlock-fill {
-  display: inline-block;
-  background: url(../../img/icon/ic_unlock_fill_20.svg);
-  width: 20px;
-  height: 20px;
+	display: inline-block;
+	background: url("../../img/icon/ic_unlock_fill_20.svg");
+	width: 20px;
+	height: 20px;
 }

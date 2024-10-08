@@ -31,7 +31,7 @@
 .page-join-class .join-class-cont-wrap .search-result-list-wrap ul li .school-class-name-wrap .school-class-name span,
 .window-popup-container .title-wrap .title,
 .note-edit-wrap .title-top-wrap .center-wrap .date-cont-wrap .date-wrap .date {
-    font-family: "NanumSquare", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "segoe ui emoji", sans-serif;
+	font-family: var(--font-tit);
 }
 
 
@@ -71,7 +71,8 @@
 /* * * * * 
     BUTTON  >> scss로 취합
 * * * * */
-/* [role="button"] {cursor: pointer;}
+/* 
+[role="button"] {cursor: pointer;}
 .l-page-sub button[disabled],
 .l-page-homework button[disabled] { cursor: default; }
 
@@ -184,10 +185,12 @@
 }
 .hi-btn.btn-download.btn-line::before { background-image: url("../img/icon/icon_download_blue.svg"); }
 .hi-btn.btn-download.btn-line-lgray::before { background-image: url("../img/icon/icon_download_gray.svg"); }
-.hi-btn.btn-download[disabled]::before { background-image: url("../img/icon/icon_download_white.svg") !important; } */
+.hi-btn.btn-download[disabled]::before { background-image: url("../img/icon/icon_download_white.svg") !important; } 
+*/
 
 /* 하이톡 공유 버튼 */
-/* .hi-hitalkshare .btn-hitalkshare {
+/* 
+.hi-hitalkshare .btn-hitalkshare {
     width: 24px;
     height: 24px;
     background: #fff url("../img/icon/icon_hitalkshare.svg") center center / 24px 24px no-repeat;
@@ -216,12 +219,14 @@
     left: calc(50% - 2px);
     border: 4px solid transparent;
     border-top: 4px solid rgba(61,70,85,.85);
-} */
+} 
+*/
 
 
 /* * * * * 
-    SWITCH
+    SWITCH scss로 취합
 * * * * */
+/* 
 .hi-switch { display: inline-block; }
 .hi-switch input[type=checkbox] + label::before { display: none; }
 .hi-switch .track {
@@ -247,12 +252,14 @@
 }
 .hi-switch input[type=checkbox]:checked + label .track { border-color: #4267b2; }
 .hi-switch input[type=checkbox]:checked + label .track::before { left: 24px;background-color: #4778de; }
+*/
 
 
 /* * * * * 
-    CHECKBOX
+    CHECKBOX scss로 취합
 * * * * */
 /* checkbox */
+/* 
 input[type=checkbox] {
     position: fixed;
     left: -999em;
@@ -293,8 +300,10 @@ input[type=checkbox]:checked + label::before { background-position: left bottom;
 input[type=checkbox]:checked + label:hover::before { background-position: center bottom; }
 input[type=checkbox].dis:checked + label::before,
 input[type=checkbox]:disabled:checked + label::before { background-position: right bottom; }
+*/
 
 /* radio */
+/*
 input[type=radio] {
     position: fixed;
     left: -999em;
@@ -335,6 +344,7 @@ input[type=radio]:checked + label::before { background-position: left bottom; }
 input[type=radio]:checked + label:hover::before { background-position: center bottom; }
 input[type=radio].dis:checked + label::before,
 input[type=radio]:disabled:checked + label::before { background-position: right bottom; }
+*/
 
 i.attach-file-image {
     display: inline-block;
@@ -409,7 +419,8 @@ i.camera_transparent, span.camera_transparent {
 /* * * * *
     SELECTBOX  >> scss로 취합
 * * * * */
-/* .hi-selectbox ::-webkit-scrollbar {
+/* 
+.hi-selectbox ::-webkit-scrollbar {
     background-color: transparent;
     width: 8px;
 }
@@ -497,13 +508,15 @@ i.camera_transparent, span.camera_transparent {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
     margin-top: -2px;
-} */
+}
+*/
 
 
 /* * * * * 
     TOOLTIP  >> scss로 취합
 * * * * */
-/* .hi-tooltip {
+/* 
+.hi-tooltip {
     display: none;
     z-index: 1000;
     position: absolute;
@@ -527,13 +540,15 @@ i.camera_transparent, span.camera_transparent {
     border: 5px solid transparent;
     border-top: 0;
     border-bottom: 5px solid #3d4655;
-} */
+} 
+*/
 
 
 /* * * * * 
     NO DATA  >> scss로 취합
 * * * * */
-/* .hi-nodata { padding: 170px 0; }
+/* 
+.hi-nodata { padding: 170px 0; }
 .hi-nodata::before {
     content: "!";
     display: block;
@@ -554,13 +569,15 @@ i.camera_transparent, span.camera_transparent {
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
-} */
+} 
+*/
 
 
 /* * * * * 
     TABLE  >> scss로 취합
 * * * * */
-/* .hi-tbl-col {
+/* 
+.hi-tbl-col {
     width: 100%;
     border-top: 2px solid #616161;
     border-bottom: 1px solid #d6d6d6;
@@ -587,13 +604,15 @@ i.camera_transparent, span.camera_transparent {
     display: block;
     line-height: 1.5;
 }
-.hi-tbl-col td span[role="button"]:hover { text-decoration: underline; } */
+.hi-tbl-col td span[role="button"]:hover { text-decoration: underline; }
+*/
 
 
 /* * * * * 
     TAB >> scss로 취합
 * * * * */
-/* .hi-tab {
+/* 
+.hi-tab {
     font-size: 0;
     border-top: 1px solid #222;
     border-bottom: 1px solid #e0e0e0;
@@ -624,7 +643,8 @@ i.camera_transparent, span.camera_transparent {
     border-radius: 50%;
     vertical-align: top;
     margin: -2px 0 0 2px;
-} */
+} 
+*/
 
 /* * * * * 
     upload attachment
@@ -669,7 +689,8 @@ i.camera_transparent, span.camera_transparent {
     height: 0;
     left: -9999px;
     z-index: -1;
-} */
+}
+*/
 
 
 /* * * * * 
@@ -762,6 +783,20 @@ i.camera_transparent, span.camera_transparent {
     font-size: 12px;
     font-weight: 400;
     line-height: 1.5;
+}
+.hi-comment .comment__con.secret {
+    position: relative;
+    padding-left:20px;
+}
+.hi-comment .comment__con.secret::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url("../img/icon/icons_comment.png") 0 -20px/100px auto no-repeat;
 }
 .hi-comment .text { margin-top: 8px; }
 .hi-comment .text.secret {
@@ -1065,12 +1100,11 @@ i.camera_transparent, span.camera_transparent {
 }
 .hi-comment .btn-file span.file {
     position: relative;
-    display: block;
+    display: inline-block;  
     max-width: 100%;
     background-color: #f3f4f8;
     border-radius: 35px;
-    padding: 0 35px;
-    padding-right: 16px;
+    padding: 0 30px 0 35px;  
 }
 .hi-comment .btn-file span.file:not(:last-child) {
     margin-bottom: 8px;
@@ -1233,7 +1267,7 @@ i.camera_transparent, span.camera_transparent {
 .hi-comment .comment__editor .attachment .btn-file .btn-delete {
     position: absolute;
     top: 8px;
-    right: 14px;
+    right: 10px; 
 }
 .hi-comment .comment__editor .attachment .emoticon { 
     position: relative;
@@ -1247,10 +1281,10 @@ i.camera_transparent, span.camera_transparent {
     width: 100%;
     height: 100%;
     object-fit: cover;
- }
- .hi-comment .comment__editor .attachment .photo {
+}
+.hi-comment .comment__editor .attachment .photo {
     width: 348px;
- }
+}
 .hi-comment .comment__editor .attachment .video span.thumb,
 .hi-comment .comment__editor .attachment .photo span.img {  
     display: inline-block;
@@ -1513,7 +1547,8 @@ i.camera_transparent, span.camera_transparent {
     right: -400px;
     top: 30px;
     bottom: auto;
-}  */
+}  
+*/
 
 /* kebab menu */
 .hi-kebabmenu { position: absolute; }
@@ -2020,7 +2055,8 @@ i.camera_transparent, span.camera_transparent {
     border-radius: 38px;
     padding: 0 16px;
     margin-bottom: 8px;
-} */
+} 
+*/
 
 /* 페이지 이동 안내 */
 .m-movepage__content {
@@ -2068,7 +2104,8 @@ i.camera_transparent, span.camera_transparent {
 /* * * * * 
     MODAL  >> scss 취합
 * * * * */
-/* .hi-modal-common {
+/* 
+.hi-modal-common {
     display:none;
     z-index: 9999;
     position: fixed;
@@ -2340,10 +2377,12 @@ i.camera_transparent, span.camera_transparent {
         top: 50%;
         transform: translateY(-50%);
     }
-} */
+}
+*/
 
 /* modal : common message modal */
-/* .modal-message .modal__header { padding-top: 40px; }
+/* 
+.modal-message .modal__header { padding-top: 40px; }
 .modal-message .modal__layer { width: 444px; }
 .modal-message .modal__content { padding: 16px 24px 24px; }
 .modal-message .checkbox label { margin: 0 15px; }
@@ -2362,7 +2401,8 @@ i.camera_transparent, span.camera_transparent {
 .modal-message .text-em + .text-refer { margin-top: 4px; }
 .modal-message .text-refer + .checkbox { margin-top: 16px; }
 .modal-message .modal__footer { padding: 0 24px 30px; }
-.modal-message .modal__footer .hi-btn { width: 150px;margin: 0 4px; } */
+.modal-message .modal__footer .hi-btn { width: 150px;margin: 0 4px; } 
+*/
 
 /* modal : 클래스 > 리마인드 푸시 : s */
 .modal-remind-push .modal__layer { width: 800px; }
@@ -2989,7 +3029,8 @@ i.camera_transparent, span.camera_transparent {
 /* modal : 설문 > 동영상 등록하기 */
 /* 미사용 클래스 
 .modal-upload-video .modal__layer { width: 520px; }
-.modal-upload-video .modal__layer .btn-md { width: 180px;margin-top: 24px; } */
+.modal-upload-video .modal__layer .btn-md { width: 180px;margin-top: 24px; } 
+*/
 
 /* modal : 설문 > 이미지 등록하기 */
 /* 미사용 클래스 
@@ -3614,7 +3655,7 @@ i.camera_transparent, span.camera_transparent {
 
 /* 나의 클래스/학교 순서 변경 */
 /* global >> scoped (ClassSort.vue)
-    .order-modal-classSchool {
+.order-modal-classSchool {
     width: 835px;
     height: 637px;
     background: #FFF;
@@ -3833,7 +3874,8 @@ i.camera_transparent, span.camera_transparent {
     display: flex;
     justify-content: center;
     align-items: center;
-} */
+} 
+*/
 
 /* 멀티프로필 */
 /* global >> scoped (ProfileSettingModal.vue / ProfileAddModal.vue) 
@@ -4155,10 +4197,12 @@ i.camera_transparent, span.camera_transparent {
     right: 20px;
     background: url(../img/icon/icon_modal_close.svg) no-repeat;
     cursor: pointer;
-} */
+} 
+*/
 /* 멀티프로필 */
 
 /* vue draggable */
+.draggable-area{user-select: none;}
 .class-sort__list .flip-list-move,
 .school-sort__list .flip-list-move { transition: transform 0.5s; }
 .class-sort__list .no-move,

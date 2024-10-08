@@ -30,28 +30,16 @@ const router = new Router({
           path: 'icon',
           name : 'Icon',
           component : () => import('../views/page/foundation/Icon.vue'),
-        // },{
-        //   path: 'grid',
-        //   name : 'Grid',
-        //   component : () => import('../views/page/foundation/Grid.vue'),
-        // },{
-        //   path: 'breakpoints', 
-        //   name: 'Breakpoints',
-        //   component : () => import('../views/page/foundation/Breakpoints.vue'),
         }
       ]
     },{
       path: '/form',
       name : 'Forms',
       component : () => import('../views/page/form/Forms.vue'),
-      children:[          
+      children:[        
         {
-          path: 'form',
-          name : 'Form',
-          component : () => import('../views/page/form/Form.vue'),
-        },{
           path: 'checks',
-          name : 'Checks & Radios & Swiches',
+          name : 'Check & Radio & Switch',
           component : () => import('../views/page/form/Checks.vue'),
         },{
           path: 'selectbox',
@@ -73,10 +61,6 @@ const router = new Router({
           name: 'Modal',
           component:  () => import('../views/page/components/Modal.vue'),
         },{
-        //   path: 'dropdown', 
-        //   name: 'Dropdown',
-        //   component:  () => import('../views/page/components/Dropdown.vue'),
-        // },{
           path: 'collapse', 
           name: 'Collapse',
           component:() => import('../views/page/components/Collapse.vue'),

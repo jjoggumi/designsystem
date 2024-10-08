@@ -8,6 +8,7 @@
           'is-active': tab.isActive,
           'is-new': tab.isNew,
          }"
+         :style="'min-width:' + minWidth + 'px'"
         @click="selectTab(tab)"
       >
       <i :class="`hi-ico ` + tab.ico" v-if="tab.ico"></i>
@@ -28,6 +29,7 @@ export default {
     type: { type: String, default: null },
     size: { type: String, default: null },
     align: { type: String, default: null },
+    minWidth: { type: String, default: 'auto' },
   },
   data() {
     return {
@@ -40,6 +42,12 @@ export default {
       if (this.tabs.length === 1 || tab.isActive) {
         this.selectTab(tab);
       }
+    },
+    selectTab(selectedTab) {
+      console.log(this.tabs)
+      this.tabs.forEach((tab) => {
+        tab.isActive = tab === selectedTab;
+      });
     },
   },
   computed: {
