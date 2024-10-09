@@ -4,13 +4,13 @@
       <h2>Icon Variant</h2>
       <ul class="options">
         <li v-for="name in propsOpt.name" :key="name.value" @click="changeName(name.value)">
-          <HiIcon :name="name.value" size="24"  />
+          <HiIcon :name="name.value" size="24" />
           <span>{{ name.title }}</span>
         </li>
       </ul>
     </section>
     <section>
-      <h2>Icon Style</h2>
+      <h2>Icon Type</h2>
       <ul class="options">
         <li>
           <HiIcon :name="propsName" color="primary" size="24" />
@@ -81,14 +81,27 @@
           :class="[
             'hi-ico',
             propsVal.name ? propsVal.name : '',
-            propsVal.color ? (propsVal.outline === true ? 'ico-line-' + propsVal.color : 'ico-' + propsVal.color) : propsVal.outline === true ? 'ico-line-primary' : '',
+            propsVal.color
+              ? propsVal.outline === true
+                ? 'ico-line-' + propsVal.color
+                : 'ico-' + propsVal.color
+              : propsVal.outline === true
+              ? 'ico-line-primary'
+              : '',
             propsVal.bgColor ? 'ico-bg-' + propsVal.bgColor : '',
             propsVal.size ? 'ico-size-' + propsVal.size : '',
             propsVal.rounded ? 'ico-' + propsVal.rounded : '',
           ]"
         >
         </i>
-        <HiIcon :name="propsVal.name" :color="propsVal.color" :bgColor="propsVal.bgColor" :outline="propsVal.outline" :size="propsVal.size" :rounded="propsVal.rounded" />
+        <HiIcon
+          :name="propsVal.name"
+          :color="propsVal.color"
+          :bgColor="propsVal.bgColor"
+          :outline="propsVal.outline"
+          :size="propsVal.size"
+          :rounded="propsVal.rounded"
+        />
       </div>
       <ul class="propArea">
         <li>
@@ -126,43 +139,43 @@
 </template>
 
 <script>
-import HiIcon from "@/components/HiIcon.vue";
-import HiSelectBox from "@/components/HiSelectBox.vue";
-import HiSwitch from "@/components/HiSwitch.vue";
+import HiIcon from '@/components/HiIcon.vue';
+import HiSelectBox from '@/components/HiSelectBox.vue';
+import HiSwitch from '@/components/HiSwitch.vue';
 import designsysData from '@/assets/js/designsysData.js';
 
 export default {
-  name: "FoundationIcon",
+  name: 'FoundationIcon',
   components: { HiIcon, HiSelectBox, HiSwitch },
   data() {
     return {
-      propsName: "ico-none",
+      propsName: 'ico-none',
       propsVal: {
-        name: "ico-none",
-        color: "primary",
-        bgColor: "",
+        name: 'ico-none',
+        color: 'primary',
+        bgColor: '',
         outline: false,
-        size: "24",
-        rounded: "",
+        size: '24',
+        rounded: '',
       },
       propsOpt: {
         name: designsysData.icon,
         color: designsysData.iconColor,
         bgColor: designsysData.iconColor,
         rounded: [
-          { value: "", title: "none" },
-          { value: "rounded", title: "rounded" },
-          { value: "bitrounded", title: "bitrounded" },
+          { value: '', title: 'none' },
+          { value: 'rounded', title: 'rounded' },
+          { value: 'bitrounded', title: 'bitrounded' },
         ],
         size: [
-          { value: "18", title: "18" },
-          { value: "20", title: "20" },
-          { value: "24", title: "24" },
-          { value: "28", title: "28" },
-          { value: "32", title: "32" },
-          { value: "36", title: "36" },
-          { value: "50", title: "50" },
-          { value: "100", title: "100" },
+          { value: '18', title: '18' },
+          { value: '20', title: '20' },
+          { value: '24', title: '24' },
+          { value: '28', title: '28' },
+          { value: '32', title: '32' },
+          { value: '36', title: '36' },
+          { value: '50', title: '50' },
+          { value: '100', title: '100' },
         ],
       },
     };
@@ -176,27 +189,33 @@ export default {
     generatedCode() {
       // Generate class list for the button element
       const classes = [
-        "hi-ico",
-        this.propsVal.name ? this.propsVal.name : "",
-        this.propsVal.color ? (this.propsVal.outline === true ? "ico-line-" + this.propsVal.color : "ico-" + this.propsVal.color) : this.propsVal.outline === true ? "ico-line-primary" : "",
-        this.propsVal.bgColor ? "ico-bg-" + this.propsVal.bgColor : "",
-        this.propsVal.size ? "ico-size-" + this.propsVal.size : "",
-        this.propsVal.rounded ? "ico-" + this.propsVal.rounded : "",
+        'hi-ico',
+        this.propsVal.name ? this.propsVal.name : '',
+        this.propsVal.color
+          ? this.propsVal.outline === true
+            ? 'ico-line-' + this.propsVal.color
+            : 'ico-' + this.propsVal.color
+          : this.propsVal.outline === true
+          ? 'ico-line-primary'
+          : '',
+        this.propsVal.bgColor ? 'ico-bg-' + this.propsVal.bgColor : '',
+        this.propsVal.size ? 'ico-size-' + this.propsVal.size : '',
+        this.propsVal.rounded ? 'ico-' + this.propsVal.rounded : '',
       ]
         .filter(Boolean)
-        .join(" ");
+        .join(' ');
 
       // Generate HiButton component attributes
       const hiButtonAttrs = [
-        this.propsVal.name ? `name="${this.propsVal.name}"` : "",
-        this.propsVal.color ? `color="${this.propsVal.color}"` : "",
-        this.propsVal.bgColor ? `bgColor="${this.propsVal.bgColor}"` : "",
-        this.propsVal.size ? `size="${this.propsVal.size}"` : "",
-        this.propsVal.rounded ? `rounded="${this.propsVal.rounded}"` : "",
-        this.propsVal.outline ? "outline" : "",
+        this.propsVal.name ? `name="${this.propsVal.name}"` : '',
+        this.propsVal.color ? `color="${this.propsVal.color}"` : '',
+        this.propsVal.bgColor ? `bgColor="${this.propsVal.bgColor}"` : '',
+        this.propsVal.size ? `size="${this.propsVal.size}"` : '',
+        this.propsVal.rounded ? `rounded="${this.propsVal.rounded}"` : '',
+        this.propsVal.outline ? 'outline' : '',
       ]
         .filter(Boolean)
-        .join(" ");
+        .join(' ');
 
       // Generate HTML code for the button and HiButton component
       return `

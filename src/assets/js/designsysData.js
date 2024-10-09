@@ -54,11 +54,11 @@ export default {
     { value: "", title: "none" },
   ],
   size: [
-    { value: "", title: "none" },
-    { value: "xl", title: "xl" },
-    { value: "lg", title: "lg" },
-    { value: "md", title: "md" },
-    { value: "sm", title: "sm" },
+    { value: "default", title: "default" },
     { value: "xs", title: "xs" },
+    { value: "sm", title: "sm" },
+    { value: "md", title: "md" },
+    { value: "lg", title: "lg" },
+    { value: "xl", title: "xl" },
   ],
 }
