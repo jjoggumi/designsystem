@@ -111,6 +111,7 @@
 	@include iconName(none);
 	@include iconName(listmove);
 	@include iconName(plus);
+	@include iconName(minus);
 	@include iconName(chart);
 	@include iconName(close-circle-fill);
 	@include iconName(speech-bubble);
@@ -131,6 +132,7 @@
 	@include iconName(close);
 	@include iconName(close2);
 	@include iconName(close3);
+	@include iconName(delete);
 }
 i.ico-listmove {
 	display: inline-block;

@@ -106,6 +106,7 @@
         <button type="button" class="hi-btn btn-primary btn-block">width 100%</button> -->
       </div>
     </section>
+
     <div class="ctrArea">
       <div class="elArea">
         <button
@@ -172,7 +173,7 @@
 import HiButton from "@/components/HiButton.vue";
 import HiSelectBox from "@/components/HiSelectBox.vue";
 import HiSwitch from "@/components/HiSwitch.vue";
-import designsysData from '@/assets/js/designsysData.js';
+import designsysData from "@/assets/js/designsysData.js";
 
 export default {
   name: "ComponentsHiButton",

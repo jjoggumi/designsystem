@@ -2,6 +2,7 @@ export default {
   icon: [
     { value: "ico-none", title: "none" },
     { value: "ico-plus", title: "plus" },
+    { value: "ico-minus", title: "minus" },
     { value: "ico-chart", title: "chart" },
     { value: "ico-close-circle-fill", title: "close-circle-fill" },
     { value: "ico-speech-bubble", title: "speech-bubble" },
@@ -22,6 +23,7 @@ export default {
     { value: "ico-close", title: "close" },
     { value: "ico-close2", title: "close2" },
     { value: "ico-close3", title: "close3" },
+    { value: "ico-delete", title: "delete" },
   ],
   iconColor: [
     { value: "default", title: "default" },

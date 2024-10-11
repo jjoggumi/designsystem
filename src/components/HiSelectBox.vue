@@ -8,25 +8,29 @@
     }"
   >
     <button class="selected" :disabled="disabled" @click="toggleSelectBox">
-      <slot name="selected" :value="value">
-        {{ getValueTitle(value) }}
-      </slot>
+      <slot name="selected" :value="value"></slot>
+      {{ getValueTitle(value) }}
     </button>
 
     <div v-if="isOpen" class="option__layer" style="display: block">
-      <button
-        v-for="item of dividedItems"
-        :key="item.value"
-        :ref="`hi-select-box-${item.value}`"
-        class="option"
-        :class="{
-          'is-selected': item.value === value,
-        }"
-        @click="selectItem(item)"
-      >
-        <slot name="list" :item="item"></slot>
-        {{ item.title }}
-      </button>
+      <template v-if="$scopedSlots['custom-option']">
+        <slot name="custom-option" :items="dividedItems" :value="value" :select-item="selectItem"></slot>
+      </template>
+      <template v-else>
+        <button
+          v-for="item of dividedItems"
+          :key="item.value"
+          :ref="`hi-select-box-${item.value}`"
+          class="option"
+          :class="{
+            'is-selected': item.value === value,
+          }"
+          @click="selectItem(item)"
+        >
+          <slot name="list" :item="item"></slot>
+          {{ item.title }}
+        </button>
+      </template>
     </div>
   </div>
 </template>
@@ -36,10 +40,10 @@ export default {
   name: "hi-select-box",
   props: {
     value: {
-      type: [String, Number],
+      type: [String, Number, Array],
     },
     defaultValue: {
-      type: [String, Number],
+      type: [String, Number, Array],
     },
     items: {
       type: Array,
@@ -68,9 +72,7 @@ export default {
   },
   computed: {
     dividedItems() {
-      return this.divide
-        ? this.items.filter((item) => parseInt(item.value, 10) % this.divide === 0)
-        : this.items;
+      return this.divide ? this.items.filter((item) => parseInt(item.value, 10) % this.divide === 0) : this.items;
     },
   },
   watch: {

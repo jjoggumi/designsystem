@@ -1,7 +1,7 @@
 <template>
   <article class="modalSys">
     <section>
-      <h2>Modal Type</h2>        
+      <h2>Modal Type</h2>
       <HiButton color="primary" @click="$set(modalType, 0, true)">Default</HiButton>
       <HiButton color="primary" @click="$set(modalType, 2, true)">Type01</HiButton>
       <HiButton color="secondary" @click="$set(modalType, 1, true)">Opt : 타이틀 구분선 추가</HiButton>
@@ -130,7 +130,7 @@
           <HiButton color="primary" size="lg" @click="$set(modalCon, 1, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-progressbar modal-flex" v-show="modalCon[2]" @close="$set(modalCon, 2, false)">
+      <HiModal addClassName="modal-message" v-show="modalCon[2]" @close="$set(modalCon, 2, false)">
         <template v-slot:heading>전체 파일을 선택 중입니다.<br />잠시만 기다려주세요.</template>
         <template v-slot:content>
           <div class="w100">
@@ -202,7 +202,7 @@ import HiModal from "@/components/HiModal.vue";
 import HiButton from "@/components/HiButton.vue";
 import HiSelectBox from "@/components/HiSelectBox.vue";
 import HiSwitch from "@/components/HiSwitch.vue";
-import HiIcon from '@/components/HiIcon.vue';
+import HiIcon from "@/components/HiIcon.vue";
 export default {
   name: "ComponentsModal",
   components: { HiModal, HiButton, HiSelectBox, HiSwitch, HiIcon },
@@ -230,16 +230,19 @@ export default {
         ],
       },
     };
-  },  
+  },
   computed: {
     generatedCode() {
       // Generate class list for the button element
-      const classes = ["btn", 
-      this.propsVal.type ? `${this.propsVal.type}` : "", 
-      this.propsVal.size ? `model-${this.propsVal.size}` : "",
-      this.propsVal.titleLine ? "title-line" : "",
-      this.propsVal.titleCloseSkip ? "title-close-skip" : "",
-      ].filter(Boolean).join(" ");
+      const classes = [
+        "btn",
+        this.propsVal.type ? `${this.propsVal.type}` : "",
+        this.propsVal.size ? `model-${this.propsVal.size}` : "",
+        this.propsVal.titleLine ? "title-line" : "",
+        this.propsVal.titleCloseSkip ? "title-close-skip" : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
       const btnarea = [
         this.propsVal.type === ""
           ? `&lt;div class="group-btn"&gt;
