@@ -13,8 +13,8 @@
 	// --primary-07: #6BA2FB;
 	
 	/* State Color */
-	--success:    #61D235;	// 확인, 성공, 긍정적 
-	--info:       #FF6A6A;     // 공지, 알럿, 정보, 긍정적 
+	--success:    #61D235;	 // 확인, 성공, 긍정적 
+	--info:       #FF6A6A;  // 공지, 알럿, 정보, 긍정적 
 	--warning:    #EC1F2D;  //경고, 오류, 부정적
 
 	/* Sub Color */
@@ -28,14 +28,14 @@
 	--gray-02:    #F6F6F6;   
 	--gray-03:    #F3F3F3;   // [bg] 구성항목 구분 배경
 	--gray-04:    #EEE;      // [bg] 인풋박스 비활성화 배경
-	--gray-05:    #E0E0E0;   
+	--gray-05:    #E0E0E0;   // [border] 셀렉박스, 텍스트박스 테두리
 	--gray-06:    #D6D6D6;   // [bg] 버튼, 아이콘, 비활성화 배경
 	--gray-07:    #BDBDBD;   // [text] 비활성화, 입력제한 텍스트
 	--gray-08:    #9E9E9E;   // [text] 설명 텍스트
 	--gray-09:    #616161;   // [text] 본문 하위 서브 텍스트
 	--gray-10:    #222;      // [text] 본문 텍스트
 
-	--black:      #000;        // [text] 타이틀 텍스트
+	--black:      #000;      // [text] 타이틀 텍스트
 	--white:      #fff;
 
 	/* font */
@@ -57,8 +57,8 @@ $primary-03:    #E9F3FF;  // [bg] 상단공지
 $primary-04:    #E1E9F9;  // [bg] 급식 상세 알레르기 정보
 
 /* State Color */
-$success:       #61D235;	// 확인, 성공, 긍정적 
-$info:          #FF6A6A;     // 공지, 알럿, 정보, 긍정적 
+$success:       #61D235;	 // 확인, 성공, 긍정적 
+$info:          #FF6A6A;  // 공지, 알럿, 정보, 긍정적 
 $warning:       #EC1F2D;  //경고, 오류, 부정적
 
 /* Sub Color */
@@ -72,14 +72,14 @@ $gray-01:       #FAFAFA;   // [bg] 전체 두번째 배경
 $gray-02:       #F6F6F6;   
 $gray-03:       #F3F3F3;   // [bg] 구성항목 구분 배경
 $gray-04:       #EEE;      // [bg] 인풋박스 비활성화 배경
-$gray-05:       #E0E0E0;   
+$gray-05:       #E0E0E0;   // [border] 셀렉박스, 텍스트박스 테두리
 $gray-06:       #D6D6D6;   // [bg] 버튼, 아이콘, 비활성화 배경
 $gray-07:       #BDBDBD;   // [text] 비활성화, 입력제한 텍스트
 $gray-08:       #9E9E9E;   // [text] 설명 텍스트
 $gray-09:       #616161;   // [text] 본문 하위 서브 텍스트
 $gray-10:       #222;      // [text] 본문 텍스트
 
-$black:         #000;        // [text] 타이틀 텍스트
+$black:         #000;      // [text] 타이틀 텍스트
 $white:         #fff;
 $transparent: transparent;
 $default:       $gray-09;
