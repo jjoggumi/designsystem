@@ -87,10 +87,10 @@
 </template>
 
 <script>
-import HiTabs from '@/components/HiTabs.vue';
-import HiTab from '@/components/HiTab.vue';
-import HiSelectBox from '@/components/HiSelectBox.vue';
-import HiSwitch from '@/components/HiSwitch.vue';
+import HiTabs from '@/components/Tab/HiTabs.vue';
+import HiTab from '@/components/Tab/HiTab.vue';
+import HiSelectBox from '@/components/Form/HiSelectBox.vue';
+import HiSwitch from '@/components/Form/HiSwitch.vue';
 import designsysData from '@/assets/js/designsysData.js';
 
 export default {

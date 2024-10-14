@@ -137,6 +137,14 @@ button {
 	&.btn-black {
 		@include btnStyle($gray-10, $focus: 60);
 	}
+	
+	&.btn-link {
+		@include btnStyle($transparent, $focus: 60, $font: #212529);
+		border-radius: 0;
+		padding: 0px;
+		line-height: normal;
+		font-weight: $font-nomal;
+	}
 
 	&.btn-line-default {
 		@include btnStyle(
@@ -597,4 +605,12 @@ button {
 .btn-bg-r.dis {
 	background: #dadde2;
 	opacity: 0.5;
+}
+
+// 기타 버튼
+.tit-btn{
+  font-size: 18px!important;
+  letter-spacing: -1px;
+  color:#3867c6;
+  text-decoration: underline;
 }

@@ -61,6 +61,14 @@
 	@include iconColor(disabled, $disabled);
 
 	// 아이콘 사이즈
+	&.ico-size-10 {
+		width: 10px;
+		height: 10px;
+	}
+	&.ico-size-14 {
+		width: 14px;
+		height: 14px;
+	}
 	&.ico-size-18 {
 		width: 18px;
 		height: 18px;
@@ -111,7 +119,11 @@
 	@include iconName(none);
 	@include iconName(listmove);
 	@include iconName(plus);
+	@include iconName(plus2);
+	@include iconName(plus3);
 	@include iconName(minus);
+	@include iconName(minus2);
+	@include iconName(minus3);
 	@include iconName(chart);
 	@include iconName(close-circle-fill);
 	@include iconName(speech-bubble);

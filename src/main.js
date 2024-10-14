@@ -7,7 +7,7 @@ import vClickOutside from "v-click-outside";
 //import Toasted from 'vue-toasted';
 // hiClass APIs
 import "@/plugins/hiClass.js";
-import "@/assets/css/reset.css"; // reset
+//import "@/assets/css/reset.css"; // reset
 import "@/assets/css/scss/common.scss"; // common scss
 //import "@/assets/css/common.css"; // common css
 //import "@/assets/css/hiclass.css"; // old css

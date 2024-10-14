@@ -77,8 +77,8 @@
 </template>
   
 <script>
-import HiSelectBox from "@/components/HiSelectBox.vue";
-import HiSwitch from "@/components/HiSwitch.vue";
+import HiSelectBox from "@/components/Form/HiSelectBox.vue";
+import HiSwitch from "@/components/Form/HiSwitch.vue";
 import HiDatePicker from '@/components/HiDatePicker.vue';
 import HiSearchBox from '@/components/HiSearchBox.vue';
 

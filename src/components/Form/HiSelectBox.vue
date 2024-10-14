@@ -3,16 +3,24 @@
     v-click-outside="closeSelectBox"
     class="hi-selectbox"
     :class="{
-      'is-opened': isOpen,
-      time: this.selectBoxType === 'time',
+       'is-opened': isOpen,
+       'time': this.selectBoxType === 'time'
     }"
   >
-    <button class="selected" :disabled="disabled" @click="toggleSelectBox">
+    <button
+      class="selected"
+      :disabled="disabled"
+      @click="toggleSelectBox"
+    >
       <slot name="selected" :value="value"></slot>
       {{ getValueTitle(value) }}
     </button>
 
-    <div v-if="isOpen" class="option__layer" style="display: block">
+    <div
+      v-if="isOpen"
+      class="option__layer"
+      style="display: block"
+    >
       <template v-if="$scopedSlots['custom-option']">
         <slot name="custom-option" :items="dividedItems" :value="value" :select-item="selectItem"></slot>
       </template>
@@ -23,16 +31,18 @@
           :ref="`hi-select-box-${item.value}`"
           class="option"
           :class="{
-            'is-selected': item.value === value,
+            'is-selected': item.value === value
           }"
           @click="selectItem(item)"
         >
           <slot name="list" :item="item"></slot>
           {{ item.title }}
-        </button>
+        </button>      
       </template>
     </div>
+
   </div>
+
 </template>
 
 <script>
@@ -46,72 +56,78 @@ export default {
       type: [String, Number, Array],
     },
     items: {
-      type: Array,
+      type: Array
     },
     divide: {
-      type: Number,
+      type: Number
     },
     /**
      * ex)
      * time: 시, 분
      */
     selectBoxType: {
-      type: String,
+      type: String
     },
     disabled: {
-      type: Boolean,
+      type: Boolean
     },
     emptyTitle: {
-      type: String,
-    },
+      type: String
+    }
   },
   data() {
     return {
-      isOpen: false,
-    };
+      isOpen: false
+    }
   },
   computed: {
     dividedItems() {
-      return this.divide ? this.items.filter((item) => parseInt(item.value, 10) % this.divide === 0) : this.items;
-    },
+      return this.divide
+        ? this.items.filter(item => parseInt(item.value, 10) % this.divide === 0)
+        : this.items
+    }
   },
   watch: {
     isOpen(val) {
       if (val) {
-        const ref = `hi-select-box-${this.value}`;
-        this.doFocus(ref);
+        const ref = `hi-select-box-${this.value}`
+        this.doFocus(ref)
       }
-    },
+    }
   },
   mounted() {
     if (!this.value && this.defaultValue) {
-      this.$emit("update:value", this.defaultValue);
+      this.$emit('update:value', this.defaultValue)
     }
   },
   methods: {
     closeSelectBox() {
-      this.isOpen = false;
+      this.isOpen = false
     },
     toggleSelectBox() {
-      this.isOpen = !this.isOpen;
+      this.isOpen = !this.isOpen
     },
     getValueTitle(val) {
-      const foundItem = this.dividedItems.find((item) => item.value === val);
-      return foundItem ? foundItem.title : this.emptyTitle || "?";
+      const foundItem = this.dividedItems.find(item => item.value === val)
+      return foundItem
+        ? foundItem.title
+        : (this.emptyTitle || '?')
     },
     selectItem(item) {
-      this.$emit("update:value", item.value);
-      this.closeSelectBox();
+      this.$emit('update:value', item.value)
+      this.closeSelectBox()
     },
     doFocus(ref) {
       this.$nextTick(() => {
         if (this.$refs[ref] && this.$refs[ref][0]) {
-          this.$refs[ref][0].focus();
+          this.$refs[ref][0].focus()
         }
-      });
-    },
-  },
-};
+      })
+    }
+  }
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

@@ -1,4 +1,4 @@
-<template>
+<template> 
   <article class="modalSys">
     <HiModal addClassName="send modal-message modal-lg" @close="$set(modalType, 0, false)">
       <template v-slot:heading
@@ -9,7 +9,6 @@
         <div class="hi-row">
           <div class="col-sm-6">
             <HiSelectBox
-              class="type01"
               :items="select.items"
               :value="select.selectedValue"
               :is-list-layout="true"
@@ -19,7 +18,7 @@
               :empty-title="select.selectedValue"
             >
               <template #custom-option="{ value, selectItem }">
-                <ul>
+                <ul class="list-type01">
                   <li v-for="item in select.items" :key="item.value">
                     <button type="button" class="option" :class="{ 'is-selected': item.value === value }" @click="selectItem(item)">
                       {{ item.title }}
@@ -51,7 +50,6 @@
               <span
                 >경기 시공초등학교 1학년 1반
                 <HiSelectBox
-                  class="type01"
                   :items="select.items"
                   :value="select.selectedValues"
                   :is-list-layout="true"
@@ -66,12 +64,18 @@
                         <p
                           class="board-name"
                           :class="{
-                            on: chkMoveObj.boardId === item.boardId,
+                            on: chkMoveObj.boardId.includes(item.boardId),
                           }"
                         >
                           <span class="title" v-if="item.folderCount > 0">{{ item.boardName }}</span>
                           <span class="title" v-else>
-                            <input type="radio" name="move-board-chk" :id="`chk-board-${item.boardId}`" :value="item" v-model="chkMoveObj" />
+                            <input
+                              type="checkbox"
+                              name="move-board-chk"
+                              :id="`chk-board-${item.boardId}`"
+                              :value="item.boardId"
+                              v-model="chkMoveObj.boardId"
+                            />
                             <label :for="`chk-board-${item.boardId}`">
                               <span class="chk-title">{{ item.boardName }}</span>
                             </label>
@@ -83,16 +87,16 @@
                             v-for="folderItem of item.folderList"
                             :key="`folder-list-${folderItem.folderId}`"
                             :class="{
-                              on: chkMoveObj.folderId === folderItem.folderId,
+                              on: chkMoveObj.folderId.includes(folderItem.folderId),
                             }"
                           >
                             <span class="check">
                               <input
-                                type="radio"
+                                type="checkbox"
                                 name="move-board-chk"
                                 :id="`chk-board-${folderItem.folderId}`"
-                                :value="folderItem"
-                                v-model="chkMoveObj"
+                                :value="folderItem.folderId"
+                                v-model="chkMoveObj.folderId"
                               />
                               <label :for="`chk-board-${folderItem.folderId}`">
                                 <span class="chk-title"><i :style="`background: ${folderItem.color};`"></i>{{ folderItem.folderName }}</span>
@@ -140,9 +144,10 @@ export default {
         ],
       },
 
-      chkMoveObj: {},
-      moveObj: {},
-
+      chkMoveObj: {
+        boardId: [], // 체크박스 선택된 항목을 저장하기 위한 배열
+        folderId: [], // 폴더 항목을 저장하기 위한 배열
+      },
       list: board.list,
     };
   },
@@ -189,6 +194,9 @@ export default {
   ::v-deep .modal__layer {
     height: 860px;
   }
+}
+.hi-selectbox {
+  width: 300px;
 }
 .export-list {
   border: 1px solid #eee;

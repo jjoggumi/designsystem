@@ -126,8 +126,8 @@
 </template>
   
 <script>
-import HiSelectBox from "@/components/HiSelectBox.vue";
-import HiIcon from "@/components/HiIcon.vue";
+import HiSelectBox from "@/components/Form/HiSelectBox.vue";
+import HiIcon from "@/components/Icon/HiIcon.vue";
 
 export default {
   name : 'FormSys',

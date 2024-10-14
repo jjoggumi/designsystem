@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import HiButton from "@/components/HiButton.vue";
+import HiButton from "@/components/Button/HiButton.vue";
 export default {
   components: { HiButton },
   name: "ComponentsAlerts",

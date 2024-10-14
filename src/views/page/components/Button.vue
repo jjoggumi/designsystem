@@ -19,6 +19,7 @@
     <section>
       <h2>Btn Color</h2>
       <div>
+        <HiButton color="link" size="md">link</HiButton>
         <HiButton color="default" size="md">default</HiButton>
         <HiButton color="primary" size="md" disabled>disabled</HiButton>
         <HiButton color="primary" size="md">primary</HiButton>
@@ -170,9 +171,9 @@
 </template>
 
 <script>
-import HiButton from "@/components/HiButton.vue";
-import HiSelectBox from "@/components/HiSelectBox.vue";
-import HiSwitch from "@/components/HiSwitch.vue";
+import HiButton from "@/components/Button/HiButton.vue";
+import HiSelectBox from "@/components/Form/HiSelectBox.vue";
+import HiSwitch from "@/components/Form/HiSwitch.vue";
 import designsysData from "@/assets/js/designsysData.js";
 
 export default {

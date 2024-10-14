@@ -1,5 +1,5 @@
 /* Typography */
-
+ 
 /* board List */
 .board-list {
 	width: 100%;
@@ -154,87 +154,70 @@
 	}
 }
 
-
-.list-type01{
-	width: 212px;
-	
-	button.selected {
-		border-radius: 6px;
-		border-color: #d6d6d6
-	}
-	
-	.selected:after {
-		right: 14px;
-		width: 8px;
-		height: 8px
-	}
-	
-	&.is-opened .selected {
-		border-color: #d6d6d6
-	}
-	
-	.option__layer {
-		top: 44px;
-		max-height: 302px;
-		-webkit-box-shadow: rgba(0,0,0,.12) 0 5px 10px;
-		box-shadow: 0 5px 10px rgba(0,0,0,.12);
-		border-radius: 6px;
-		border-color: #d6d6d6
-	}
-	
-	.option__layer ul {
+.option-list{
+	> ul {
 		overflow: auto;
-		max-height: 250px
-	}
-	
-	.option__layer li {
-		position: relative
-	}
-	
-	.option__layer button.option {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		padding: 14px 40px 13px 15px;
-		font-size: 15px;
-		height: 50px
-	}
-	
-	.option__layer li:first-child button.option {
-		border-top: 0
-	}
-	
-	.option__layer li button.del {
-		display: none;
-		position: absolute;
-		right: 10px;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		transform: translateY(-50%)
-	}
-	
-	.option__layer button.add {
-		display: -webkit-box;
-		display: -ms-flexbox;
+		max-height: 168px;
+		> li {
+			position: relative;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			padding: 10px 15px;		
+			
+			&.is-selected,
+			&:hover{ 
+				background-color: #f6f6f6;
+			}
+		}		
+	}		
+
+	&.type01{
+		> ul > li {
+			padding: 0;		
+			button{
+				&.item{
+					display: flex;
+					align-items: center;
+					height: 100%;
+					width: 100%;
+					padding: 10px 15px;
+					font-size: 15px;
+				}
+				&.prepend,
+				&.append{
+					display: none;
+					align-items: center;
+					justify-content: center;			
+					position: absolute;	
+					top: 0;
+					width: 50px;
+					height: 100%;
+				}
+				&.prepend{
+					left: 0;
+				}
+				&.append{
+					right: 0;
+				}
+			}
+			&.is-selected,
+			&:hover{ 
+				.prepend, .append{
+					display: flex
+				}
+			}
+		}		
+	}		
+	button.add {
 		display: flex;
 		padding: 13px 15px;
 		height: 50px;
 		font-size: 15px;
 		gap: 6px;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
 		width: 100%;
 		border-top: 1px solid #e0e0e0;
 		color: #ff8737
-	}
-	
-	.option__layer .option.is-selected,
-	.option__layer .option:hover {
-		background-color: #f6f6f6
-	}
-	
-	.option__layer li:hover button.del {
-		display: block
 	}
 }

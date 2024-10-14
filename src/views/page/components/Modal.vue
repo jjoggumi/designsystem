@@ -16,7 +16,7 @@
           </div>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message" v-show="modalType[2]" @close="$set(modalType, 2, false)">
+      <HiModal type="type01" v-show="modalType[2]" @close="$set(modalType, 2, false)">
         <template v-slot:heading>Type01 : 하단 버튼 영역 UI 변경</template>
         <template v-slot:content>
           <div class="desc">컨텐츠모달, 알림모달, 메시지모달 등 <br /><strong>현행에서 주로 사용되는 UI</strong> 입니다.</div>
@@ -26,7 +26,7 @@
           <HiButton color="primary" size="lg" @click="$set(modalType, 2, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="title-line" v-show="modalType[1]" @close="$set(modalType, 1, false)">
+      <HiModal titleLine v-show="modalType[1]" @close="$set(modalType, 1, false)">
         <template v-slot:heading>Option : 구분선 있는 타이틀</template>
         <template v-slot:content>
           <div class="desc">
@@ -41,7 +41,7 @@
           </div>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message title-close-skip" v-show="modalType[3]" @close="$set(modalType, 3, false)">
+      <HiModal type="type01" closeSkip v-show="modalType[3]" @close="$set(modalType, 3, false)">
         <template v-slot:heading>Option :상단 닫기버튼 스킵</template>
         <template v-slot:content>
           <div class="desc">메세지 알림 모달 형태로 <br />하단버튼으로 상단 닫기 이벤트를 대신함</div>
@@ -59,7 +59,7 @@
       <HiButton color="primary" @click="$set(modalSize, 1, true)">Medium Modal</HiButton>
       <HiButton color="primary" @click="$set(modalSize, 2, true)">Large Modal</HiButton>
       <HiButton color="primary" @click="$set(modalSize, 3, true)">Full Modal</HiButton>
-      <HiModal addClassName="modal-message modal-sm" v-show="modalSize[0]" @close="$set(modalSize, 0, false)">
+      <HiModal type="type01" size="sm" v-show="modalSize[0]" @close="$set(modalSize, 0, false)">
         <template v-slot:heading>Small Modal Title </template>
         <template v-slot:content> Small Modal Content </template>
         <template v-slot:footer>
@@ -67,7 +67,7 @@
           <HiButton color="primary" size="lg" @click="$set(modalSize, 0, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message modal-md" v-show="modalSize[1]" @close="$set(modalSize, 1, false)">
+      <HiModal type="type01" size="md" v-show="modalSize[1]" @close="$set(modalSize, 1, false)">
         <template v-slot:heading>Medium Modal Title </template>
         <template v-slot:content>Medium Modal Content </template>
         <template v-slot:footer>
@@ -75,7 +75,7 @@
           <HiButton color="primary" size="lg" @click="$set(modalSize, 1, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message modal-lg" v-show="modalSize[2]" @close="$set(modalSize, 2, false)">
+      <HiModal type="type01" size="lg" v-show="modalSize[2]" @close="$set(modalSize, 2, false)">
         <template v-slot:heading>Large Modal Title </template>
         <template v-slot:content>Large Modal Content </template>
         <template v-slot:footer>
@@ -83,7 +83,7 @@
           <HiButton color="primary" size="lg" @click="$set(modalSize, 2, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message modal-full" v-show="modalSize[3]" @close="$set(modalSize, 3, false)">
+      <HiModal type="type01" size="full" v-show="modalSize[3]" @close="$set(modalSize, 3, false)">
         <template v-slot:heading>Full Modal Title </template>
         <template v-slot:content>Full Modal Content </template>
         <template v-slot:footer>
@@ -97,7 +97,7 @@
       <HiButton color="primary" @click="$set(modalCon, 0, true)">Default Content</HiButton>
       <HiButton color="primary" @click="$set(modalCon, 1, true)">Icon Messege</HiButton>
       <HiButton color="primary" @click="$set(modalCon, 2, true)">Progress bar</HiButton>
-      <HiModal addClassName="modal-message" v-show="modalCon[0]" @close="$set(modalCon, 0, false)">
+      <HiModal type="type01" v-show="modalCon[0]" @close="$set(modalCon, 0, false)">
         <template v-slot:heading>
           모달 제목 영역
           <span class="highlight">제목 강조 텍스트</span>
@@ -116,7 +116,7 @@
           <HiButton color="primary" size="lg" @click="$set(modalCon, 0, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message" v-show="modalCon[1]" @close="$set(modalCon, 1, false)">
+      <HiModal type="type01" v-show="modalCon[1]" @close="$set(modalCon, 1, false)">
         <template v-slot:heading>
           모달 제목 영역
           <span class="highlight">제목 강조 텍스트</span>
@@ -130,7 +130,7 @@
           <HiButton color="primary" size="lg" @click="$set(modalCon, 1, false)">확인</HiButton>
         </template>
       </HiModal>
-      <HiModal addClassName="modal-message" v-show="modalCon[2]" @close="$set(modalCon, 2, false)">
+      <HiModal type="type01" v-show="modalCon[2]" @close="$set(modalCon, 2, false)">
         <template v-slot:heading>전체 파일을 선택 중입니다.<br />잠시만 기다려주세요.</template>
         <template v-slot:content>
           <div class="w100">
@@ -148,15 +148,13 @@
     <div class="ctrArea">
       <div class="elArea">
         <HiModal
-          :class="[
-            propsVal.type ? propsVal.type : '',
-            propsVal.size ? 'modal-' + propsVal.size : '',
-            propsVal.titleLine === true ? 'title-line' : '',
-            propsVal.titleCloseSkip === true ? 'title-close-skip' : '',
-          ]"
+          :type="propsVal.type"
+          :size="propsVal.size ? propsVal.size : ''"
+          :titleLine="propsVal.titleLine"
+          :closeSkip="propsVal.closeSkip"
           @close="modalType[0] = false"
         >
-          <template v-slot:heading>모달 제목 영역입니다. </template>
+          <template v-slot:heading>{{propsVal.type}}모달 제목 영역입니다. </template>
           <template v-slot:content> 모달 컨텐츠 영역입니다. </template>
           <template v-slot:footer>
             <div v-if="propsVal.type === ''" class="group-btn">
@@ -185,7 +183,7 @@
         </li>
         <li>
           <label>CLOSE SKIP</label>
-          <hi-switch v-model="propsVal.titleCloseSkip" @update:model="propsVal.titleCloseSkip = $event" />
+          <hi-switch v-model="propsVal.closeSkip" @update:model="propsVal.closeSkip = $event" />
         </li>
       </ul>
       <div class="codeArea">
@@ -198,11 +196,11 @@
 </template>
 
 <script>
-import HiModal from "@/components/HiModal.vue";
-import HiButton from "@/components/HiButton.vue";
-import HiSelectBox from "@/components/HiSelectBox.vue";
-import HiSwitch from "@/components/HiSwitch.vue";
-import HiIcon from "@/components/HiIcon.vue";
+import HiModal from "@/components/Modal/HiModal.vue";
+import HiButton from "@/components/Button/HiButton.vue";
+import HiSelectBox from "@/components/Form/HiSelectBox.vue";
+import HiSwitch from "@/components/Form/HiSwitch.vue";
+import HiIcon from "@/components/Icon/HiIcon.vue";
 export default {
   name: "ComponentsModal",
   components: { HiModal, HiButton, HiSelectBox, HiSwitch, HiIcon },
@@ -214,13 +212,13 @@ export default {
       propsVal: {
         type: "",
         titleLine: false,
-        titleCloseSkip: false,
+        closeSkip: false,
         size: "sm",
       },
       propsOpt: {
         type: [
           { value: "", title: "default" },
-          { value: "modal-message", title: "type01" },
+          { value: "type01", title: "type01" },
         ],
         size: [
           { value: "sm", title: "sm" },
@@ -235,11 +233,10 @@ export default {
     generatedCode() {
       // Generate class list for the button element
       const classes = [
-        "btn",
-        this.propsVal.type ? `${this.propsVal.type}` : "",
-        this.propsVal.size ? `model-${this.propsVal.size}` : "",
-        this.propsVal.titleLine ? "title-line" : "",
-        this.propsVal.titleCloseSkip ? "title-close-skip" : "",
+        this.propsVal.type ? `type="${this.propsVal.type}"` : "",
+        this.propsVal.size ? `size="${this.propsVal.size}"` : "",
+        this.propsVal.titleLine ? "titleLine" : "",
+        this.propsVal.closeSkip ? "closeSkip" : "",
       ]
         .filter(Boolean)
         .join(" ");
@@ -257,7 +254,7 @@ export default {
 
       // Generate HTML code for the button and HiButton component
       return `
-        &lt;HiModal class="${classes}" @close=""&gt;
+        &lt;HiModal ${classes} @close=""&gt;
           &lt;template v-slot:heading&gt;모달 제목 영역입니다.&lt;/template&gt;
           &lt;template v-slot:content&gt; 모달 컨텐츠 영역입니다. &lt;/template&gt;
           &lt;template v-slot:footer&gt;

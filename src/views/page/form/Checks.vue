@@ -86,7 +86,7 @@
 </template>
   
 <script>
-import HiSwitch from "@/components/HiSwitch.vue";
+import HiSwitch from "@/components/Form/HiSwitch.vue";
 
 export default {
   name : 'CheckRadioSwitch',

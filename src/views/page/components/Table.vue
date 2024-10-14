@@ -466,8 +466,8 @@
 </template>
 
 <script>
-import HiSelectBox from "@/components/HiSelectBox.vue";
-import HiSwitch from "@/components/HiSwitch.vue";
+import HiSelectBox from "@/components/Form/HiSelectBox.vue";
+import HiSwitch from "@/components/Form/HiSwitch.vue";
 export default {
   name: "ComponentsTable",
   components: { HiSelectBox, HiSwitch },

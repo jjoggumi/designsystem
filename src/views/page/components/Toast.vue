@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import HiButton from "@/components/HiButton.vue";
-//import HiSelectBox from "@/components/HiSelectBox.vue";
-//import HiSwitch from "@/components/HiSwitch.vue";
+import HiButton from "@/components/Button/HiButton.vue";
+//import HiSelectBox from "@/components/Form/HiSelectBox.vue";
+//import HiSwitch from "@/components/Form/HiSwitch.vue";
 
 export default {
   name: "ComponentsToast",
