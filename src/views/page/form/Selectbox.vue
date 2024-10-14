@@ -44,7 +44,7 @@
         >
           <template #custom-option="{ value, selectItem }">
             <div class="option-list type01">
-              <ul class="custom_scr">
+              <ul class="custom-scr">
                 <li v-for="item in editSelect.items" :key="item.value">
                   <HiButton color="link" class="item" :class="{ 'is-selected': item.value === value }" @click="selectItem(item)">
                     {{ item.title }}
@@ -78,7 +78,7 @@
         >
           <template #custom-option="{ value, selectItem }">
             <div class="option-list type01">
-              <ul class="custom_scr">
+              <ul class="custom-scr">
                 <li v-for="item in editSelect.items" :key="item.value">
                   <HiButton color="link" class="item" :class="{ 'is-selected': item.value === value }" @click="selectItem(item)">
                     {{ item.title }}
@@ -107,7 +107,7 @@
         >
           <template #custom-option="{ value, selectItem }">
             <div class="option-list type01">
-              <ul class="custom_scr">
+              <ul class="custom-scr">
                 <li v-for="item in editSelect.items" :key="item.value" class="pl-30">
                   <HiButton color="link" class="prepend" @click="handleDeleteItem(item)">
                     <HiIcon name="ico-minus3" color="white" bgColor="info" size="10" rounded="rounded"></HiIcon>
