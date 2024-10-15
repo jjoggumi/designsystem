@@ -262,6 +262,10 @@ button {
 	&.btn-square {
 		border-radius: 0;
 	}
+
+	> .hi-ico{
+		vertical-align: middle;
+	}
 }
 
 // common.css
