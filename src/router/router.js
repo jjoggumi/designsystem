@@ -78,6 +78,11 @@ const router = new Router({
           component: () => import('../views/page/components/Table.vue'),
         }
       ]
+    },    
+    {
+      path: '/pub',
+      name : 'Pub',
+      component :  () => import('../views/Pub.vue'),
     }
   ],
 })

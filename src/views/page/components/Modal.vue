@@ -101,6 +101,7 @@
         <template v-slot:heading>
           모달 제목 영역
           <span class="highlight">제목 강조 텍스트</span>
+          <p class="smr">제목 작은 설명글</p>
         </template>
         <template v-slot:content>
           <p class="desc">
@@ -147,14 +148,8 @@
     </section>
     <div class="ctrArea">
       <div class="elArea">
-        <HiModal
-          :type="propsVal.type"
-          :size="propsVal.size ? propsVal.size : ''"
-          :titleLine="propsVal.titleLine"
-          :closeSkip="propsVal.closeSkip"
-          @close="modalType[0] = false"
-        >
-          <template v-slot:heading>{{propsVal.type}}모달 제목 영역입니다. </template>
+        <HiModal :type="propsVal.type" :size="propsVal.size ? propsVal.size : ''" :titleLine="propsVal.titleLine" :closeSkip="propsVal.closeSkip" @close="modalType[0] = false">
+          <template v-slot:heading>{{ propsVal.type }}모달 제목 영역입니다. </template>
           <template v-slot:content> 모달 컨텐츠 영역입니다. </template>
           <template v-slot:footer>
             <div v-if="propsVal.type === ''" class="group-btn">
@@ -221,6 +216,7 @@ export default {
           { value: "type01", title: "type01" },
         ],
         size: [
+          { value: "xs", title: "xs" },
           { value: "sm", title: "sm" },
           { value: "md", title: "md" },
           { value: "lg", title: "lg" },

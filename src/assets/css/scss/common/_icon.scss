@@ -58,7 +58,7 @@
 	@include iconColor(orange, $orange);
 	@include iconColor(black, $black);
 	@include iconColor(white, $white);
-	@include iconColor(disabled, $disabled);
+	@include iconColor(disabled, $disabled-bg);
 
 	// 아이콘 사이즈
 	&.ico-size-10 {
@@ -145,6 +145,11 @@
 	@include iconName(close2);
 	@include iconName(close3);
 	@include iconName(delete);
+	@include iconName(star-fill);
+	@include iconName(star);
+	@include iconName(pen);
+	@include iconName(warning-circle);
+	@include iconName(warning-circle-fill);
 }
 i.ico-listmove {
 	display: inline-block;

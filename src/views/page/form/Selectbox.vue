@@ -61,6 +61,42 @@
             </div>
           </template>
         </HiSelectBox>
+        <HiSelectBox :items="defaultSelect.items" :value="defaultSelect.selectedValue" @update:value="defaultSelect.selectedValue = $event" selectBoxType="dropdown">
+          <template #selected> <HiIcon name="ico-chart" color="black" size="18" /> DropDown </template>
+        </HiSelectBox>
+      </div>
+    </section>
+    <section>
+      <h2>Selectbox Position</h2>
+      <div>
+        <HiSelectBox
+          class="mr-10"
+          :value="defaultSelect.selectedValue"
+          @update:value="defaultSelect.selectedValue = $event"
+          :items="defaultSelect.items"
+          :empty-title="defaultSelect.selectedValue || 'Option Default'"
+        />
+        <HiSelectBox
+          class="mr-10 opt-top"
+          :value="defaultSelect.selectedValue"
+          @update:value="defaultSelect.selectedValue = $event"
+          :items="defaultSelect.items"
+          :empty-title="defaultSelect.selectedValue || 'Option Top'"
+        />
+        <HiSelectBox
+          class="mr-10 opt-left"
+          :value="defaultSelect.selectedValue"
+          @update:value="defaultSelect.selectedValue = $event"
+          :items="defaultSelect.items"
+          :empty-title="defaultSelect.selectedValue || 'Option Left'"
+        />
+        <HiSelectBox
+          class="mr-10 opt-right"
+          :value="defaultSelect.selectedValue"
+          @update:value="defaultSelect.selectedValue = $event"
+          :items="defaultSelect.items"
+          :empty-title="defaultSelect.selectedValue || 'Option Right'"
+        />
       </div>
     </section>
     <section>
@@ -179,7 +215,7 @@
 import HiButton from "@/components/Button/HiButton.vue";
 import HiSelectBox from "@/components/Form/HiSelectBox.vue";
 import HiIcon from "@/components/Icon/HiIcon.vue";
-import board from "@/assets/js/board.js";
+import board from "@/assets/js/board2.js";
 
 export default {
   name: "FormSys",
@@ -266,7 +302,7 @@ export default {
 <style lang="scss" scoped>
 .formSys {
   .hi-selectbox {
-    width: 24%;
+    width: 19%;
   }
 }
 </style>

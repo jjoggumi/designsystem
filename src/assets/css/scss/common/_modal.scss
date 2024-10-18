@@ -32,14 +32,13 @@
 		max-height: 100vh;
 		vertical-align: middle;
 		background-color: #fff;
-		font-size: 14px;
-		border-radius: 10px;
+		font-size: 16px;
+		border-radius: 20px;
 		box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.3);
 
 		.desc {
 			color: #616161;
-			font-size: 15px;
-			line-height: 1.5;
+			font-size: 16px;
 
 			& + .inputbox { margin-top: 16px; }
 			& + .textbox { margin-top: 20px; }
@@ -49,9 +48,8 @@
 
 			p {
 				color: #222;
-				font-size: 15px;
+				font-size: 16px;
 				font-weight: 400;
-				line-height: 1.5;
 				text-align: left;
 				margin-bottom: 8px;
 			}    
@@ -72,25 +70,24 @@
 
 			p {
 				color: #4267b2;
-				font-size: 15px;
+				font-size: 16px;
 				font-weight: 500;
 				line-height: 1.5;
 			}
 		}
 	} 
 	.modal__header { 
-		padding: 40px 24px 6px;
+		padding: 40px 30px 0px;
 
 		.heading {
 			color: #000;
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: 800;
 			text-align: center;
-			line-height: 1.2; 
 			.smr{
 				color: #616161;
-				font-size: 15px;
-				line-height: 1.5;
+				font-size: 16px;    
+				margin-top: 10px;
 				font-weight: $font-nomal;
 			}
 		}
@@ -259,13 +256,13 @@
 		display: -ms-flexbox;
 		display: flex;
 		justify-content: center;
+		margin-top: -10px;
 		
 		.group-btn {
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
 			border-top: 1px solid #ccc;
-			margin-top: -10px;
 			width: 100%;
 			[class*="btn-"] {
 				flex: 1;
@@ -285,7 +282,8 @@
 			background-color: #4778de;
 		}
 	}    
-	&.modal-sm .modal__layer{width:100%;max-width:360px;}
+	&.modal-xs .modal__layer{width:100%;max-width:360px;}
+	&.modal-sm .modal__layer{width:100%;max-width:400px;}
 	&.modal-md .modal__layer{width:100%;max-width:620px;}
 	&.modal-lg .modal__layer{width:100%;max-width:850px;}
 	&.modal-full .modal__layer{
@@ -319,9 +317,6 @@
 
 /* modal : common message modal */
 .modal-message{
-	.modal__header { padding-top: 40px; }
-	.modal__layer { width: 444px; }
-	.modal__content { padding: 16px 24px 24px; }
 	.checkbox label { margin: 0 15px; 
 		span { color: #222;font-size: 15px; }
 	}
@@ -341,8 +336,7 @@
 	.modal__footer { 
 		padding: 0 24px 30px;  
 		display: block;
-		border: 0;
-		margin-top: 0;   
+		border: 0;  
 		.hi-btn {    
 			max-width: 145px;
 			width: 100%;

@@ -28,6 +28,11 @@ export default {
     { value: "ico-close2", title: "close2" },
     { value: "ico-close3", title: "close3" },
     { value: "ico-delete", title: "delete" },
+    { value: "ico-star", title: "star" },
+    { value: "ico-star-fill", title: "star-fill" },
+    { value: "ico-pen", title: "ico-pen" },
+    { value: "ico-warning-circle", title: "ico-warning-circle" },
+    { value: "ico-warning-circle-fill", title: "ico-warning-circle-fill" },
   ],
   iconColor: [
     { value: "link", title: "link" },

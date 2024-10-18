@@ -14,6 +14,10 @@
 	&:focus:not(.disabled, :disabled) {
 		box-shadow: 0 0 0 3px scale-color($border, $lightness: $focus * 1%);
 	}
+	
+	> .hi-ico{
+		&::after{background-color: $font;}
+	}
 }
 button,
 [role=button] {
@@ -40,6 +44,13 @@ button {
 	min-height: 22px;
 	line-height: 2.1;
 
+	> .hi-ico{
+		vertical-align: middle;
+		padding: 0;
+		margin-left: -2px;
+		margin-top: -1px;
+	}
+
 	&.disabled,
 	&:disabled,
 	&[aria-disabled="true"],
@@ -49,6 +60,14 @@ button {
 		background-color: $gray-06 !important;
 		border-color: $gray-06 !important;
 		cursor: default;
+
+		&:focus {
+			box-shadow: none !important;
+		}
+		
+		> .hi-ico{
+			&::after{background-color: $white !important;}
+		}
 	}
 	/* 버튼 사이즈 */
 	&.btn-xs {
@@ -57,6 +76,7 @@ button {
 
 	&.btn-sm {
 		font-size: 14px;
+		padding: 0 12px;
 	}
 
 	&.btn-md {
@@ -85,57 +105,63 @@ button {
 		background-color: $gray-06 !important;
 		border-color: $gray-06 !important;
 		cursor: default;
+		&:focus {			
+			box-shadow: none;
+		}
 	}
 	&.btn-default {
-		@include btnStyle($gray-03, $focus: 10, $font: $gray-09, $border: $gray-03);
+		@include btnStyle($gray-03, $focus: 50, $font: $gray-09, $border: $gray-03);
 	}
 
 	&.btn-primary {
-		@include btnStyle($primary, $focus: 35);
+		@include btnStyle($primary, $focus: 70);
 	}
 
 	&.btn-secondary {
-		@include btnStyle($secondary, $focus: 40);
+		@include btnStyle($secondary, $focus: 70);
 	}
 
 	&.btn-success {
-		@include btnStyle($success, $focus: 50);
+		@include btnStyle($success, $focus: 70);
 	}
 
 	&.btn-info {
-		@include btnStyle($info, $focus: 35);
+		@include btnStyle($info, $focus: 70);
 	}
 
 	&.btn-warning {
-		@include btnStyle($warning, $focus: 35);
+		@include btnStyle($warning, $focus: 80);
 	}
 
 	&.btn-purple {
-		@include btnStyle($purple, $focus: 35);
+		@include btnStyle($purple, $focus: 70);
 	}
 
 	&.btn-yellow {
-		@include btnStyle($yellow, $focus: 45);
+		@include btnStyle($yellow, $focus: 70);
 	}
 
 	&.btn-jungle {
-		@include btnStyle($jungle, $focus: 35);
+		@include btnStyle($jungle, $focus: 70);
 	}
 
 	&.btn-orange {
-		@include btnStyle($orange, $focus: 60);
+		@include btnStyle($orange, $focus: 70);
 	}
 
 	&.btn-gray {
-		@include btnStyle($gray-09, $focus: 60, $font: $white);
+		@include btnStyle($gray-09, $focus: 75, $font: $white);
 	}
 
 	&.btn-white {
-		@include btnStyle($white, $focus: 60, $font: #212529);
+		@include btnStyle($white, $focus: 0.1, $font: #212529);
+		&:focus {
+			box-shadow:0 0 0 3px rgba(255, 255, 255, 0.2);
+		}
 	}
 
 	&.btn-black {
-		@include btnStyle($gray-10, $focus: 60);
+		@include btnStyle($gray-10, $focus: 85);
 	}
 	
 	&.btn-link {
@@ -149,7 +175,7 @@ button {
 	&.btn-line-default {
 		@include btnStyle(
 			$transparent,
-			$focus: 50,
+			$focus: 60,
 			$font: $gray-09,
 			$border: $gray-06
 		);
@@ -157,7 +183,7 @@ button {
 	&.btn-line-primary {
 		@include btnStyle(
 			$transparent,
-			$focus: 35,
+			$focus: 80,
 			$font: $primary,
 			$border: $primary
 		);
@@ -165,7 +191,7 @@ button {
 	&.btn-line-secondary {
 		@include btnStyle(
 			$transparent,
-			$focus: 40,
+			$focus: 80,
 			$font: $secondary,
 			$border: $secondary
 		);
@@ -173,18 +199,18 @@ button {
 	&.btn-line-success {
 		@include btnStyle(
 			$transparent,
-			$focus: 40,
+			$focus: 80,
 			$font: $success,
 			$border: $success
 		);
 	}
 	&.btn-line-info {
-		@include btnStyle($transparent, $focus: 25, $font: $info, $border: $info);
+		@include btnStyle($transparent, $focus: 70, $font: $info, $border: $info);
 	}
 	&.btn-line-warning {
 		@include btnStyle(
 			$transparent,
-			$focus: 42,
+			$focus: 80,
 			$font: $warning,
 			$border: $warning
 		);
@@ -192,7 +218,7 @@ button {
 	&.btn-line-purple {
 		@include btnStyle(
 			$transparent,
-			$focus: 25,
+			$focus: 80,
 			$font: $purple,
 			$border: $purple
 		);
@@ -200,7 +226,7 @@ button {
 	&.btn-line-yellow {
 		@include btnStyle(
 			$transparent,
-			$focus: 45,
+			$focus: 80,
 			$font: $yellow,
 			$border: $yellow
 		);
@@ -208,7 +234,7 @@ button {
 	&.btn-line-jungle {
 		@include btnStyle(
 			$transparent,
-			$focus: 45,
+			$focus: 80,
 			$font: $jungle,
 			$border: $jungle
 		);
@@ -216,7 +242,7 @@ button {
 	&.btn-line-orange {
 		@include btnStyle(
 			$transparent,
-			$focus: 35,
+			$focus: 80,
 			$font: $orange,
 			$border: $orange
 		);
@@ -224,7 +250,7 @@ button {
 	&.btn-line-gray {
 		@include btnStyle(
 			$transparent,
-			$focus: 55,
+			$focus: 80,
 			$font: $gray-09,
 			$border: $gray-09
 		);
@@ -254,6 +280,14 @@ button {
 			border-color: rgba(255, 255, 255, 0.8);
 		}
 	}
+	&.btn-light-primary {
+		@include btnStyle(
+			#E4EBFA,
+			$focus: 40,
+			$font: #4166B0,
+			$border: #E4EBFA
+		);
+	}
 
 	&.btn-bitrounded {
 		border-radius: 5px;
@@ -261,10 +295,6 @@ button {
 
 	&.btn-square {
 		border-radius: 0;
-	}
-
-	> .hi-ico{
-		vertical-align: middle;
 	}
 }
 

@@ -9,9 +9,11 @@
       <div class="modal__content">
         <slot name="content"></slot>
       </div>
-      <div class="modal__footer">
-        <slot name="footer"></slot>
-      </div>
+      <template v-if="$scopedSlots['footer']">
+        <div class="modal__footer">
+          <slot name="footer"></slot>
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -23,7 +25,7 @@ export default {
     type: { type: String, default: null },
     size: { type: String, default: null },
     titleLine: { type: Boolean, default: false },
-    closeSkip: { type: Boolean, default: false }
+    closeSkip: { type: Boolean, default: false },
   },
   data() {
     return {};
@@ -31,14 +33,12 @@ export default {
   computed: {
     classList() {
       const className = ["hi-modal-common"];
-      this.type === 'type01' ? className.push(`modal-message`) : 
-      this.type ===  null ? null : 
-      className.push(`modal-${this.type}`) ;
+      this.type === "type01" ? className.push(`modal-message`) : this.type === null ? null : className.push(`modal-${this.type}`);
       this.size ? className.push(`modal-${this.size}`) : null;
       this.titleLine ? className.push("title-line") : null;
       this.closeSkip ? className.push("title-close-skip") : null;
       return className.join(" ");
-    }
+    },
   },
 };
 </script>

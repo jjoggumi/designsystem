@@ -8,12 +8,7 @@
           <p class="color">#4778DE <br />var(--primary)</p>
         </div>
         <ul class="primarySub">
-          <li
-            class="sub01"
-            v-for="(primarySub, i) in primarySubColor"
-            :key="i"
-            :style="`background-color:${primarySub.color}`"
-          >
+          <li class="sub01" v-for="(primarySub, i) in primarySubColor" :key="i" :style="`background-color:${primarySub.color}`">
             {{ primarySub.color }}
             <br />var(--{{ primarySub.name }})
           </li>
@@ -27,11 +22,7 @@
     <section>
       <h2>State Color</h2>
       <ul class="colorWrap">
-        <li
-          :style="`background-color:` + state.color"
-          v-for="(state, i) in stateColor"
-          :key="i"
-        >
+        <li :style="`background-color:` + state.color" v-for="(state, i) in stateColor" :key="i">
           <p class="tit">{{ state.name }}</p>
           <p class="color">{{ state.color }}<br />var(--{{ state.name }})</p>
         </li>
@@ -40,11 +31,7 @@
     <section>
       <h2>Sub Color</h2>
       <ul class="colorWrap">
-        <li
-          :style="`background-color:` + sub.color"
-          v-for="(sub, i) in subColor"
-          :key="i"
-        >
+        <li :style="`background-color:` + sub.color" v-for="(sub, i) in subColor" :key="i">
           <p class="tit">{{ sub.name }}</p>
           <p class="color">{{ sub.color }}<br />var(--{{ sub.name }})</p>
         </li>
@@ -58,16 +45,10 @@
           <p class="color" style="color: var(--gray-09)">{{ grayColor[0].color }}</p>
         </div>
         <ul class="colorWrap">
-          <li
-            v-for="(gray, i) in grayColor.slice(1, -1)"
-            :key="i"
-            :style="`background-color:var(--${gray.name})`"
-          >
+          <li v-for="(gray, i) in grayColor.slice(1, -1)" :key="i" :style="`background-color:var(--${gray.name})`">
             <template v-if="i < 6">
               <p class="tit" style="color: var(--gray-09)">{{ gray.name }}</p>
-              <p class="color" style="color: var(--gray-09)">
-                {{ gray.color }}<br />var(--{{ gray.name }})
-              </p>
+              <p class="color" style="color: var(--gray-09)">{{ gray.color }}<br />var(--{{ gray.name }})</p>
             </template>
             <template v-else>
               <p class="tit">{{ gray.name }}</p>
@@ -87,9 +68,7 @@
         <li v-for="(txtColor, i) in txtColor" :key="i">
           <p class="box" :style="`color:var(--${txtColor.name});font-size:20px;`">A</p>
           <p class="tit" :style="`color:var(--${txtColor.name})`">{{ txtColor.smr }}</p>
-          <p class="color" :style="`color:var(--${txtColor.name})`">
-            {{ txtColor.color }}<br />var(--{{ txtColor.name }})
-          </p>
+          <p class="color" :style="`color:var(--${txtColor.name})`">{{ txtColor.color }}<br />var(--{{ txtColor.name }})</p>
         </li>
       </ul>
     </section>
@@ -217,7 +196,7 @@ export default {
         },
         {
           name: "gray-09",
-          color: "#191919",
+          color: "#616161",
         },
         {
           name: "gray-10",
