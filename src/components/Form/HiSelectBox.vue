@@ -107,10 +107,16 @@ export default {
   },
   methods: {
     closeSelectBox() {
-      this.isOpen = false;
+      if (this.isOpen) {
+        this.isOpen = false;
+        this.$emit("clickOutside");
+      }
     },
     toggleSelectBox() {
       this.isOpen = !this.isOpen;
+      if (!this.isOpen) {
+        this.$emit("clickOutside");
+      }
     },
     getValueTitle(val) {
       const foundItem = this.dividedItems.find((item) => item.value === val);

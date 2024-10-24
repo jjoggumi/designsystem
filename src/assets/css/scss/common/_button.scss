@@ -69,6 +69,7 @@ button {
 			&::after{background-color: $white !important;}
 		}
 	}
+
 	/* 버튼 사이즈 */
 	&.btn-xs {
 		font-size: 11px;
@@ -109,6 +110,7 @@ button {
 			box-shadow: none;
 		}
 	}
+
 	&.btn-default {
 		@include btnStyle($gray-03, $focus: 50, $font: $gray-09, $border: $gray-03);
 	}
@@ -171,6 +173,15 @@ button {
 		line-height: normal;
 		font-weight: $font-nomal;
 	}
+	
+	&.btn-light-primary {
+		@include btnStyle(
+			#E4EBFA,
+			$focus: 40,
+			$font: #4166B0,
+			$border: #E4EBFA
+		);
+	}
 
 	&.btn-line-default {
 		@include btnStyle(
@@ -180,6 +191,7 @@ button {
 			$border: $gray-06
 		);
 	}
+
 	&.btn-line-primary {
 		@include btnStyle(
 			$transparent,
@@ -188,6 +200,7 @@ button {
 			$border: $primary
 		);
 	}
+
 	&.btn-line-secondary {
 		@include btnStyle(
 			$transparent,
@@ -196,6 +209,7 @@ button {
 			$border: $secondary
 		);
 	}
+
 	&.btn-line-success {
 		@include btnStyle(
 			$transparent,
@@ -204,9 +218,11 @@ button {
 			$border: $success
 		);
 	}
+
 	&.btn-line-info {
 		@include btnStyle($transparent, $focus: 70, $font: $info, $border: $info);
 	}
+
 	&.btn-line-warning {
 		@include btnStyle(
 			$transparent,
@@ -215,6 +231,7 @@ button {
 			$border: $warning
 		);
 	}
+
 	&.btn-line-purple {
 		@include btnStyle(
 			$transparent,
@@ -223,6 +240,7 @@ button {
 			$border: $purple
 		);
 	}
+
 	&.btn-line-yellow {
 		@include btnStyle(
 			$transparent,
@@ -231,6 +249,7 @@ button {
 			$border: $yellow
 		);
 	}
+
 	&.btn-line-jungle {
 		@include btnStyle(
 			$transparent,
@@ -239,6 +258,7 @@ button {
 			$border: $jungle
 		);
 	}
+
 	&.btn-line-orange {
 		@include btnStyle(
 			$transparent,
@@ -247,6 +267,7 @@ button {
 			$border: $orange
 		);
 	}
+
 	&.btn-line-gray {
 		@include btnStyle(
 			$transparent,
@@ -255,6 +276,7 @@ button {
 			$border: $gray-09
 		);
 	}
+
 	&.btn-line-black {
 		@include btnStyle(
 			$transparent,
@@ -263,6 +285,7 @@ button {
 			$border: $gray-10
 		);
 	}
+
 	&.btn-line-white {
 		@include btnStyle(
 			$transparent,
@@ -280,12 +303,13 @@ button {
 			border-color: rgba(255, 255, 255, 0.8);
 		}
 	}
-	&.btn-light-primary {
+	
+	&.btn-line-light-primary {
 		@include btnStyle(
-			#E4EBFA,
+			$transparent,
 			$focus: 40,
 			$font: #4166B0,
-			$border: #E4EBFA
+			$border: #B5C9F2
 		);
 	}
 

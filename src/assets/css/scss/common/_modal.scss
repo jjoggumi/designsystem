@@ -10,6 +10,18 @@
 	text-align: center;
 	font-size: 0;
 
+	& ::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+  }
+  & ::-webkit-scrollbar-thumb {
+    background-color: #cfd3db;
+    border-radius: 10px;
+    border: 2px solid #fff;
+  }
+  & ::-webkit-scrollbar-track { background-color: transparent; }
+  
+
 	&::before {
 		content: "";
 		display: inline-block;
@@ -36,6 +48,16 @@
 		border-radius: 20px;
 		box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.3);
 
+		.tit{
+			font-size: 16px;
+			font-weight: $font-strong;
+			margin-bottom: 20px;
+			.smr{
+				font-weight: $font-nomal;
+				margin-top: 5px;	
+				color: #616161;
+			}
+		}
 		.desc {
 			color: #616161;
 			font-size: 16px;
@@ -336,7 +358,7 @@
 	.modal__footer { 
 		padding: 0 24px 30px;  
 		display: block;
-		border: 0;  
+		border: 0;
 		.hi-btn {    
 			max-width: 145px;
 			width: 100%;

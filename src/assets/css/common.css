@@ -31,7 +31,7 @@
 .page-join-class .join-class-cont-wrap .search-result-list-wrap ul li .school-class-name-wrap .school-class-name span,
 .window-popup-container .title-wrap .title,
 .note-edit-wrap .title-top-wrap .center-wrap .date-cont-wrap .date-wrap .date {
-	font-family: var(--font-tit);
+    font-family: var(--font-tit);
 }
 
 
@@ -39,21 +39,21 @@
     SCROLL
 * * * * */
 /* scroll common */
-.hi-modal-common ::-webkit-scrollbar,
-.hi-searchbox ::-webkit-scrollbar,
+/* .hi-modal-common ::-webkit-scrollbar,
+.hi-searchbox ::-webkit-scrollbar, */
 .member-status__list::-webkit-scrollbar {
     background-color: transparent;
-    width: 8px;
+    width: 10px;
 }
-.hi-modal-common ::-webkit-scrollbar-thumb,
-.hi-searchbox ::-webkit-scrollbar-thumb,
+/* .hi-modal-common ::-webkit-scrollbar-thumb,
+.hi-searchbox ::-webkit-scrollbar-thumb, */
 .member-status__list::-webkit-scrollbar-thumb {
     background-color: #cfd3db;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 2px solid #fff;
 }
-.hi-modal-common ::-webkit-scrollbar-track,
-.hi-searchbox ::-webkit-scrollbar-track,
+/* .hi-modal-common ::-webkit-scrollbar-track,
+.hi-searchbox ::-webkit-scrollbar-track, */
 .member-status__list::-webkit-scrollbar-track { background-color: transparent; }
 
 /* scroll transparent */
@@ -1592,7 +1592,8 @@ i.camera_transparent, span.camera_transparent {
 .hi-kebabmenu .kebabmenu__layer button {
     width: 100%;
     color: #616161;
-    line-height: 40px;
+    line-height: 21px;
+    height:45px;
     text-align: left;
     white-space: nowrap;
     padding: 0 20px 0 16px;
@@ -1608,14 +1609,7 @@ i.camera_transparent, span.camera_transparent {
     vertical-align: middle;
     margin-right: 2px;
 }
-.hi-kebabmenu .kebabmenu__layer button.btn-move::before {
-    background: url("../img/icon/icon_board_move.svg") 0 0 no-repeat;
-    vertical-align: middle;
-    margin-right: 2px;
-}
 .hi-kebabmenu .kebabmenu__layer .btn-edit-blackboard::before { background-position: -20px 0; }
-.hi-kebabmenu .kebabmenu__layer .btn-notice::before { background-position: -40px 0; }
-.hi-kebabmenu .kebabmenu__layer .btn-delete::before { background-position: -60px 0; }
 .hi-kebabmenu .kebabmenu__layer .btn-report::before { background-position: 0 -20px; }
 .hi-kebabmenu .kebabmenu__layer .btn-align-left::before { background-position: 0 -40px; }
 .hi-kebabmenu .kebabmenu__layer .btn-align-center::before { background-position: -20px -40px; }
@@ -1625,7 +1619,33 @@ i.camera_transparent, span.camera_transparent {
 .hi-kebabmenu .kebabmenu__layer .btn-image::before {
     background: url("../img/icon/icon_image_edit_gray01.svg") 0 0/18px auto no-repeat;
 }
+
 .hi-kebabmenu .kebabmenu__layer button span { vertical-align: middle; }
+
+.hi-kebabmenu .kebabmenu__layer button.btn-blackbd-modify::before {
+    background: url("../img/svg/ico_blackbd_modify.svg") 0 0 no-repeat;
+}
+.hi-kebabmenu .kebabmenu__layer button.btn-modify::before {
+    background: url("../img/svg/ico_modify.svg") 0 0 no-repeat;
+}
+.hi-kebabmenu .kebabmenu__layer button.btn-move::before {
+    background: url("../img/svg/ico-move.svg") 0 0 no-repeat;
+}
+.hi-kebabmenu .kebabmenu__layer button.btn-export::before {
+    background: url("../img/svg/ico_export.svg") 0 0 no-repeat;
+}
+.hi-kebabmenu .kebabmenu__layer button.btn-copy::before {
+    background: url("../img/svg/ico_copy.svg") 0 0 no-repeat;
+}
+.hi-kebabmenu .kebabmenu__layer button.btn-delete::before {
+    background: url("../img/svg/ico_del.svg") 0 0 no-repeat;
+}
+.hi-kebabmenu .kebabmenu__layer button.btn-notice::before {
+    background: url("../img/svg/ico_pin_on.svg") 0 0 no-repeat;
+}
+.hi-kebabmenu .kebabmenu__layer button.btn-notice-off::before {
+    background: url("../img/svg/ico_pin_off.svg") 0 0 no-repeat;
+}
 
 /* commmon file group */
 .group-file { padding-top: 24px; }
@@ -3326,7 +3346,6 @@ i.camera_transparent, span.camera_transparent {
 }
 .modal-flex .modal__content {
     display: flex;
-    padding-bottom: 20px;
 }
 .modal-flex .column__flex { min-width: 200px; }
 .modal-flex .modal__footer { padding: 0 30px 30px; }

@@ -53,6 +53,7 @@ export default {
   btnColor: [
     { value: "default", title: "default" },
     { value: "primary", title: "primary" },
+    { value: "light-primary", title: "light-primary" },
     { value: "secondary", title: "secondary" },
     { value: "success", title: "success" },
     { value: "info", title: "info" },

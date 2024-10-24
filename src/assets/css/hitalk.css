@@ -945,7 +945,8 @@ input[type=radio]+label:before { background-image: url("../img/icon/icons_radio_
 }
 .ooo-conversation-cont-wrap .reservation__item .icon-error .hi-tooltip span { font-size: 13px; }
 .ooo-conversation-cont-wrap .reservation__item .icon-error:hover .hi-tooltip { display: block; }
-.ooo-conversation-cont-wrap .reservation__item .hi-kebabmenu { top: 20px;right: 20px; }
+.ooo-conversation-cont-wrap .reservation__item .hi-kebabmenu { top: 8px;right: 8px; } /* #68446 하이톡 > 예약 메시지 목록 우측 더보기 버튼 클릭영역 확대  */
+.ooo-conversation-cont-wrap .reservation__item .hi-kebabmenu  .btn-kebab { width: 48px;   height: 48px;   padding: 15px;  } /* #68446 하이톡 > 예약 메시지 목록 우측 더보기 버튼 클릭영역 확대  */
 .ooo-conversation-cont-wrap .hi-kebabmenu .kebabmenu__layer button { color: #333; }
 .ooo-conversation-cont-wrap .hi-kebabmenu .kebabmenu__layer button::before { background: url("../img/icon/icons_hitalk.png") 0 0/200px auto no-repeat; }
 .ooo-conversation-cont-wrap .hi-kebabmenu .kebabmenu__layer .btn-hitalk-reserve::before { background-position: -100px -370px; }
@@ -3057,7 +3058,7 @@ p.badge-noti-member>span {
     border-radius: 4px;
     border: 1px solid #eaeaea;
 }
-.attaching-img .img-wrap:hover:before {
+.attaching-img .img-wrap:not(.hitalk-sticker):hover:before {
     content: "";
     position: absolute;
     top: 0;
@@ -3377,6 +3378,7 @@ p.badge-noti-member>span {
     display: inline-block;
     width: 182px;
     height: 100%;
+    font-size: 14px;
     background-color: #fff;
     border: 1px solid #e0e0e0;
     padding: 0 10px;

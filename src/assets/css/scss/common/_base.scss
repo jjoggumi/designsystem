@@ -126,14 +126,14 @@ figure a img {
 .custom-scr{
   &::-webkit-scrollbar {
     background-color: transparent;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
   &::-webkit-scrollbar-thumb {
   background: #d3d1cb;
   background-clip: padding-box;
   border: 2px solid transparent;
-  border-radius: 50px;
+  border-radius: 10px;
   }
   &::-webkit-scrollbar-track { background-color: transparent; }
 }

@@ -23,6 +23,7 @@
         <HiButton color="default" size="md">default</HiButton>
         <HiButton color="primary" size="md" disabled>disabled</HiButton>
         <HiButton color="primary" size="md">primary</HiButton>
+        <HiButton color="light-primary" size="md">primary</HiButton>
         <HiButton color="secondary" size="md">secondary</HiButton>
         <HiButton color="success" size="md">success</HiButton>
         <HiButton color="info" size="md">info</HiButton>
@@ -59,6 +60,7 @@
         <HiButton color="line-default" size="md">default</HiButton>
         <HiButton color="line-primary" size="md" disabled>disabled</HiButton>
         <HiButton color="line-primary" size="md">primary</HiButton>
+        <HiButton color="line-light-primary" size="md">primary</HiButton>
         <HiButton color="line-secondary" size="md">secondary</HiButton>
         <HiButton color="line-success" size="md">success</HiButton>
         <HiButton color="line-info" size="md">info</HiButton>

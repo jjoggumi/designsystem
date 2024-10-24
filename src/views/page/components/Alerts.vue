@@ -3,6 +3,8 @@
     <section>
       <h2>Btn Type</h2>
       <div>
+        <HiButton color="primary" size="md" @click="showBasicToast()">기본 토스트</HiButton>
+        <HiButton color="primary" size="md" @click="showBasicAlert('삭제하시겠습니까', 'warning')">삭제하시겠습니까</HiButton>
         <HiButton color="primary" size="md" @click="showBasicAlert('삭제하시겠습니까', 'warning')">삭제하시겠습니까</HiButton>
         <HiButton color="primary" size="md" @click="showBasicAlert('저장되었습니다.', 'success')">삭제하시겠습니까</HiButton>
         <HiButton color="primary" size="md" @click="showBasicAlert('게시판(폴더)가 삭제되어 게시글을<br> 등록할 수 없습니다.', 'success')">삭제하시겠습니까</HiButton>
@@ -29,6 +31,11 @@ export default {
         .catch(() => {
           console.log("취소");
         });
+    },
+    showBasicToast() {
+      //this.$toasted.clear();
+      const options = { duration: 5000 };
+      this.$toasted.show("제출한 내역이 삭제되었습니다.", options);
     },
   },
 };

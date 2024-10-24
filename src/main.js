@@ -3,6 +3,7 @@ import App from "@/App.vue";
 import router from "@/router/router.js";
 import store from "@/store/store";
 import vClickOutside from "v-click-outside";
+import Toasted from 'vue-toasted';
 
 //import Toasted from 'vue-toasted';
 // hiClass APIs
@@ -30,10 +31,10 @@ import "@/assets/css/scss/layout.scss";
 Vue.config.productionTip = false;
 Vue.use(vClickOutside);
 
-// Vue.use(Toasted, {
-//   position: 'bottom-center',
-//   duration: 3000
-// })
+Vue.use(Toasted, {
+  position: 'bottom-center',
+  duration: 3000
+})
 
 new Vue({
   router,
